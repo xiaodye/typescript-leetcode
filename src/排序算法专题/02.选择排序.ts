@@ -9,7 +9,9 @@ const selectSort = function (arr: number[]): number[] {
   let minIndex: number;
   for (let i = 0; i < len - 1; i++) {
     minIndex = i;
-    for (let j = i; j < len; j++) {
+
+    // i是待排序区间的左边界，j是有边界
+    for (let j = i + 1; j < len; j++) {
       if (arr[j] < arr[minIndex]) {
         minIndex = j;
       }
@@ -21,3 +23,10 @@ const selectSort = function (arr: number[]): number[] {
   }
   return arr;
 };
+
+// test
+const arr = [5, 3, 2, 4, 1];
+console.log(selectSort(arr));
+debugger;
+
+export {};
