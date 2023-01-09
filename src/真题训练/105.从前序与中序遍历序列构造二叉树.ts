@@ -2,7 +2,6 @@ import TreeNode from "../data-structure/TreeNode";
 
 /**
  * 根据一棵树的前序遍历与中序遍历构造二叉树，你可以假设树中没有重复的元素。
- * leetcode-105
  * @param preorder 前序遍历数组
  * @param inorder 中序遍历数组
  * @returns 新二叉树根节点
@@ -35,6 +34,5 @@ export default function buildTree(preorder: number[], inorder: number[]): TreeNo
 }
 
 // test
-const root = buildTree([3, 9, 20, 15, 7], [9, 3, 15, 20, 7]);
-console.log(root);
+console.log(buildTree([3, 9, 20, 15, 7], [9, 3, 15, 20, 7]));
 debugger;
