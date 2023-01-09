@@ -21,7 +21,7 @@ const knapsack = function (w: number[], v: number[], c: number): number {
     dp[0][i] = v[0];
   }
 
-  // 填充dp数组
+  // 填充dp数组，此时第首行和第首列已经确立
   for (let i = 1; i < num; i++) {
     for (let j = 1; j <= c; j++) {
       if (j < w[i]) {
