@@ -9,6 +9,8 @@
       "type": "node",
       "request": "launch",
       "runtimeArgs": ["-r", "ts-node/register"],
+      "console": "integratedTerminal",
+      "internalConsoleOptions": "openOnSessionStart",
       "skipFiles": ["<node_internals>/**"],
       "program": "${workspaceFolder}/${file}"
     }
