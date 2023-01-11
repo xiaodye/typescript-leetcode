@@ -1,6 +1,7 @@
 {
   "compilerOptions": {
     "target": "ESNext",
+    "module": "NodeNext",
     "lib": ["ESNext"],
     "strict": true,
     "forceConsistentCasingInFileNames": true
