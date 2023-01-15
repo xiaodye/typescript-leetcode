@@ -3,7 +3,10 @@
     "target": "ESNext",
     "module": "NodeNext",
     "lib": ["ESNext"],
+
     "strict": true,
+    "strictNullChecks": false,
+    "noImplicitReturns": true,
     "forceConsistentCasingInFileNames": true
   },
   "exclude": ["node_modules"]
