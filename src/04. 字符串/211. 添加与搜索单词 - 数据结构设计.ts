@@ -15,7 +15,7 @@ export default class WordDictionary {
      * 若该字符串对应长度的数组还不存在，则先创建
      */
     if (this.words.has(word.length)) {
-      this.words.get(word.length)!.push(word);
+      this.words.get(word.length).push(word);
     } else {
       this.words.set(word.length, [word]);
     }
@@ -26,14 +26,14 @@ export default class WordDictionary {
 
     // 情况一：参数不是正则
     if (!word.includes(".")) {
-      return this.words.get(word.length)!.includes(word);
+      return this.words.get(word.length).includes(word);
     }
 
     // 情况二：参数是正则
     const reg = new RegExp(word);
 
     // 只要数组中有一个匹配正则表达式的字符串，就返回true
-    return this.words.get(word.length)!.some((item) => reg.test(item));
+    return this.words.get(word.length).some((item) => reg.test(item));
   }
 }
 
