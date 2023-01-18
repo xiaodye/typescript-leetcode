@@ -3,7 +3,7 @@
  * @param n 楼梯阶数
  * @returns
  */
-const climbStairs = function (n: number): number {
+export default function climbStairs(n: number): number {
   const f: number[] = [];
 
   // 初始化已知值
@@ -15,10 +15,8 @@ const climbStairs = function (n: number): number {
   }
 
   return f[n];
-};
+}
 
 // test
 console.log(climbStairs(5));
 debugger;
-
-export {};
