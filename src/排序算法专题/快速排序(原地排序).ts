@@ -5,7 +5,7 @@
  * @param right
  * @returns
  */
-const quickSort = function (arr: number[], left: number, right: number): number[] {
+export default function quickSort(arr: number[], left: number, right: number): number[] {
   if (arr.length > 1) {
     const pivotIndex = partition(arr, left, right);
 
@@ -17,7 +17,7 @@ const quickSort = function (arr: number[], left: number, right: number): number[
     }
   }
   return arr;
-};
+}
 
 /**
  * 以基准值为轴心，划分左右子数组的过程
@@ -57,5 +57,3 @@ const partition = function (arr: number[], left: number, right: number): number 
 const arr = [5, 1, 3, 6, 2, 0, 7];
 console.log(quickSort(arr, 0, arr.length - 1));
 debugger;
-
-export {};

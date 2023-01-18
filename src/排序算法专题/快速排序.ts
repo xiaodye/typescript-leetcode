@@ -3,7 +3,7 @@
  * @param arr 待排序数组
  * @returns
  */
-const quickSort = function (arr: number[]): number[] {
+export default function quickSort(arr: number[]): number[] {
   if (arr.length <= 1) {
     return arr;
   }
@@ -24,11 +24,9 @@ const quickSort = function (arr: number[]): number[] {
 
   // 至此，我们将数组分成了left和right两个部分，中间的一个元素pivot之前被删了，现在要加回来
   return [...quickSort(leftArr), pivot, ...quickSort(rightArr)];
-};
+}
 
 // test
 const arr = [98, 42, 25, 54, 15, 3, 25, 72, 41, 10, 121];
 console.log(quickSort(arr));
 debugger;
-
-export {};

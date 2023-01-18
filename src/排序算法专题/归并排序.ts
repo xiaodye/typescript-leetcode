@@ -3,7 +3,7 @@
  * @param arr 待排序数组
  * @returns
  */
-const mergeSort = function (arr: number[]): number[] {
+export default function mergeSort(arr: number[]): number[] {
   const len = arr.length;
 
   // 但被分割的数组只有一个元素时，返回数组。
@@ -14,7 +14,7 @@ const mergeSort = function (arr: number[]): number[] {
   arr = mergeArr(leftArr, rightArr);
 
   return arr;
-};
+}
 
 /**
  * 合并两个有序数组
@@ -50,5 +50,3 @@ const mergeArr = function (leftArr: number[], rightArr: number[]): number[] {
 const arr = [8, 7, 6, 5, 4, 3, 2, 1];
 console.log(mergeSort(arr));
 debugger;
-
-export {};
