@@ -5,7 +5,7 @@
  * @param c 背包的容量
  * @returns 背包的最大价值
  */
-const knapsack = function (w: number[], v: number[], c: number): number {
+export default function knapsack(w: number[], v: number[], c: number): number {
   /**
    * num就是物品的数量
    * 初始化一个二维数组，dp[i][j]表示从下标为[0-i]的物品里任意取，放进容量为j的背包，价值总和最大是多少
@@ -44,10 +44,8 @@ const knapsack = function (w: number[], v: number[], c: number): number {
   }
 
   return dp[num - 1][c];
-};
+}
 
 // test
 console.log(knapsack([1, 3, 4, 5], [15, 20, 30, 55], 6));
 debugger;
-
-export {};
