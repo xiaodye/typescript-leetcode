@@ -57,7 +57,6 @@ export default class ListNode<T = number> {
 | [05. 最长回文子串]()    | https://leetcode.cn/problems/longest-palindromic-substring/  |
 | [680. 验证回文串 II]()  | https://leetcode.cn/problems/valid-palindrome-ii/            |
 | [211. 添加与搜索单词]() | https://leetcode.cn/problems/design-add-and-search-words-data-structure/ |
-|                         |                                                              |
 
 # 栈与队列⭐️
 
@@ -66,10 +65,7 @@ export default class ListNode<T = number> {
 | 题目               | LeetCode                                        |
 | ------------------ | ----------------------------------------------- |
 | [20. 有效的括号]() | https://leetcode.cn/problems/valid-parentheses/ |
-| [155. 最小栈]()    | https://leetcode.cn/problems/min-stack/         |
-|                    |                                                 |
-|                    |                                                 |
-|                    |                                                 |
+| [155. 最小栈]()    | https://leetcode.cn/problems/min-stack          |
 
 # 二叉树⭐️
 
@@ -115,7 +111,6 @@ export default class TreeNode<T = number> {
 | [300. 最长递增子序列]()         | https://leetcode.cn/problems/longest-increasing-subsequence/ |
 | [剑指 Offer II 091. 粉刷房子]() | https://leetcode.cn/problems/JEj789/                         |
 | [322. 零钱兑换]()               | https://leetcode.cn/problems/coin-change/                    |
-|                                 |                                                              |
 
 # 排序算法专题⭐️
 
@@ -127,7 +122,6 @@ export default class TreeNode<T = number> {
 - [x] [归并排序]()
 - [x] [快速排序]()
 - [x] [希尔排序]()
-- [x] [堆排序]()
 
 ## 低频
 
