@@ -1,10 +1,12 @@
 # 🐳TypeScript-Algorithms
 
-# 描述
+## 描述
 
 **仓库正在建设中......**
 
-# 数组⭐️
+## 数组⭐️
+
+### 推荐题单
 
 | 题目                     | leetcode                                         |
 | ------------------------ | ------------------------------------------------ |
@@ -14,18 +16,18 @@
 | [15. 三数之和]()         | https://leetcode.cn/problems/3sum/               |
 | [200. 岛屿数量]()        | https://leetcode.cn/problems/number-of-islands/  |
 
-# 链表⭐️
+## 链表⭐️
 
-## 单链表节点
+### data-structure
 
 ```ts
 /**
  * 单链表节点类
  */
-export default class ListNode<T = number> {
-  val: T;
-  next: ListNode | null;
-  constructor(val: T, next: ListNode | null = null) {
+class ListNode {
+  public val: number;
+  public next: ListNode | null;
+  constructor(val: number, next: ListNode | null = null) {
     this.val = val;
     this.next = next;
   }
@@ -33,7 +35,7 @@ export default class ListNode<T = number> {
 
 ```
 
-## 推荐刷题清单
+### 推荐题单
 
 | 题目                                | leetcode                                                     |
 | ----------------------------------- | ------------------------------------------------------------ |
@@ -47,9 +49,9 @@ export default class ListNode<T = number> {
 | [19. 删除链表的倒数第 N 个结点]()   | https://leetcode.cn/problems/remove-nth-node-from-end-of-list/ |
 | [138. 复制带随机指针的链表]()       | https://leetcode.cn/problems/copy-list-with-random-pointer/  |
 
-# 字符串⭐️
+## 字符串⭐️
 
-## 推荐清单
+### 推荐题单
 
 | 题目                    | LeetCode                                                     |
 | ----------------------- | ------------------------------------------------------------ |
@@ -58,9 +60,9 @@ export default class ListNode<T = number> {
 | [680. 验证回文串 II]()  | https://leetcode.cn/problems/valid-palindrome-ii/            |
 | [211. 添加与搜索单词]() | https://leetcode.cn/problems/design-add-and-search-words-data-structure/ |
 
-# 栈与队列⭐️
+## 栈与队列⭐️
 
-## 推荐清单
+### 推荐题单
 
 | 题目               | LeetCode                                        |
 | ------------------ | ----------------------------------------------- |
@@ -69,17 +71,17 @@ export default class ListNode<T = number> {
 
 # 二叉树⭐️
 
-## 二叉树节点
+### data-structure
 
 ```ts
 /**
  * 二叉树节点类
  */
-export default class TreeNode<T = number> {
-  val: T;
-  left: TreeNode | null;
-  right: TreeNode | null;
-  constructor(val: T, left: TreeNode | null = null, right: TreeNode | null = null) {
+class TreeNode {
+  public val: number;
+  public left: TreeNode | null;
+  public right: TreeNode | null;
+  constructor(val: number, left: TreeNode | null = null, right: TreeNode | null = null) {
     this.val = val;
     this.left = left;
     this.right = right;
@@ -90,7 +92,7 @@ export default class TreeNode<T = number> {
 
 
 
-## 推荐清单
+### 推荐题单
 
 | 题目                                    | LeetCode                                                     |
 | --------------------------------------- | ------------------------------------------------------------ |
@@ -100,9 +102,9 @@ export default class TreeNode<T = number> {
 | [236. 二叉树的最近公共祖先]()           | https://leetcode.cn/problems/lowest-common-ancestor-of-a-binary-tree/ |
 | [105. 从前序与中序遍历序列构造二叉树]() | https://leetcode.cn/problems/construct-binary-tree-from-preorder-and-inorder-traversal/ |
 
-# 动态规划⭐️
+## 动态规划⭐️
 
-## 推荐清单
+### 推荐题单
 
 | 题目                            | LeetCode                                                     |
 | ------------------------------- | ------------------------------------------------------------ |
@@ -112,9 +114,9 @@ export default class TreeNode<T = number> {
 | [剑指 Offer II 091. 粉刷房子]() | https://leetcode.cn/problems/JEj789/                         |
 | [322. 零钱兑换]()               | https://leetcode.cn/problems/coin-change/                    |
 
-# 排序算法专题⭐️
+## 排序算法专题⭐️
 
-## 高频
+### 高频
 
 - [x] [冒泡排序]()
 - [x] [选择排序]()
@@ -123,7 +125,7 @@ export default class TreeNode<T = number> {
 - [x] [快速排序]()
 - [x] [希尔排序]()
 
-## 低频
+### 低频
 
 - [ ] [堆排序]()
 - [ ] [基数排序]()
