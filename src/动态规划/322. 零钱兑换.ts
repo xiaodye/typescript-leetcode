@@ -4,7 +4,7 @@
  * @param amount
  * @returns
  */
-const coinChnage = function (coins: number[], amount: number): number {
+export default function coinChnage(coins: number[], amount: number): number {
   const f: number[] = [];
   f[0] = 0;
 
@@ -27,11 +27,9 @@ const coinChnage = function (coins: number[], amount: number): number {
   }
 
   return f[amount];
-};
+}
 
 // test
 console.log(coinChnage([1, 2, 5], 11));
 console.log(coinChnage([2], 3));
 debugger;
-
-export {};

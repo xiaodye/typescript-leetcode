@@ -3,7 +3,7 @@
  * @param nums
  * @returns
  */
-const lengthOfLIS = function (nums: number[]): number {
+export default function lengthOfLIS(nums: number[]): number {
   if (nums.length === 0) return 0;
 
   const dp = new Array<number>(nums.length).fill(1);
@@ -25,10 +25,8 @@ const lengthOfLIS = function (nums: number[]): number {
   }
 
   return maxLen;
-};
+}
 
 // test
 console.log(lengthOfLIS([10, 9, 2, 5, 3, 7, 101, 18]));
 debugger;
-
-export {};
