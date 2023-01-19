@@ -72,7 +72,7 @@ class ListNode {
 | [739. 每日温度]()       | https://leetcode.cn/problems/daily-temperatures/           |
 | [239. 滑动窗口最大值]() | https://leetcode.cn/problems/sliding-window-maximum/       |
 
-# 二叉树⭐️
+## 二叉树⭐️
 
 ### data-structure
 
