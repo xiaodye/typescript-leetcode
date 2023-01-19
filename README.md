@@ -8,7 +8,7 @@
 
 ### 推荐题单
 
-| 题目                     | leetcode                                         |
+| 题目                     | LeetCode                                         |
 | ------------------------ | ------------------------------------------------ |
 | [1. 两数之和]()          | https://leetcode.cn/problems/two-sum/            |
 | [56. 合并区间]()         | https://leetcode.cn/problems/merge-intervals/    |
@@ -37,7 +37,7 @@ class ListNode {
 
 ### 推荐题单
 
-| 题目                                | leetcode                                                     |
+| 题目                                | LeetCode                                                     |
 | ----------------------------------- | ------------------------------------------------------------ |
 | [21. 合并两个有序链表]()            | https://leetcode.cn/problems/merge-two-sorted-lists/         |
 | [141. 环形链表]()                   | https://leetcode.cn/problems/linked-list-cycle/              |
@@ -64,10 +64,12 @@ class ListNode {
 
 ### 推荐题单
 
-| 题目               | LeetCode                                        |
-| ------------------ | ----------------------------------------------- |
-| [20. 有效的括号]() | https://leetcode.cn/problems/valid-parentheses/ |
-| [155. 最小栈]()    | https://leetcode.cn/problems/min-stack          |
+| 题目                    | LeetCode                                                   |
+| ----------------------- | ---------------------------------------------------------- |
+| [20. 有效的括号]()      | https://leetcode.cn/problems/valid-parentheses/            |
+| [155. 最小栈]()         | https://leetcode.cn/problems/min-stack                     |
+| [232. 用栈实现队列]()   | https://leetcode.cn/problems/implement-queue-using-stacks/ |
+| [239. 滑动窗口最大值]() | https://leetcode.cn/problems/sliding-window-maximum/       |
 
 # 二叉树⭐️
 
