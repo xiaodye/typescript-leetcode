@@ -69,6 +69,7 @@ class ListNode {
 | [20. 有效的括号]()      | https://leetcode.cn/problems/valid-parentheses/            |
 | [155. 最小栈]()         | https://leetcode.cn/problems/min-stack                     |
 | [232. 用栈实现队列]()   | https://leetcode.cn/problems/implement-queue-using-stacks/ |
+| [739. 每日温度]()       | https://leetcode.cn/problems/daily-temperatures/           |
 | [239. 滑动窗口最大值]() | https://leetcode.cn/problems/sliding-window-maximum/       |
 
 # 二叉树⭐️
