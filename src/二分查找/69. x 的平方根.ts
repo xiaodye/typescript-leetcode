@@ -11,7 +11,7 @@ export default function mySqrt(x: number): number {
   while (left <= right) {
     const mid = Math.floor(left + (right - left) / 2);
 
-    if (mid * mid <= x) {
+    if (mid <= x / mid) {
       left = mid + 1;
     } else {
       right = mid - 1;
