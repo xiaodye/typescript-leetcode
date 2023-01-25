@@ -4,7 +4,7 @@
 
 **仓库正在建设中......**
 
-## 二分查找
+## 二分查找 ⭐️
 
 ### 推荐题目
 
@@ -63,12 +63,12 @@ class ListNode {
 
 ### 推荐题目
 
-| 题目                              | LeetCode                                                     |
-| --------------------------------- | ------------------------------------------------------------ |
-| [344. 反转字符串](src/字符串)     | https://leetcode.cn/problems/reverse-string/                 |
-| [05. 最长回文子串](src/字符串)    | https://leetcode.cn/problems/longest-palindromic-substring/  |
-| [125. 验证回文串](src/字符串)     | https://leetcode.cn/problems/valid-palindrome/               |
-| [680. 验证回文串 II](src/字符串)  | https://leetcode.cn/problems/valid-palindrome-ii/            |
+| 题目                              | LeetCode                                                                 |
+| --------------------------------- | ------------------------------------------------------------------------ |
+| [344. 反转字符串](src/字符串)     | https://leetcode.cn/problems/reverse-string/                             |
+| [05. 最长回文子串](src/字符串)    | https://leetcode.cn/problems/longest-palindromic-substring/              |
+| [125. 验证回文串](src/字符串)     | https://leetcode.cn/problems/valid-palindrome/                           |
+| [680. 验证回文串 II](src/字符串)  | https://leetcode.cn/problems/valid-palindrome-ii/                        |
 | [211. 添加与搜索单词](src/字符串) | https://leetcode.cn/problems/design-add-and-search-words-data-structure/ |
 
 ## 栈与队列 ⭐️
@@ -105,13 +105,13 @@ class TreeNode {
 
 ### 推荐题目
 
-| 题目                                              | LeetCode                                                     |
-| ------------------------------------------------- | ------------------------------------------------------------ |
-| [144. 二叉树的前序遍历](src/二叉树)               | https://leetcode.cn/problems/binary-tree-preorder-traversal/ |
-| [94. 二叉树的中序遍历](src/二叉树)                | https://leetcode.cn/problems/binary-tree-inorder-traversal/  |
-| [145. 二叉树的后序遍历](src/二叉树)               | https://leetcode.cn/problems/binary-tree-postorder-traversal/ |
-| [102. 二叉树的层序遍历](src/二叉树)               | https://leetcode.cn/problems/binary-tree-level-order-traversal/ |
-| [236. 二叉树的最近公共祖先](src/二叉树)           | https://leetcode.cn/problems/lowest-common-ancestor-of-a-binary-tree/ |
+| 题目                                              | LeetCode                                                                                |
+| ------------------------------------------------- | --------------------------------------------------------------------------------------- |
+| [144. 二叉树的前序遍历](src/二叉树)               | https://leetcode.cn/problems/binary-tree-preorder-traversal/                            |
+| [94. 二叉树的中序遍历](src/二叉树)                | https://leetcode.cn/problems/binary-tree-inorder-traversal/                             |
+| [145. 二叉树的后序遍历](src/二叉树)               | https://leetcode.cn/problems/binary-tree-postorder-traversal/                           |
+| [102. 二叉树的层序遍历](src/二叉树)               | https://leetcode.cn/problems/binary-tree-level-order-traversal/                         |
+| [236. 二叉树的最近公共祖先](src/二叉树)           | https://leetcode.cn/problems/lowest-common-ancestor-of-a-binary-tree/                   |
 | [105. 从前序与中序遍历序列构造二叉树](src/二叉树) | https://leetcode.cn/problems/construct-binary-tree-from-preorder-and-inorder-traversal/ |
 
 ## 动态规划 ⭐️
@@ -126,7 +126,7 @@ class TreeNode {
 | [剑指 Offer II 091. 粉刷房子](src/动态规划) | https://leetcode.cn/problems/JEj789/                         |
 | [322. 零钱兑换](src/动态规划)               | https://leetcode.cn/problems/coin-change/                    |
 
-## 回溯⭐️
+## 回溯 ⭐️
 
 ### 推荐题目
 
@@ -135,8 +135,6 @@ class TreeNode {
 | [46. 全排列](src/回溯) | https://leetcode.cn/problems/permutations/ |
 | [77. 组合](src/回溯)   | https://leetcode.cn/problems/combinations/ |
 | [78. 子集](src/回溯)   | https://leetcode.cn/problems/subsets/      |
-
-
 
 ## 排序算法专题 ⭐️
 
