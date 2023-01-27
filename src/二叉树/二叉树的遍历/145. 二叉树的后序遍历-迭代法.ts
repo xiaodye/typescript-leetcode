@@ -1,4 +1,4 @@
-import TreeNode from "../data-structure/TreeNode";
+import TreeNode from "@/data-structure/TreeNode";
 
 /**
  * 给你一棵二叉树的根节点 root ，返回其节点值的 后序遍历 。
