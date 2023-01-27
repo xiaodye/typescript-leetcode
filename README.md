@@ -8,12 +8,13 @@
 
 ### 推荐题目
 
-| 题目                                  | LeetCode                                             |
-| ------------------------------------- | ---------------------------------------------------- |
-| [704. 二分查找](src/二分查找)         | https://leetcode.cn/problems/binary-search/          |
-| [35. 搜索插入位置](src/二分查找)      | https://leetcode.cn/problems/search-insert-position/ |
-| [367. 有效的完全平方数](src/二分查找) | https://leetcode.cn/problems/valid-perfect-square/   |
-| [69. x 的平方根](src/二分查找)        | https://leetcode.cn/problems/sqrtx/                  |
+| 题目                                                         | LeetCode                                                     |
+| ------------------------------------------------------------ | ------------------------------------------------------------ |
+| [704. 二分查找](src/二分查找)                                | https://leetcode.cn/problems/binary-search/                  |
+| [35. 搜索插入位置](src/二分查找)                             | https://leetcode.cn/problems/search-insert-position/         |
+| [367. 有效的完全平方数](src/二分查找)                        | https://leetcode.cn/problems/valid-perfect-square/           |
+| [69. x 的平方根](src/二分查找)                               | https://leetcode.cn/problems/sqrtx/                          |
+| [34. 在排序数组中查找元素的第一个和最后一个位置](src/二分查找) | https://leetcode.cn/problems/find-first-and-last-position-of-element-in-sorted-array/ |
 
 ## 数组 ⭐️
 
