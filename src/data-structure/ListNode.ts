@@ -1,10 +1,10 @@
 /**
- * 链表节点类
+ * 单链表节点类
  */
-export default class ListNode<T = number> {
-  val: T;
-  next: ListNode | null;
-  constructor(val: T, next: ListNode | null = null) {
+export default class ListNode {
+  public val: number;
+  public next: ListNode | null;
+  constructor(val: number, next: ListNode | null = null) {
     this.val = val;
     this.next = next;
   }
