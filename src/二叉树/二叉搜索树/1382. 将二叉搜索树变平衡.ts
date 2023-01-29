@@ -1,4 +1,4 @@
-import TreeNode from "../data-structure/TreeNode";
+import TreeNode from "../../data-structure/TreeNode";
 
 /**
  * 给你一棵二叉搜索树，请你返回一棵 平衡后 的二叉搜索树，新生成的树应该与原来的树有着相同的节点值。
