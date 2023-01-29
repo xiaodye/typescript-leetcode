@@ -14,6 +14,7 @@
 | [35. 搜索插入位置](src/二分查找)                             | https://leetcode.cn/problems/search-insert-position/         |
 | [367. 有效的完全平方数](src/二分查找)                        | https://leetcode.cn/problems/valid-perfect-square/           |
 | [69. x 的平方根](src/二分查找)                               | https://leetcode.cn/problems/sqrtx/                          |
+| [50. Pow(x, n)](src/二分查找)                                | https://leetcode.cn/problems/powx-n/                         |
 | [34. 在排序数组中查找元素的第一个和最后一个位置](src/二分查找) | https://leetcode.cn/problems/find-first-and-last-position-of-element-in-sorted-array/ |
 
 ## 数组 ⭐️
@@ -106,13 +107,35 @@ class TreeNode {
 
 ### 推荐题目
 
-| 题目                                              | LeetCode                                                                                |
-| ------------------------------------------------- | --------------------------------------------------------------------------------------- |
-| [144. 二叉树的前序遍历](src/二叉树)               | https://leetcode.cn/problems/binary-tree-preorder-traversal/                            |
-| [94. 二叉树的中序遍历](src/二叉树)                | https://leetcode.cn/problems/binary-tree-inorder-traversal/                             |
-| [145. 二叉树的后序遍历](src/二叉树)               | https://leetcode.cn/problems/binary-tree-postorder-traversal/                           |
-| [102. 二叉树的层序遍历](src/二叉树)               | https://leetcode.cn/problems/binary-tree-level-order-traversal/                         |
-| [236. 二叉树的最近公共祖先](src/二叉树)           | https://leetcode.cn/problems/lowest-common-ancestor-of-a-binary-tree/                   |
+#### 二叉树的遍历
+
+| 题目                                             | LeetCode                                                     |
+| ------------------------------------------------ | ------------------------------------------------------------ |
+| [144. 二叉树的前序遍历](src/二叉树/二叉树的遍历) | https://leetcode.cn/problems/binary-tree-preorder-traversal/ |
+| [94. 二叉树的中序遍历](src/二叉树/二叉树的遍历)  | https://leetcode.cn/problems/binary-tree-inorder-traversal/  |
+| [145. 二叉树的后序遍历](src/二叉树/二叉树的遍历) | https://leetcode.cn/problems/binary-tree-postorder-traversal/ |
+| [102. 二叉树的层序遍历](src/二叉树/二叉树的遍历) | https://leetcode.cn/problems/binary-tree-level-order-traversal/ |
+
+#### 二叉搜索树
+
+| 题目                                                     | LeetCode                                                     |
+| -------------------------------------------------------- | ------------------------------------------------------------ |
+| [700. 二叉搜索树中的搜索](src/二叉树/二叉搜索树)         | https://leetcode.cn/problems/search-in-a-binary-search-tree/ |
+| [701. 二叉搜索树中的插入操作](src/二叉树/二叉搜索树)     | https://leetcode.cn/problems/insert-into-a-binary-search-tree/ |
+| [450. 删除二叉搜索树中的节点](src/二叉树/二叉搜索树)     | https://leetcode.cn/problems/delete-node-in-a-bst/           |
+| [98. 验证二叉搜索树](src/二叉树/二叉搜索树)              | https://leetcode.cn/problems/validate-binary-search-tree/    |
+| [110. 平衡二叉树](src/二叉树/二叉搜索树)                 | https://leetcode.cn/problems/balanced-binary-tree/           |
+| [108. 将有序数组转换为二叉搜索树](src/二叉树/二叉搜索树) | https://leetcode.cn/problems/convert-sorted-array-to-binary-search-tree/ |
+| [1382. 将二叉搜索树变平衡](src/二叉树/二叉搜索树)        | https://leetcode.cn/problems/balance-a-binary-search-tree/   |
+
+
+
+**归档中**......
+
+| 题目                                              | LeetCode                                                     |
+| ------------------------------------------------- | ------------------------------------------------------------ |
+| [226. 翻转二叉树](src/二叉树)                     | https://leetcode.cn/problems/invert-binary-tree/             |
+| [236. 二叉树的最近公共祖先](src/二叉树)           | https://leetcode.cn/problems/lowest-common-ancestor-of-a-binary-tree/ |
 | [105. 从前序与中序遍历序列构造二叉树](src/二叉树) | https://leetcode.cn/problems/construct-binary-tree-from-preorder-and-inorder-traversal/ |
 
 ## 动态规划 ⭐️
