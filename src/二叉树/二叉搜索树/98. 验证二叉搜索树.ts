@@ -1,4 +1,4 @@
-import TreeNode from "@/data-structure/TreeNode";
+import TreeNode from "../../data-structure/TreeNode";
 
 /**
  * 给你一个二叉树的根节点 root ，判断其是否是一个有效的二叉搜索树。

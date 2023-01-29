@@ -1,4 +1,4 @@
-import TreeNode from "@/data-structure/TreeNode";
+import TreeNode from "../../data-structure/TreeNode";
 
 /**
  * 给定二叉搜索树（BST）的根节点 root 和一个整数值 val。

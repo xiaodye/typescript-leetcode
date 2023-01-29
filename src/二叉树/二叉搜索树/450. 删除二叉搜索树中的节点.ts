@@ -1,4 +1,4 @@
-import TreeNode from "@/data-structure/TreeNode";
+import TreeNode from "../../data-structure/TreeNode";
 
 /**
  * 给定一个二叉搜索树的根节点 root 和一个值 key，删除二叉搜索树中的 key 对应的节点，并保证二叉搜索树的性质不变。

@@ -1,4 +1,4 @@
-import TreeNode from "@/data-structure/TreeNode";
+import TreeNode from "../../data-structure/TreeNode";
 
 /**
  * 二叉树的中序遍历
