@@ -132,7 +132,5 @@ function linkedListToString(linkedList: MyLinkedList) {
 const linkedList = new MyLinkedList();
 linkedList.addAtHead(1);
 linkedList.addAtTail(3);
-// linkedList.addAtIndex(1, 2);
-console.log(linkedList.get(1));
-
+linkedList.addAtIndex(1, 2);
 linkedListToString(linkedList);
