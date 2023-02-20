@@ -53,17 +53,21 @@ class ListNode {
 
 ### 推荐题目
 
-| 题目                                        | LeetCode                                                            |
-| ------------------------------------------- | ------------------------------------------------------------------- |
-| [21. 合并两个有序链表](src/链表)            | https://leetcode.cn/problems/merge-two-sorted-lists/                |
-| [141. 环形链表](src/链表)                   | https://leetcode.cn/problems/linked-list-cycle/                     |
-| [142. 环形链表 II](src/链表)                | https://leetcode.cn/problems/linked-list-cycle-ii/                  |
-| [206. 反转链表](src/链表)                   | https://leetcode.cn/problems/reverse-linked-list/                   |
-| [92. 反转链表 II](src/链表)                 | https://leetcode.cn/problems/reverse-linked-list-ii/                |
-| [83. 删除排序链表中的重复元素](src/链表)    | https://leetcode.cn/problems/remove-duplicates-from-sorted-list/    |
+| 题目                                        | LeetCode                                                     |
+| ------------------------------------------- | ------------------------------------------------------------ |
+| [203.移除链表元素](src/链表)                | https://leetcode.cn/problems/remove-linked-list-elements/    |
+| [21. 合并两个有序链表](src/链表)            | https://leetcode.cn/problems/merge-two-sorted-lists/         |
+| [707. 设计链表](src/链表)                   | https://leetcode.cn/problems/design-linked-list/             |
+| [141. 环形链表](src/链表)                   | https://leetcode.cn/problems/linked-list-cycle/              |
+| [142. 环形链表 II](src/链表)                | https://leetcode.cn/problems/linked-list-cycle-ii/           |
+| [206. 反转链表](src/链表)                   | https://leetcode.cn/problems/reverse-linked-list/            |
+| [92. 反转链表 II](src/链表)                 | https://leetcode.cn/problems/reverse-linked-list-ii/         |
+| [24. 两两交换链表中的节点](src/链表)        | https://leetcode.cn/problems/swap-nodes-in-pairs/            |
+| [160. 相交链表](src/链表)                   | https://leetcode.cn/problems/intersection-of-two-linked-lists/ |
+| [83. 删除排序链表中的重复元素](src/链表)    | https://leetcode.cn/problems/remove-duplicates-from-sorted-list/ |
 | [82. 删除排序链表中的重复元素 II](src/链表) | https://leetcode.cn/problems/remove-duplicates-from-sorted-list-ii/ |
-| [19. 删除链表的倒数第 N 个结点](src/链表)   | https://leetcode.cn/problems/remove-nth-node-from-end-of-list/      |
-| [138. 复制带随机指针的链表](src/链表)       | https://leetcode.cn/problems/copy-list-with-random-pointer/         |
+| [19. 删除链表的倒数第 N 个结点](src/链表)   | https://leetcode.cn/problems/remove-nth-node-from-end-of-list/ |
+| [138. 复制带随机指针的链表](src/链表)       | https://leetcode.cn/problems/copy-list-with-random-pointer/  |
 
 ## 字符串 ⭐️
 
