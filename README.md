@@ -69,16 +69,28 @@ class ListNode {
 | [19. 删除链表的倒数第 N 个结点](src/链表)   | https://leetcode.cn/problems/remove-nth-node-from-end-of-list/ |
 | [138. 复制带随机指针的链表](src/链表)       | https://leetcode.cn/problems/copy-list-with-random-pointer/  |
 
+## 哈希表⭐️
+
+### 推荐题目
+
+| 题目                                | LeetCode                                                 |
+| ----------------------------------- | -------------------------------------------------------- |
+| [202. 快乐数](src/哈希表)           | https://leetcode.cn/problems/happy-number/               |
+| [242. 有效的字母异位词](src/哈希表) | https://leetcode.cn/problems/valid-anagram/              |
+| [383. 赎金信](src/哈希表)           | https://leetcode.cn/problems/ransom-note/                |
+| [349. 两个数组的交集](src/哈希表)   | https://leetcode.cn/problems/intersection-of-two-arrays/ |
+| [454. 四数相加 II](src/哈希表)      | https://leetcode.cn/problems/4sum-ii/                    |
+
 ## 字符串 ⭐️
 
 ### 推荐题目
 
-| 题目                              | LeetCode                                                                 |
-| --------------------------------- | ------------------------------------------------------------------------ |
-| [344. 反转字符串](src/字符串)     | https://leetcode.cn/problems/reverse-string/                             |
-| [05. 最长回文子串](src/字符串)    | https://leetcode.cn/problems/longest-palindromic-substring/              |
-| [125. 验证回文串](src/字符串)     | https://leetcode.cn/problems/valid-palindrome/                           |
-| [680. 验证回文串 II](src/字符串)  | https://leetcode.cn/problems/valid-palindrome-ii/                        |
+| 题目                              | LeetCode                                                     |
+| --------------------------------- | ------------------------------------------------------------ |
+| [344. 反转字符串](src/字符串)     | https://leetcode.cn/problems/reverse-string/                 |
+| [05. 最长回文子串](src/字符串)    | https://leetcode.cn/problems/longest-palindromic-substring/  |
+| [125. 验证回文串](src/字符串)     | https://leetcode.cn/problems/valid-palindrome/               |
+| [680. 验证回文串 II](src/字符串)  | https://leetcode.cn/problems/valid-palindrome-ii/            |
 | [211. 添加与搜索单词](src/字符串) | https://leetcode.cn/problems/design-add-and-search-words-data-structure/ |
 
 ## 栈与队列 ⭐️
