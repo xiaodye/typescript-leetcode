@@ -1,3 +1,8 @@
+/**
+ * 编写一个算法来判断一个数 n 是不是快乐数。
+ * @param n
+ * @returns
+ */
 export default function isHappy(n: number): boolean {
   const set = new Set<number>();
 
