@@ -80,6 +80,7 @@ class ListNode {
 | [383. 赎金信](src/哈希表)           | https://leetcode.cn/problems/ransom-note/                |
 | [349. 两个数组的交集](src/哈希表)   | https://leetcode.cn/problems/intersection-of-two-arrays/ |
 | [454. 四数相加 II](src/哈希表)      | https://leetcode.cn/problems/4sum-ii/                    |
+| [347. 前 K 个高频元素](src/哈希表)  | https://leetcode.cn/problems/top-k-frequent-elements     |
 
 ## 字符串 ⭐️
 
@@ -101,13 +102,16 @@ class ListNode {
 
 ### 推荐题目
 
-| 题目                                | LeetCode                                                   |
-| ----------------------------------- | ---------------------------------------------------------- |
-| [20. 有效的括号](src/栈与队列)      | https://leetcode.cn/problems/valid-parentheses/            |
-| [155. 最小栈](src/栈与队列)         | https://leetcode.cn/problems/min-stack                     |
-| [232. 用栈实现队列](src/栈与队列)   | https://leetcode.cn/problems/implement-queue-using-stacks/ |
-| [739. 每日温度](src/栈与队列)       | https://leetcode.cn/problems/daily-temperatures/           |
-| [239. 滑动窗口最大值](src/栈与队列) | https://leetcode.cn/problems/sliding-window-maximum/       |
+| 题目                                               | LeetCode                                                     |
+| -------------------------------------------------- | ------------------------------------------------------------ |
+| [20. 有效的括号](src/栈与队列)                     | https://leetcode.cn/problems/valid-parentheses/              |
+| [155. 最小栈](src/栈与队列)                        | https://leetcode.cn/problems/min-stack                       |
+| [232. 用栈实现队列](src/栈与队列)                  | https://leetcode.cn/problems/implement-queue-using-stacks/   |
+| [225. 用队列实现栈](src/栈与队列)                  | https://leetcode.cn/problems/implement-stack-using-queues/   |
+| [150. 逆波兰表达式求值](src/栈与队列)              | https://leetcode.cn/problems/evaluate-reverse-polish-notation |
+| [1047. 删除字符串中的所有相邻重复项](src/栈与队列) | https://leetcode.cn/problems/remove-all-adjacent-duplicates-in-string |
+| [739. 每日温度](src/栈与队列)                      | https://leetcode.cn/problems/daily-temperatures/             |
+| [239. 滑动窗口最大值](src/栈与队列)                | https://leetcode.cn/problems/sliding-window-maximum/         |
 
 ## 二叉树 ⭐️
 
