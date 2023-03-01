@@ -9,25 +9,25 @@ export default function maxSlidingWindow(nums: number[], k: number): number[] {
   const res: number[] = [];
 
   // 定义一个双端队列
-  const queue: number[] = [];
+  const dqueue: number[] = [];
 
   for (let i = 0; i < nums.length; i++) {
     // 使用双端队列维护一个递减队列
-    while (queue.length !== 0 && nums[queue[queue.length - 1]] < nums[i]) {
-      queue.pop();
+    while (dqueue.length !== 0 && nums[dqueue[dqueue.length - 1]] < nums[i]) {
+      dqueue.pop();
     }
 
     // 队列存的是索引
-    queue.push(i);
+    dqueue.push(i);
 
     // 若队头元素不在当前窗口范围内，则出队
-    while (queue[0] <= i - k) {
-      queue.shift();
+    while (dqueue[0] <= i - k) {
+      dqueue.shift();
     }
 
     // 当i===k-1, 出现第一个最大值
     if (i >= k - 1) {
-      res.push(nums[queue[0]]);
+      res.push(nums[dqueue[0]]);
     }
   }
 
