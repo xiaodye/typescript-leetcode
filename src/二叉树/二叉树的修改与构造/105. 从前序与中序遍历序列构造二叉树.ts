@@ -1,4 +1,4 @@
-import TreeNode from "../data-structure/TreeNode";
+import TreeNode from "../../data-structure/TreeNode";
 
 /**
  * 根据一棵树的前序遍历与中序遍历构造二叉树，你可以假设树中没有重复的元素。
