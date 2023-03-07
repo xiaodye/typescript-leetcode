@@ -160,11 +160,13 @@ class TreeNode {
 
 #### 二叉树的修改与构造
 
-| 题目                                             | LeetCode                                         |
-| ------------------------------------------------ | ------------------------------------------------ |
-| [226. 翻转二叉树](src/二叉树/二叉树的修改与构造) | https://leetcode.cn/problems/invert-binary-tree/ |
-
-
+| 题目                                                         | LeetCode                                                     |
+| ------------------------------------------------------------ | ------------------------------------------------------------ |
+| [226. 翻转二叉树](src/二叉树/二叉树的修改与构造)             | https://leetcode.cn/problems/invert-binary-tree/             |
+| [617. 合并二叉树](src/二叉树/二叉树的修改与构造)             | https://leetcode.cn/problems/merge-two-binary-trees/         |
+| [105. 从前序与中序遍历序列构造二叉树](src/二叉树/二叉树的修改与构造) | https://leetcode.cn/problems/construct-binary-tree-from-preorder-and-inorder-traversal/ |
+| [106. 从中序与后序遍历序列构造二叉树](src/二叉树/二叉树的修改与构造) | https://leetcode.cn/problems/construct-binary-tree-from-inorder-and-postorder-traversal/ |
+| [654. 最大二叉树](src/二叉树/二叉树的修改与构造)             | https://leetcode.cn/problems/maximum-binary-tree/            |
 
 #### 二叉搜索树
 
@@ -178,14 +180,6 @@ class TreeNode {
 | [1382. 将二叉搜索树变平衡](src/二叉树/二叉搜索树)        | https://leetcode.cn/problems/balance-a-binary-search-tree/   |
 
 
-
-**归档中**......
-
-| 题目                                              | LeetCode                                                     |
-| ------------------------------------------------- | ------------------------------------------------------------ |
-| [226. 翻转二叉树](src/二叉树)                     | https://leetcode.cn/problems/invert-binary-tree/             |
-| [236. 二叉树的最近公共祖先](src/二叉树)           | https://leetcode.cn/problems/lowest-common-ancestor-of-a-binary-tree/ |
-| [105. 从前序与中序遍历序列构造二叉树](src/二叉树) | https://leetcode.cn/problems/construct-binary-tree-from-preorder-and-inorder-traversal/ |
 
 ## 动态规划 ⭐️
 
