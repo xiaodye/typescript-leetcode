@@ -144,6 +144,28 @@ class TreeNode {
 | [145. 二叉树的后序遍历](src/二叉树/二叉树的遍历) | https://leetcode.cn/problems/binary-tree-postorder-traversal/ |
 | [102. 二叉树的层序遍历](src/二叉树/二叉树的遍历) | https://leetcode.cn/problems/binary-tree-level-order-traversal/ |
 
+#### 二叉树的属性
+
+| 题目                                                 | LeetCode                                                   |
+| ---------------------------------------------------- | ---------------------------------------------------------- |
+| [101. 对称二叉树](src/二叉树/二叉树的属性)           | https://leetcode.cn/problems/symmetric-tree/               |
+| [104. 二叉树的最大深度](src/二叉树/二叉树的属性)     | https://leetcode.cn/problems/maximum-depth-of-binary-tree/ |
+| [111. 二叉树的最小深度](src/二叉树/二叉树的属性)     | https://leetcode.cn/problems/minimum-depth-of-binary-tree/ |
+| [222. 完全二叉树的节点个数](src/二叉树/二叉树的属性) | https://leetcode.cn/problems/count-complete-tree-nodes/    |
+| [110. 平衡二叉树](src/二叉树/二叉树的属性)           | https://leetcode.cn/problems/balanced-binary-tree/         |
+| [257. 二叉树的所有路径](src/二叉树/二叉树的属性)     | https://leetcode.cn/problems/binary-tree-paths/            |
+| [404. 左叶子之和](src/二叉树/二叉树的属性)           | https://leetcode.cn/problems/sum-of-left-leaves/           |
+| [513. 找树左下角的值](src/二叉树/二叉树的属性)       | https://leetcode.cn/problems/find-bottom-left-tree-value/  |
+| [112. 路径总和](src/二叉树/二叉树的属性)             | https://leetcode.cn/problems/path-sum/                     |
+
+#### 二叉树的修改与构造
+
+| 题目                                             | LeetCode                                         |
+| ------------------------------------------------ | ------------------------------------------------ |
+| [226. 翻转二叉树](src/二叉树/二叉树的修改与构造) | https://leetcode.cn/problems/invert-binary-tree/ |
+
+
+
 #### 二叉搜索树
 
 | 题目                                                     | LeetCode                                                     |
@@ -152,7 +174,6 @@ class TreeNode {
 | [701. 二叉搜索树中的插入操作](src/二叉树/二叉搜索树)     | https://leetcode.cn/problems/insert-into-a-binary-search-tree/ |
 | [450. 删除二叉搜索树中的节点](src/二叉树/二叉搜索树)     | https://leetcode.cn/problems/delete-node-in-a-bst/           |
 | [98. 验证二叉搜索树](src/二叉树/二叉搜索树)              | https://leetcode.cn/problems/validate-binary-search-tree/    |
-| [110. 平衡二叉树](src/二叉树/二叉搜索树)                 | https://leetcode.cn/problems/balanced-binary-tree/           |
 | [108. 将有序数组转换为二叉搜索树](src/二叉树/二叉搜索树) | https://leetcode.cn/problems/convert-sorted-array-to-binary-search-tree/ |
 | [1382. 将二叉搜索树变平衡](src/二叉树/二叉搜索树)        | https://leetcode.cn/problems/balance-a-binary-search-tree/   |
 
