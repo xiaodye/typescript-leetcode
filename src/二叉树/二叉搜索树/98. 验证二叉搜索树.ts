@@ -5,25 +5,26 @@ import TreeNode from "../../data-structure/TreeNode";
  * @param root
  * @returns
  */
-export default function isValidBST(root: TreeNode | null): boolean {
+export default function isValidBST(root: TreeNode): boolean {
   if (!root) return true;
 
   const stack: TreeNode[] = [];
-  let prev = -Infinity;
+  let curr = root;
+  let prevVal = -Infinity;
 
-  while (stack.length !== 0 || root) {
-    while (root) {
-      stack.push(root);
-      root = root.left;
+  while (curr || stack.length !== 0) {
+    while (curr) {
+      stack.push(curr);
+      curr = curr.left;
     }
 
-    root = stack.pop();
+    curr = stack.pop();
 
     // 如果中序遍历得到的节点的值小于等于前一个，说明不是二叉搜索树
-    if (root.val <= prev) return false;
+    if (curr.val <= prevVal) return false;
 
-    prev = root.val;
-    root = root.right;
+    prevVal = curr.val;
+    curr = curr.right;
   }
 
   return true;
