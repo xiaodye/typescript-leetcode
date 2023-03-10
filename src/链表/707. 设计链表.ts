@@ -1,3 +1,5 @@
+import LinkNode from "../data-structure/LinkNode";
+
 /**
  * 设计链表的实现。
  *
@@ -100,20 +102,6 @@ export default class MyLinkedList {
     }
 
     return curr;
-  }
-}
-
-/**
- * 双向链表节点
- */
-class LinkNode {
-  public val: number;
-  public prev: LinkNode | null;
-  public next: LinkNode | null;
-  constructor(val: number, prev: LinkNode | null = null, next: LinkNode | null = null) {
-    this.val = val;
-    this.prev = prev;
-    this.next = next;
   }
 }
 
