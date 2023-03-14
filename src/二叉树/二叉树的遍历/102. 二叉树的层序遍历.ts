@@ -16,18 +16,16 @@ export default function levelOrder(root: TreeNode | null): number[][] {
 
   while (queue.length !== 0) {
     // len代表当前层节点数，arr用于存储节点
-    let len = queue.length;
+    const len = queue.length;
     const arr: number[] = [];
 
-    while (len !== 0) {
+    for (let i = 0; i < len; i++) {
       const top = queue.shift();
       arr.push(top.val);
 
       // 如果存在左或右子节点，则进队列
       if (top.left) queue.push(top.left);
       if (top.right) queue.push(top.right);
-
-      len--;
     }
 
     // 此时已完成一层的遍历，push into res
