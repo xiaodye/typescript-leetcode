@@ -6,10 +6,10 @@ import TreeNode from "../data-structure/TreeNode";
  * @param preorder
  * @param inorder
  */
-export default function buildTree(preorder: number[], inorder: number[]): TreeNode | null {
+export default function buildTree(preorder: number[], inorder: number[]): TreeNode {
   const len = preorder.length;
 
-  function build(preL: number, preR: number, inL: number, inR: number): TreeNode | null {
+  function build(preL: number, preR: number, inL: number, inR: number): TreeNode {
     if (preL > preR) return null;
 
     const root = new TreeNode(preorder[preL]);

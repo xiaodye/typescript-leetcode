@@ -5,7 +5,7 @@ import ListNode from "../data-structure/ListNode";
  * @param head
  * @returns
  */
-export default function reversePrint(head: ListNode | null): number[] {
+export default function reversePrint(head: ListNode): number[] {
   if (!head) return [];
 
   const res: number[] = [];
