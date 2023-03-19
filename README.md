@@ -68,6 +68,7 @@ class ListNode {
 | [82. 删除排序链表中的重复元素 II](src/链表) | https://leetcode.cn/problems/remove-duplicates-from-sorted-list-ii/ |
 | [19. 删除链表的倒数第 N 个结点](src/链表)   | https://leetcode.cn/problems/remove-nth-node-from-end-of-list/ |
 | [138. 复制带随机指针的链表](src/链表)       | https://leetcode.cn/problems/copy-list-with-random-pointer/  |
+| [2. 两数相加](src/链表)                     | https://leetcode.cn/problems/add-two-numbers/                |
 
 ## 哈希表⭐️
 
@@ -194,15 +195,25 @@ class TreeNode {
 
 ### 推荐题目
 
-| 题目                                        | LeetCode                                                     |
-| ------------------------------------------- | ------------------------------------------------------------ |
-| [0 - 1 背包问题](src/动态规划)              |                                                              |
-| [509. 斐波那契数](src/动态规划)             | https://leetcode.cn/problems/fibonacci-number/               |
-| [746. 使用最小花费爬楼梯](src/动态规划)     | https://leetcode.cn/problems/min-cost-climbing-stairs/       |
-| [70. 爬楼梯](src/动态规划)                  | https://leetcode.cn/problems/climbing-stairs/                |
-| [300. 最长递增子序列](src/动态规划)         | https://leetcode.cn/problems/longest-increasing-subsequence/ |
-| [剑指 Offer II 091. 粉刷房子](src/动态规划) | https://leetcode.cn/problems/JEj789/                         |
-| [322. 零钱兑换](src/动态规划)               | https://leetcode.cn/problems/coin-change/                    |
+| 题目                                        | LeetCode                                               |
+| ------------------------------------------- | ------------------------------------------------------ |
+| [0 - 1 背包问题](src/动态规划)              |                                                        |
+| [509. 斐波那契数](src/动态规划)             | https://leetcode.cn/problems/fibonacci-number/         |
+| [746. 使用最小花费爬楼梯](src/动态规划)     | https://leetcode.cn/problems/min-cost-climbing-stairs/ |
+| [70. 爬楼梯](src/动态规划)                  | https://leetcode.cn/problems/climbing-stairs/          |
+| [剑指 Offer II 091. 粉刷房子](src/动态规划) | https://leetcode.cn/problems/JEj789/                   |
+| [322. 零钱兑换](src/动态规划)               | https://leetcode.cn/problems/coin-change/              |
+| [62. 不同路径](src/动态规划)                | https://leetcode.cn/problems/unique-paths/             |
+| [63. 不同路径 II](src/动态规划)             | https://leetcode.cn/problems/unique-paths-ii/          |
+
+###子序列问题
+| 题目                                             | LeetCode                                                     |
+| ------------------------------------------------ | ------------------------------------------------------------ |
+| [674. 最长连续递增序列](src/动态规划/子序列问题) | https://leetcode.cn/problems/longest-continuous-increasing-subsequence/ |
+| [300. 最长递增子序列](src/动态规划/子序列问题)   | https://leetcode.cn/problems/longest-increasing-subsequence/ |
+| [718. 最长重复子数组](src/动态规划/子序列问题)   | https://leetcode.cn/problems/maximum-length-of-repeated-subarray/ |
+| [1143. 最长公共子序列](src/动态规划/子序列问题)  | https://leetcode.cn/problems/longest-common-subsequence/     |
+| [53. 最大子数组和](src/动态规划/子序列问题)      | https://leetcode.cn/problems/maximum-subarray/               |
 
 ## 回溯 ⭐️
 
