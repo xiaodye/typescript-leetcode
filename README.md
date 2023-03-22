@@ -30,6 +30,7 @@
 | [88. 合并两个有序数组](src/数组)  | https://leetcode.cn/problems/merge-sorted-array/        |
 | [15. 三数之和](src/数组)          | https://leetcode.cn/problems/3sum/                      |
 | [209. 长度最小的子数组](src/数组) | https://leetcode.cn/problems/minimum-size-subarray-sum/ |
+| [54. 螺旋矩阵](src/数组)          | https://leetcode.cn/problems/spiral-matrix/             |
 | [59. 螺旋矩阵 II](src/数组)       | https://leetcode.cn/problems/spiral-matrix-ii/          |
 | [200. 岛屿数量](src/数组)         | https://leetcode.cn/problems/number-of-islands/         |
 
