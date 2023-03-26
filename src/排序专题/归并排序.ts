@@ -1,5 +1,8 @@
 /**
  * 归并排序
+ *
+ * 时间复杂度：O(nlogn)
+ *
  * @param arr 待排序数组
  * @returns
  */

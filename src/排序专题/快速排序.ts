@@ -1,19 +1,50 @@
 /**
  * 快速排序
+ *
+ * 时间复杂度：O(nlogn)
+ *
+ * @param arr 待排序数组
+ * @returns
+ */
+export default function quickSort(arr: number[]): number[] {
+  if (arr.length <= 1) {
+    return arr;
+  }
+
+  const pivotIndex = Math.floor(arr.length / 2);
+  // 从数组中取出我们的"基准"元素
+  const pivot = arr.splice(pivotIndex, 1)[0];
+  const leftArr: number[] = [];
+  const rightArr: number[] = [];
+
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i] <= pivot) {
+      leftArr.push(arr[i]);
+    } else {
+      rightArr.push(arr[i]);
+    }
+  }
+
+  // 至此，我们将数组分成了left和right两个部分，中间的一个元素pivot之前被删了，现在要加回来
+  return [...quickSort(leftArr), pivot, ...quickSort(rightArr)];
+}
+
+/**
+ * 快速排序（原地排序）
  * @param arr 待排序数组
  * @param left
  * @param right
  * @returns
  */
-export default function quickSort(arr: number[], left: number, right: number): number[] {
+export function quickSort2(arr: number[], left: number, right: number): number[] {
   if (arr.length > 1) {
     const pivotIndex = partition(arr, left, right);
 
     if (left < pivotIndex - 1) {
-      quickSort(arr, left, pivotIndex - 1);
+      quickSort2(arr, left, pivotIndex - 1);
     }
     if (right > pivotIndex) {
-      quickSort(arr, pivotIndex, right);
+      quickSort2(arr, pivotIndex, right);
     }
   }
   return arr;
@@ -54,6 +85,6 @@ const partition = function (arr: number[], left: number, right: number): number 
 };
 
 // test
-const arr = [5, 1, 3, 6, 2, 0, 7];
-console.log(quickSort(arr, 0, arr.length - 1));
+const arr = [98, 42, 25, 54, 15, 3, 25, 72, 41, 10, 121];
+console.log(quickSort(arr));
 debugger;
