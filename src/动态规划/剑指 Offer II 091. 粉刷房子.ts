@@ -6,12 +6,10 @@
 export default function minCost(costs: number[][]): number {
   if (costs.length === 0) return 0;
 
-  // 初始化一个二维数组
   const len = costs.length;
-  const f = new Array<number[]>(len);
-  for (let i = 0; i < f.length; i++) {
-    f[i] = new Array<number>(3);
-  }
+
+  // 初始化一个二维数组
+  const f = Array.from({ length: len }, () => new Array<number>(3));
 
   // 初始化状态值，边界值
   f[0][0] = costs[0][0];

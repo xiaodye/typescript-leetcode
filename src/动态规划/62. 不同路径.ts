@@ -8,10 +8,7 @@
  */
 export default function uniquePaths(m: number, n: number): number {
   // 创建dp数组
-  const dp = new Array<number[]>(m);
-  for (let i = 0; i < dp.length; i++) {
-    dp[i] = new Array<number>().fill(0);
-  }
+  const dp = Array.from({ length: m }, () => new Array<number>(n).fill(0));
 
   // 初始化化dp
   for (let i = 0; i < m; i++) {

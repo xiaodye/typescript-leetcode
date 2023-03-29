@@ -6,15 +6,13 @@
  * @returns 背包的最大价值
  */
 export default function knapsack(w: number[], v: number[], c: number): number {
+  const num = w.length;
+
   /**
    * num就是物品的数量
    * 初始化一个二维数组，dp[i][j]表示从下标为[0-i]的物品里任意取，放进容量为j的背包，价值总和最大是多少
    */
-  const num = w.length;
-  const dp = new Array<number[]>(num);
-  for (let i = 0; i < dp.length; i++) {
-    dp[i] = new Array(c + 1).fill(0);
-  }
+  const dp = Array.from({ length: num }, () => new Array<number>(c + 1).fill(0));
 
   // 初始化首行的数据
   for (let i = w[0]; i <= c; i++) {
