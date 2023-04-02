@@ -13,7 +13,7 @@
  */
 export default function reverseWords(s: string): string {
   // 定义双端队列
-  const queue: string[] = [];
+  const deque: string[] = [];
   let word = "";
 
   let left = 0;
@@ -27,7 +27,7 @@ export default function reverseWords(s: string): string {
     let char = s[left];
 
     if (char === " " && word !== "") {
-      queue.unshift(word);
+      deque.unshift(word);
       word = "";
     } else if (char !== " ") {
       word += char;
@@ -36,7 +36,7 @@ export default function reverseWords(s: string): string {
     left++;
   }
 
-  queue.unshift(word);
+  deque.unshift(word);
 
-  return queue.join(" ");
+  return deque.join(" ");
 }
