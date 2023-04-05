@@ -10,10 +10,7 @@
  */
 export default function generateMatrix(n: number): number[][] {
   // 初始化矩阵
-  const matrix = new Array<number[]>(n);
-  for (let i = 0; i < matrix.length; i++) {
-    matrix[i] = new Array<number>(n).fill(0);
-  }
+  const matrix = Array.from({ length: n }, () => new Array<number>(n).fill(0));
 
   let num = 1;
   let [left, right, top, bottom] = [0, n - 1, 0, n - 1];

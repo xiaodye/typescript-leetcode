@@ -5,10 +5,7 @@
  */
 export default function longestPalindrome(s: string): string {
   // 初始化一个二维数组，dp[i][j]表示字符串索引[i-j]的子串是否为回文字符串
-  const dp = new Array<(0 | 1)[]>(s.length);
-  for (let i = 0; i < dp.length; i++) {
-    dp[i] = new Array<0 | 1>(s.length).fill(0);
-  }
+  const dp = Array.from({ length: s.length }, () => new Array<0 | 1>(s.length).fill(0));
 
   // 初始化最长回文子串的两个端点值
   let start = 0;
