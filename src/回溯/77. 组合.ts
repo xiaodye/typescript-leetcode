@@ -10,24 +10,24 @@ export default function combine(n: number, k: number): number[][] {
   const res: number[][] = [];
 
   // 定义 dfs 函数，入参是当前遍历到的数字
-  function dfs(nth: number) {
+  function backtrack(index: number) {
     if (subset.length === k) {
       res.push([...subset]);
       return;
     }
 
-    for (let i = nth; i <= n; i++) {
+    for (let i = index; i <= n; i++) {
       // 情况一: nums[i]在子集
       subset.push(i);
 
-      dfs(i + 1);
+      backtrack(i + 1);
 
       // 情况二: nums[i]不在子集
       subset.pop();
     }
   }
 
-  dfs(1);
+  backtrack(1);
 
   return res;
 }

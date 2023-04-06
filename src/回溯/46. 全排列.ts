@@ -1,39 +1,39 @@
 /**
  * 给定一个不含重复数字的数组 nums ，返回其 所有可能的全排列 。你可以 按任意顺序 返回答案。
+ *
+ * 时间复杂度：O(n * n!)
+ * 空间复杂度：O(n)
+ *
  * @param nums
  * @returns
  */
 export default function permute(nums: number[]): number[][] {
-  // curr当前排列组合, visted用于记录之前已经遍历的元素
-  const len = nums.length;
-  const curr: number[] = [];
+  // used 用于记录之前已经添加的元素，path用于记录排列组合
   const res: number[][] = [];
-  const visted = new Set<number>();
+  const path: number[] = [];
+  const used: boolean[] = [];
 
-  function dfs(nth: number) {
-    // 递归边界
-    if (nth === len) {
-      // 深克隆一个curr, push into res
-      res.push([...curr]);
+  function backtrack(nth: number): void {
+    if (nth === nums.length) {
+      // 数组是引用类型，所以需要浅拷贝一个数组，否则后序path变动，res里的元素也会变动
+      res.push([...path]);
       return;
     }
 
-    for (let i = 0; i < len; i++) {
-      if (visted.has(nums[i])) continue;
+    for (let i = 0; i < nums.length; i++) {
+      if (used[i]) continue;
 
-      // 添加进curr, 并在visted做个记录
-      curr.push(nums[i]);
-      visted.add(nums[i]);
+      path.push(nums[i]);
+      used[i] = true;
+      backtrack(nth + 1);
 
-      dfs(nth + 1);
-
-      // 移除记录
-      curr.pop();
-      visted.delete(nums[i]);
+      // 回溯操作
+      path.pop();
+      used[i] = false;
     }
   }
 
-  dfs(0);
+  backtrack(0);
 
   return res;
 }

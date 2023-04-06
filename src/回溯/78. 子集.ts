@@ -10,22 +10,22 @@ export default function subsets(nums: number[]): number[][] {
   const res: number[][] = [];
 
   // 定义 dfs 函数，入参是当前索引(坑位)
-  function dfs(nth: number) {
+  function backtrack(index: number) {
     // 每次进入，都意味着组合内容更新了一次，故直接推入结果数组
     res.push([...subset]);
 
-    for (let i = nth; i < len; i++) {
+    for (let i = index; i < len; i++) {
       // 情况一: nums[i]在子集
       subset.push(nums[i]);
 
-      dfs(i + 1);
+      backtrack(i + 1);
 
       // 情况二: nums[i]不在子集
       subset.pop();
     }
   }
 
-  dfs(0);
+  backtrack(0);
 
   return res;
 }
