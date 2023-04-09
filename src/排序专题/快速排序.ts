@@ -53,35 +53,31 @@ export function quickSort2(arr: number[], left: number, right: number): number[]
 /**
  * 以基准值为轴心，划分左右子数组的过程
  * @param arr 待划分数组
- * @param left
- * @param right
+ * @param l
+ * @param r
  * @returns
  */
-const partition = function (arr: number[], left: number, right: number): number {
-  let pivot = arr[Math.floor(left + (right - left) / 2)];
+const partition = function (arr: number[], l: number, r: number): number {
+  let pivot = arr[Math.floor(l + (r - l) / 2)];
 
-  // 初始化左右指针
-  let i = left;
-  let j = right;
-
-  while (i <= j) {
-    while (arr[i] < pivot) {
-      i++;
+  while (l <= r) {
+    while (arr[l] < pivot) {
+      l++;
     }
-    while (arr[j] > pivot) {
-      j--;
+    while (arr[r] > pivot) {
+      r--;
     }
 
     // 若i<=j，则意味着基准值左边存在较大元素或右边存在较小元素，交换两个元素确保左右两侧有序
-    if (i <= j) {
-      [arr[i], arr[j]] = [arr[j], arr[i]];
-      i++;
-      j--;
+    if (l <= r) {
+      [arr[l], arr[r]] = [arr[r], arr[l]];
+      l++;
+      r--;
     }
   }
 
   // 返回左指针索引作为下一次划分左右子数组的依据
-  return i;
+  return l;
 };
 
 // test
