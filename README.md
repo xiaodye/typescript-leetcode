@@ -28,7 +28,6 @@
 | [27. 移除元素](src/数组)          | https://leetcode.cn/problems/remove-element/            |
 | [977. 有序数组的平方](src/数组)   | https://leetcode.cn/problems/squares-of-a-sorted-array/ |
 | [88. 合并两个有序数组](src/数组)  | https://leetcode.cn/problems/merge-sorted-array/        |
-| [15. 三数之和](src/数组)          | https://leetcode.cn/problems/3sum/                      |
 | [209. 长度最小的子数组](src/数组) | https://leetcode.cn/problems/minimum-size-subarray-sum/ |
 | [54. 螺旋矩阵](src/数组)          | https://leetcode.cn/problems/spiral-matrix/             |
 | [59. 螺旋矩阵 II](src/数组)       | https://leetcode.cn/problems/spiral-matrix-ii/          |
@@ -99,6 +98,16 @@ class ListNode {
 | [151. 反转字符串中的单词](src/字符串)            | https://leetcode.cn/problems/reverse-words-in-a-string/                          |
 | [211. 添加与搜索单词](src/字符串)                | https://leetcode.cn/problems/design-add-and-search-words-data-structure/         |
 | [28. 找出字符串中第一个匹配项的下标](src/字符串) | https://leetcode.cn/problems/find-the-index-of-the-first-occurrence-in-a-string/ |
+
+## 双指针⭐️
+
+| 题目                             | LeetCode                                                |
+| -------------------------------- | ------------------------------------------------------- |
+| [15. 三数之和](src/双指针)       | https://leetcode.cn/problems/3sum/                      |
+| [11. 盛最多水的容器](src/双指针) | https://leetcode.cn/problems/container-with-most-water/ |
+| [27. 移除元素](src/双指针)       | https://leetcode.cn/problems/remove-element/            |
+| [344. 反转字符串](src/双指针)    | https://leetcode.cn/problems/reverse-string/            |
+| [392. 判断子序列](src/双指针)    | https://leetcode.cn/problems/is-subsequence/            |
 
 ## 栈与队列 ⭐️
 
@@ -194,16 +203,17 @@ class TreeNode {
 
 ### 推荐题目
 
-| 题目                                        | LeetCode                                               |
-| ------------------------------------------- | ------------------------------------------------------ |
-| [0 - 1 背包问题](src/动态规划)              |                                                        |
-| [509. 斐波那契数](src/动态规划)             | https://leetcode.cn/problems/fibonacci-number/         |
-| [746. 使用最小花费爬楼梯](src/动态规划)     | https://leetcode.cn/problems/min-cost-climbing-stairs/ |
-| [70. 爬楼梯](src/动态规划)                  | https://leetcode.cn/problems/climbing-stairs/          |
-| [剑指 Offer II 091. 粉刷房子](src/动态规划) | https://leetcode.cn/problems/JEj789/                   |
-| [322. 零钱兑换](src/动态规划)               | https://leetcode.cn/problems/coin-change/              |
-| [62. 不同路径](src/动态规划)                | https://leetcode.cn/problems/unique-paths/             |
-| [63. 不同路径 II](src/动态规划)             | https://leetcode.cn/problems/unique-paths-ii/          |
+| 题目                                        | LeetCode                                                 |
+| ------------------------------------------- | -------------------------------------------------------- |
+| [0 - 1 背包问题](src/动态规划)              |                                                          |
+| [509. 斐波那契数](src/动态规划)             | https://leetcode.cn/problems/fibonacci-number/           |
+| [746. 使用最小花费爬楼梯](src/动态规划)     | https://leetcode.cn/problems/min-cost-climbing-stairs/   |
+| [70. 爬楼梯](src/动态规划)                  | https://leetcode.cn/problems/climbing-stairs/            |
+| [剑指 Offer II 091. 粉刷房子](src/动态规划) | https://leetcode.cn/problems/JEj789/                     |
+| [322. 零钱兑换](src/动态规划)               | https://leetcode.cn/problems/coin-change/                |
+| [62. 不同路径](src/动态规划)                | https://leetcode.cn/problems/unique-paths/               |
+| [63. 不同路径 II](src/动态规划)             | https://leetcode.cn/problems/unique-paths-ii/            |
+| [416. 分割等和子集](src/动态规划)           | https://leetcode.cn/problems/partition-equal-subset-sum/ |
 
 ### 子序列问题
 
@@ -219,11 +229,15 @@ class TreeNode {
 
 ### 推荐题目
 
-| 题目                   | LeetCode                                   |
-| ---------------------- | ------------------------------------------ |
-| [46. 全排列](src/回溯) | https://leetcode.cn/problems/permutations/ |
-| [77. 组合](src/回溯)   | https://leetcode.cn/problems/combinations/ |
-| [78. 子集](src/回溯)   | https://leetcode.cn/problems/subsets/      |
+| 题目                               | LeetCode                                                     |
+| ---------------------------------- | ------------------------------------------------------------ |
+| [46. 全排列](src/回溯)             | https://leetcode.cn/problems/permutations/                   |
+| [77. 组合](src/回溯)               | https://leetcode.cn/problems/combinations/                   |
+| [78. 子集](src/回溯)               | https://leetcode.cn/problems/subsets/                        |
+| [17. 电话号码的字母组合](src/回溯) | https://leetcode.cn/problems/letter-combinations-of-a-phone-number/ |
+| [22. 括号生成](src/回溯)           | https://leetcode.cn/problems/generate-parentheses/           |
+| [39. 组合总和](src/回溯)           | https://leetcode.cn/problems/combination-sum/                |
+| [216. 组合总和 III](src/回溯)      | https://leetcode.cn/problems/combination-sum-iii             |
 
 ## 排序算法专题 ⭐️
 
