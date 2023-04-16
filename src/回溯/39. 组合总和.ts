@@ -11,23 +11,22 @@ export default function combinationSum(candidates: number[], target: number): nu
   const res: number[][] = [];
   const combine: number[] = [];
 
-  function backtrack(target: number, index: number): void {
-    if (index === candidates.length) return;
-    if (target === 0) {
+  function backtrack(index: number, sum: number): void {
+    if (sum > target) return;
+    if (sum === target) {
       res.push([...combine]);
-      return;
     }
 
-    backtrack(target, index + 1);
-
-    if (target - candidates[index] >= 0) {
-      combine.push(candidates[index]);
-      backtrack(target - candidates[index], index);
+    for (let i = index; i < candidates.length; i++) {
+      combine.push(candidates[i]);
+      sum += candidates[i];
+      backtrack(i, sum);
       combine.pop();
+      sum -= candidates[i];
     }
   }
 
-  backtrack(target, 0);
+  backtrack(0, 0);
 
   return res;
 }
