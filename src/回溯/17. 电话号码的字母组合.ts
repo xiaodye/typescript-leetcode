@@ -31,7 +31,6 @@ export default function letterCombinations(digits: string): string[] {
 
     // 取到待查找的数字，获取对应的字母组合
     const letters = map.get(Number(digits[index]));
-    console.log(letters);
 
     for (let i = 0; i < letters.length; i++) {
       backtrack(index + 1, str + letters[i]);
