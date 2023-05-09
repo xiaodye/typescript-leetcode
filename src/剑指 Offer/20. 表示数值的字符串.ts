@@ -34,6 +34,7 @@ export default function isNumber(s: string): boolean {
       t = "?";
     }
 
+    // in : 判断属性是否在对象上
     if (t in states[p]) {
       p = states[p][t as charType];
     } else {
