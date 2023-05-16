@@ -9,8 +9,8 @@
 export default function mergeSort(arr: number[]): number[] {
   const len = arr.length;
 
-  // 但被分割的数组只有一个元素时，返回数组。
-  if (len === 1) return arr;
+  // 但被分割的数组小于一个元素时，返回数组。
+  if (len <= 1) return arr;
   const mid = Math.floor(len / 2);
   const leftArr = mergeSort(arr.slice(0, mid));
   const rightArr = mergeSort(arr.slice(mid, len));
