@@ -6,11 +6,5 @@
  * @returns
  */
 export default function reverseLeftWords(s: string, n: number): string {
-  const arr = [...s];
-
-  for (let i = 0; i < n; i++) {
-    arr.push(arr.shift());
-  }
-
-  return arr.join("");
+  return s.slice(n) + s.slice(0, n);
 }
