@@ -1,4 +1,4 @@
-import TreeNode from "../data-structure/TreeNode";
+import TreeNode from "../../data-structure/TreeNode";
 
 /**
  * 输入某二叉树的前序遍历和中序遍历的结果，请构建该二叉树并返回其根节点。
