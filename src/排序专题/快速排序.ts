@@ -11,13 +11,18 @@ export default function quickSort(arr: number[]): number[] {
     return arr;
   }
 
+  // 取中间元素作为基准元素
   const pivotIndex = Math.floor(arr.length / 2);
-  // 从数组中取出我们的"基准"元素
-  const pivot = arr.splice(pivotIndex, 1)[0];
+
+  // 从数组中取出我们的"基准"元素，splice太耗时，故不使用
+  // const pivot = arr.splice(pivotIndex, 1)[0];
+  const pivot = arr[pivotIndex];
   const leftArr: number[] = [];
   const rightArr: number[] = [];
 
   for (let i = 0; i < arr.length; i++) {
+    if (i === pivotIndex) continue;
+
     if (arr[i] <= pivot) {
       leftArr.push(arr[i]);
     } else {
@@ -36,17 +41,15 @@ export default function quickSort(arr: number[]): number[] {
  * @param right
  * @returns
  */
-export function quickSort2(arr: number[], left: number, right: number): number[] {
-  if (arr.length > 1) {
-    const pivotIndex = partition(arr, left, right);
+export function quickSort2(arr: number[], l: number = 0, r: number = arr.length - 1): number[] {
+  // 数组元素小于等于 1 ，直接 return
+  if (r - l < 1) return arr;
 
-    if (left < pivotIndex - 1) {
-      quickSort2(arr, left, pivotIndex - 1);
-    }
-    if (right > pivotIndex) {
-      quickSort2(arr, pivotIndex, right);
-    }
-  }
+  const pivotIndex = partition(arr, l, r);
+
+  quickSort2(arr, l, pivotIndex - 1);
+  quickSort2(arr, pivotIndex + 1, r);
+
   return arr;
 }
 
@@ -57,28 +60,33 @@ export function quickSort2(arr: number[], left: number, right: number): number[]
  * @param r
  * @returns
  */
-const partition = function (arr: number[], l: number, r: number): number {
-  let pivot = arr[Math.floor(l + (r - l) / 2)];
+function partition(arr: number[], l: number, r: number): number {
+  // 选取最后一个元素为基准元素
+  const pivot = arr[r];
 
-  while (l <= r) {
-    while (arr[l] < pivot) {
-      l++;
-    }
-    while (arr[r] > pivot) {
-      r--;
-    }
+  let i = l - 1;
 
-    // 若i<=j，则意味着基准值左边存在较大元素或右边存在较小元素，交换两个元素确保左右两侧有序
-    if (l <= r) {
-      [arr[l], arr[r]] = [arr[r], arr[l]];
-      l++;
-      r--;
+  for (let j = l; j < r; j++) {
+    if (arr[j] < pivot) {
+      i++;
+      swap(arr, i, j);
     }
   }
 
-  // 返回左指针索引作为下一次划分左右子数组的依据
-  return l;
-};
+  swap(arr, i + 1, r);
+
+  return i + 1;
+}
+
+/**
+ * 交换两个元素
+ * @param arr
+ * @param i
+ * @param j
+ */
+function swap(arr: number[], i: number, j: number): void {
+  [arr[i], arr[j]] = [arr[j], arr[i]];
+}
 
 // test
 const arr = [98, 42, 25, 54, 15, 3, 25, 72, 41, 10, 121];
