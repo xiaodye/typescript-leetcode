@@ -5,12 +5,17 @@
  * @returns
  */
 export default function longestConsecutive(nums: number[]): number {
+  // 边界分析
   if (nums.length === 0) return 0;
 
-  const set = new Set<number>(nums);
+  // 初始化最长长度
   let maxLen = 1;
 
+  // set 去重
+  const set = new Set<number>(nums);
+
   for (let num of set) {
+    // 存在前驱，肯定没法匹配到最长的（无效匹配），只有从一个没有前驱的节点开始匹配，才可能得到结果。
     if (set.has(num - 1)) continue;
 
     let len = 0;
