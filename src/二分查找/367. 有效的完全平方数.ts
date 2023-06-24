@@ -5,16 +5,17 @@
  * @returns
  */
 export default function isPerfectSquare(num: number): boolean {
-  let left = 0;
-  let right = num;
+  let l = 1;
+  let r = num;
 
-  while (left <= right) {
-    const mid = Math.floor(left + (right - left) / 2);
+  while (l <= r) {
+    const mid = Math.floor(l + (r - l) / 2);
+    const square = mid * mid;
 
-    if (mid < num / mid) {
-      left = mid + 1;
-    } else if (mid > num / mid) {
-      right = mid - 1;
+    if (square > num) {
+      r = mid - 1;
+    } else if (square < num) {
+      l = mid + 1;
     } else {
       return true;
     }
