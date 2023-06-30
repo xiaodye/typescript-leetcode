@@ -4,8 +4,6 @@
  * @returns
  */
 export default function merge(intervals: number[][]): number[][] {
-  if (intervals.length === 0) return [];
-
   const res: number[][] = [];
   const len = intervals.length;
 
@@ -29,14 +27,3 @@ export default function merge(intervals: number[][]): number[][] {
 
   return res;
 }
-
-// test
-console.log(
-  merge([
-    [1, 3],
-    [2, 6],
-    [8, 10],
-    [15, 18],
-  ])
-);
-debugger;
