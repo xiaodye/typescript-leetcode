@@ -9,14 +9,9 @@
  * @returns
  */
 export default function intersection(nums1: number[], nums2: number[]): number[] {
-  const visted = new Set<number>(nums1);
-  const resSet = new Set<number>();
+  // 对两个数组进行去重，生成 set
+  const nums1_set = new Set(nums1);
+  const nums2_set = new Set(nums2);
 
-  for (let i = 0; i < nums2.length; i++) {
-    if (visted.has(nums2[i])) {
-      resSet.add(nums2[i]);
-    }
-  }
-
-  return [...resSet];
+  return [...nums1_set].filter((x) => nums2_set.has(x));
 }

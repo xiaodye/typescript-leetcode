@@ -1,6 +1,5 @@
 /**
  * 给定两个字符串 s 和 t ，编写一个函数来判断 t 是否是 s 的字母异位词。
- *
  * 注意：若 s 和 t 中每个字符出现的次数都相同，则称 s 和 t 互为字母异位词。
  *
  * - 时间复杂度：O(n)，其中 nnn 为 sss 的长度。
@@ -27,4 +26,24 @@ export default function isAnagram(s: string, t: string): boolean {
   }
 
   return true;
+}
+
+/**
+ * 给定两个字符串 s 和 t ，编写一个函数来判断 t 是否是 s 的字母异位词。
+ * 注意：若 s 和 t 中每个字符出现的次数都相同，则称 s 和 t 互为字母异位词。
+ *
+ * 解法：使用排序，时间复杂度略高
+ *
+ * @param s
+ * @param t
+ * @returns
+ */
+export function isAnagram2(s: string, t: string) {
+  if (s.length !== t.length) return false;
+
+  // 利用排序，若未字母异位词，排序后肯定相等
+  s = s.split("").sort().join("");
+  t = t.split("").sort().join("");
+
+  return s === t;
 }
