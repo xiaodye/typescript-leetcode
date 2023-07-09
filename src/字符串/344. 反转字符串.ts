@@ -5,7 +5,7 @@
 export default function reverseString(s: string[]): void {
   const len = s.length;
 
-  for (let i = 0, j = len - 1; i < len / 2; i++, j--) {
+  for (let i = 0, j = len - 1; i < j; i++, j--) {
     [s[i], s[j]] = [s[j], s[i]];
   }
 }

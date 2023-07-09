@@ -1,49 +1,42 @@
 /**
- * Your WordDictionary object will be instantiated and called as such:
- * var obj = new WordDictionary()
- * obj.addWord(word)
- * var param_2 = obj.search(word)
+ * 请你设计一个数据结构，支持 添加新单词 和 查找字符串是否与任何先前添加的字符串匹配 。
+ * 实现词典类 WordDictionary ：
+ * - WordDictionary() 初始化词典对象
+ * - void addWord(word) 将 word 添加到数据结构中，之后可以对它进行匹配
+ * - bool search(word) 如果数据结构中存在字符串与 word 匹配，则返回 true ；否则，返回  false 。
+ * word 中可能包含一些 '.' ，每个 . 都可以表示任何一个字母。
  */
 export default class WordDictionary {
+  // key: 字符串的长度，value: 符合长度的字符串数组
   private words = new Map<number, string[]>();
 
   constructor() {}
 
   addWord(word: string): void {
-    /**
-     * 若该字符串对应长度的数组已经存在，则只做添加
-     * 若该字符串对应长度的数组还不存在，则先创建
-     */
-    if (this.words.has(word.length)) {
-      this.words.get(word.length).push(word);
+    // 首先根据字符串的长度判断 map 当中是否存在
+    const len = word.length;
+
+    if (this.words.has(len)) {
+      this.words.get(len).push(word);
     } else {
-      this.words.set(word.length, [word]);
+      this.words.set(len, [word]);
     }
   }
 
   search(word: string): boolean {
-    if (!this.words.has(word.length)) return false;
+    const len = word.length;
 
-    // 情况一：参数不是正则
+    // 1. 若 map 不存在该长度的 key，直接 ruturn false;
+    if (!this.words.has(len)) return false;
+
+    // 2. 若字符串中不存在 . （无正则）
     if (!word.includes(".")) {
-      return this.words.get(word.length).includes(word);
+      this.words.get(len).includes(word);
     }
 
-    // 情况二：参数是正则
+    // 3. 字符串中存在 .
     const reg = new RegExp(word);
 
-    // 只要数组中有一个匹配正则表达式的字符串，就返回true
-    return this.words.get(word.length).some((item) => reg.test(item));
+    return this.words.get(len).some((item) => reg.test(item));
   }
 }
-
-// test
-const wordDictionary = new WordDictionary();
-
-wordDictionary.addWord("bad");
-wordDictionary.addWord("dad");
-wordDictionary.addWord("mad");
-console.log(wordDictionary.search("pad")); // 返回 False
-console.log(wordDictionary.search("bad")); // 返回 True
-console.log(wordDictionary.search(".ad")); // 返回 True
-console.log(wordDictionary.search("b..")); // 返回 True
