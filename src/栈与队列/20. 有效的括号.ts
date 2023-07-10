@@ -4,7 +4,7 @@
  * @returns
  */
 export default function isValid(s: string): boolean {
-  const map = new Map([
+  const map = new Map<string, string>([
     ["(", ")"],
     ["[", "]"],
     ["{", "}"],
