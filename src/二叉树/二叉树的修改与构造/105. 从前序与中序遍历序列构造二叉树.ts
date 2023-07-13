@@ -7,32 +7,18 @@ import TreeNode from "../../data-structure/TreeNode";
  * @returns 新二叉树根节点
  */
 export default function buildTree(preorder: number[], inorder: number[]): TreeNode | null {
-  const len = preorder.length;
+  // 边界条件
+  if (preorder.length === 0) return null;
 
-  // 构建二叉树的一些重复步骤，封装成一个函数，用于递归调用
-  function build(preL: number, preR: number, inL: number, inR: number): TreeNode | null {
-    // 处理边界情况
-    if (preL > preR) return null;
+  const rootVal = preorder[0];
+  const root = new TreeNode(rootVal);
 
-    /**
-     * root: 根节点
-     * k: 一颗二叉树的根节点在中序遍历序列的位置，题目已经假设没有重复元素
-     * numLeft: 左子树中结点的个数
-     */
-    const root = new TreeNode(preorder[preL]);
-    const k = inorder.indexOf(root.val);
-    const numLeft = k - inL;
+  // mid 是 inorder 中根节点的下标，也是左子树节点数
+  const mid = inorder.indexOf(rootVal);
 
-    // 构造左右子树
-    root.left = build(preL + 1, preL + numLeft, inL, k - 1);
-    root.right = build(preL + numLeft + 1, preR, k + 1, inR);
+  // 递归构建左右子树
+  root.left = buildTree(preorder.slice(1, mid + 1), inorder.slice(0, mid));
+  root.right = buildTree(preorder.slice(mid + 1), inorder.slice(mid + 1));
 
-    return root;
-  }
-
-  return build(0, len - 1, 0, len - 1);
+  return root;
 }
-
-// test
-console.log(buildTree([3, 9, 20, 15, 7], [9, 3, 15, 20, 7]));
-debugger;

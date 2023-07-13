@@ -12,22 +12,26 @@ import TreeNode from "../../data-structure/TreeNode";
 export default function binaryTreePaths(root: TreeNode | null): string[] {
   const paths: string[] = [];
 
-  construct_paths(root, "", paths);
+  // 深度优先遍历，前序遍历
+  function dfs(root: TreeNode, path: string): void {
+    if (!root) return;
+
+    // 1. 拼接到 path
+    path += root.val;
+
+    // 2. 判断当前节点是否叶子节点，到头了
+    if (!root.left && !root.right) {
+      paths.push(path);
+      return;
+    }
+
+    // 3. 非叶子节点，向下搜索
+    path += "->";
+    dfs(root.left, path);
+    dfs(root.right, path);
+  }
+
+  dfs(root, "");
 
   return paths;
-}
-
-function construct_paths(root: TreeNode | null, path: string, paths: string[]): void {
-  if (!root) return;
-
-  path += root.val.toString();
-
-  if (!root.left && !root.right) {
-    paths.push(path);
-  } else {
-    // 当前节点不是叶子节点，继续递归遍历
-    path += "->";
-    construct_paths(root.left, path, paths);
-    construct_paths(root.right, path, paths);
-  }
 }
