@@ -5,18 +5,18 @@
  * @returns
  */
 export default function maxSubArray(nums: number[]): number {
-  if (nums.length === 1) return nums[0];
+  // dp[i]: 第 i 项结尾最大子数组和
+  // 递推式: dp[i] = Math.max(dp[i - 1] + nums[i], nums[i])
+  // 初始化dp: dp[0] = nums[0];
 
   const dp: number[] = [nums[0]];
-  let max = dp[0];
+  let maxSum = dp[0];
 
   for (let i = 1; i < nums.length; i++) {
     dp[i] = Math.max(dp[i - 1] + nums[i], nums[i]);
 
-    if (dp[i] > max) {
-      max = dp[i];
-    }
+    maxSum = Math.max(maxSum, dp[i]);
   }
 
-  return max;
+  return maxSum;
 }
