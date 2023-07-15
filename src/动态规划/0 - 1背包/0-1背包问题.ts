@@ -9,11 +9,19 @@
  * @returns 背包的最大价值
  */
 export default function knapsack(weight: number[], value: number[], c: number): number {
+  // dp[i][j]: 前 i 个物品，背包容量为 j 的最大价值
+
+  // 对 物品 i 放还是不放的问题
+  // dp[i][j] = Math.max(dp[i - 1][j - w[i]] + v[i], dp[i - 1][j]) (j >= w[i])
+  // 初始化dp: 首列（背包容量为空，均为 0 ），首行（当背包容量 >= 第一个物品时，最大价值为第一个物品的价值）
+
+  // 行为背包物品，列为背包容量
+
   const num = weight.length;
 
   /**
    * num就是物品的数量
-   * 初始化一个二维数组，dp[i][j]表示从下标为[0-i]的物品里任意取，放进容量为j的背包，价值总和最大是多少
+   * 初始化一个二维数组，dp[i][j]: 从下标为[0-i]的物品里任意取，放进容量为j的背包，价值总和最大是多少
    */
   const dp = Array.from({ length: num }, () => new Array<number>(c + 1).fill(0));
 

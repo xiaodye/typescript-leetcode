@@ -9,12 +9,12 @@ export default function subsets(nums: number[]): number[][] {
   const subset: number[] = [];
   const res: number[][] = [];
 
-  // 定义 dfs 函数，入参是当前索引(坑位)
-  function backtrack(index: number) {
+  // 定义 backtrack 函数，start: 开始位置
+  function backtrack(start: number) {
     // 每次进入，都意味着组合内容更新了一次，故直接推入结果数组
     res.push([...subset]);
 
-    for (let i = index; i < len; i++) {
+    for (let i = start; i < len; i++) {
       // 情况一: nums[i]在子集
       subset.push(nums[i]);
 

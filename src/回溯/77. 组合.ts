@@ -6,24 +6,24 @@
  * @returns
  */
 export default function combine(n: number, k: number): number[][] {
-  const combine: number[] = [];
   const res: number[][] = [];
+  const path: number[] = [];
 
-  // 定义 dfs 函数，入参是当前遍历到的数字
-  function backtrack(index: number) {
-    if (combine.length === k) {
-      res.push([...combine]);
+  // 定义 backtrack 函数，入参是当前遍历到的数字
+  function backtrack(start: number) {
+    if (path.length === k) {
+      res.push([...path]);
       return;
     }
 
-    for (let i = index; i <= n - (k - combine.length) + 1; i++) {
-      // 情况一: nums[i]在子集
-      combine.push(i);
+    for (let i = start; i <= n - (k - path.length) + 1; i++) {
+      // 情况一: nums[i]在组合中
+      path.push(i);
 
       backtrack(i + 1);
 
-      // 情况二: nums[i]不在子集
-      combine.pop();
+      // 情况二: nums[i]不在组合中
+      path.pop();
     }
   }
 
