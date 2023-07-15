@@ -7,22 +7,16 @@
  * @returns
  */
 export default function quickSort(arr: number[]): number[] {
-  if (arr.length <= 1) {
-    return arr;
-  }
+  if (arr.length <= 1) return arr;
 
-  // 取中间元素作为基准元素
-  const pivotIndex = Math.floor(arr.length / 2);
+  // 把第一个元素作为基准元素
+  const pivot = arr[0];
 
-  // 从数组中取出我们的"基准"元素，splice太耗时，故不使用
-  // const pivot = arr.splice(pivotIndex, 1)[0];
-  const pivot = arr[pivotIndex];
   const leftArr: number[] = [];
   const rightArr: number[] = [];
 
-  for (let i = 0; i < arr.length; i++) {
-    if (i === pivotIndex) continue;
-
+  // 对元素进行分堆，小于基准的放左边，大于的放右边
+  for (let i = 1; i < arr.length; i++) {
     if (arr[i] <= pivot) {
       leftArr.push(arr[i]);
     } else {
@@ -30,7 +24,7 @@ export default function quickSort(arr: number[]): number[] {
     }
   }
 
-  // 至此，我们将数组分成了left和right两个部分，中间的一个元素pivot之前被删了，现在要加回来
+  // 以此递归
   return [...quickSort(leftArr), pivot, ...quickSort(rightArr)];
 }
 
@@ -42,7 +36,7 @@ export default function quickSort(arr: number[]): number[] {
  * @returns
  */
 export function quickSort2(arr: number[], l: number = 0, r: number = arr.length - 1): number[] {
-  // 数组元素小于等于 1 ，直接 return
+  // 数组元素小于 1 ，直接 return
   if (r - l < 1) return arr;
 
   const pivotIndex = partition(arr, l, r);
@@ -90,5 +84,5 @@ function swap(arr: number[], i: number, j: number): void {
 
 // test
 const arr = [98, 42, 25, 54, 15, 3, 25, 72, 41, 10, 121];
-console.log(quickSort(arr));
+console.log(quickSort2(arr));
 debugger;
