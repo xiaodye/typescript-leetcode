@@ -101,13 +101,15 @@ class ListNode {
 
 ## 双指针⭐️
 
-| 题目                             | LeetCode                                                |
-| -------------------------------- | ------------------------------------------------------- |
-| [15. 三数之和](src/双指针)       | https://leetcode.cn/problems/3sum/                      |
-| [11. 盛最多水的容器](src/双指针) | https://leetcode.cn/problems/container-with-most-water/ |
-| [27. 移除元素](src/双指针)       | https://leetcode.cn/problems/remove-element/            |
-| [344. 反转字符串](src/双指针)    | https://leetcode.cn/problems/reverse-string/            |
-| [392. 判断子序列](src/双指针)    | https://leetcode.cn/problems/is-subsequence/            |
+| 题目                                        | LeetCode                                                     |
+| ------------------------------------------- | ------------------------------------------------------------ |
+| [15. 三数之和](src/双指针)                  | https://leetcode.cn/problems/3sum/                           |
+| [11. 盛最多水的容器](src/双指针)            | https://leetcode.cn/problems/container-with-most-water/      |
+| [27. 移除元素](src/双指针)                  | https://leetcode.cn/problems/remove-element/                 |
+| [344. 反转字符串](src/双指针)               | https://leetcode.cn/problems/reverse-string/                 |
+| [392. 判断子序列](src/双指针)               | https://leetcode.cn/problems/is-subsequence/                 |
+| [26. 删除有序数组中的重复项](src/双指针)    | https://leetcode.cn/problems/remove-duplicates-from-sorted-array/description |
+| [80. 删除有序数组中的重复项 II](src/双指针) | https://leetcode.cn/problems/remove-duplicates-from-sorted-array-ii/description |
 
 ## 栈与队列 ⭐️
 
