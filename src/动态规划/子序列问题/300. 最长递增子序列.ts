@@ -4,6 +4,11 @@
  * @returns
  */
 export default function lengthOfLIS(nums: number[]): number {
+  // dp: 以 nums[i] 结尾的最长递增子序列
+  // dp[i] = Math.max(dp[0], dp[1], ...) + 1; (nums[i] > nums[j]);
+  // 初始化 dp, 开始每个元素均为 1
+  // 遍历，从 1 开始遍历
+
   if (nums.length <= 1) return nums.length;
 
   // dp[i]: 下标 i 结尾的最长递增子序列

@@ -6,7 +6,13 @@
  * @returns
  */
 export default function wordBreak(s: string, wordDict: string[]): boolean {
-  const dp = new Array<boolean>(s.length + 1).fill(false);
+  // 动态规划
+  // dp[i]: 前 i 个字符能否和由字典的字符组成 对应下标 i - 1
+  // dp[i] = dp[i - w[0].length] || dp[i - w[1].length] || ...
+  // dp 初始化，dp[0] = true, 表示 空字符出现在字典里
+
+  const dp: boolean[] = [];
+
   dp[0] = true;
 
   for (let i = 1; i <= s.length; i++) {
@@ -16,6 +22,8 @@ export default function wordBreak(s: string, wordDict: string[]): boolean {
       if (wordDict.includes(subStr) && dp[j]) {
         dp[i] = true;
         break;
+      } else {
+        dp[i] = false;
       }
     }
   }
