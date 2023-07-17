@@ -108,8 +108,8 @@ class ListNode {
 | [27. 移除元素](src/双指针)                  | https://leetcode.cn/problems/remove-element/                 |
 | [344. 反转字符串](src/双指针)               | https://leetcode.cn/problems/reverse-string/                 |
 | [392. 判断子序列](src/双指针)               | https://leetcode.cn/problems/is-subsequence/                 |
-| [26. 删除有序数组中的重复项](src/双指针)    | https://leetcode.cn/problems/remove-duplicates-from-sorted-array/description |
-| [80. 删除有序数组中的重复项 II](src/双指针) | https://leetcode.cn/problems/remove-duplicates-from-sorted-array-ii/description |
+| [26. 删除有序数组中的重复项](src/双指针)    | https://leetcode.cn/problems/remove-duplicates-from-sorted-array |
+| [80. 删除有序数组中的重复项 II](src/双指针) | https://leetcode.cn/problems/remove-duplicates-from-sorted-array-ii |
 
 ## 栈与队列 ⭐️
 
@@ -203,19 +203,33 @@ class TreeNode {
 
 ## 动态规划 ⭐️
 
-### 推荐题目
+### 基础题目
+
+| 题目                                        | LeetCode                                               |
+| ------------------------------------------- | ------------------------------------------------------ |
+| [509. 斐波那契数](src/动态规划)             | https://leetcode.cn/problems/fibonacci-number/         |
+| [746. 使用最小花费爬楼梯](src/动态规划)     | https://leetcode.cn/problems/min-cost-climbing-stairs/ |
+| [70. 爬楼梯](src/动态规划)                  | https://leetcode.cn/problems/climbing-stairs/          |
+| [剑指 Offer II 091. 粉刷房子](src/动态规划) | https://leetcode.cn/problems/JEj789/                   |
+| [322. 零钱兑换](src/动态规划)               | https://leetcode.cn/problems/coin-change/              |
+| [62. 不同路径](src/动态规划)                | https://leetcode.cn/problems/unique-paths/             |
+| [63. 不同路径 II](src/动态规划)             | https://leetcode.cn/problems/unique-paths-ii/          |
+| [343. 整数拆分](src/动态规划)               | https://leetcode.cn/problems/integer-break/            |
+
+### 0 - 1 背包
 
 | 题目                                        | LeetCode                                                 |
 | ------------------------------------------- | -------------------------------------------------------- |
-| [0 - 1 背包问题](src/动态规划)              |                                                          |
-| [509. 斐波那契数](src/动态规划)             | https://leetcode.cn/problems/fibonacci-number/           |
-| [746. 使用最小花费爬楼梯](src/动态规划)     | https://leetcode.cn/problems/min-cost-climbing-stairs/   |
-| [70. 爬楼梯](src/动态规划)                  | https://leetcode.cn/problems/climbing-stairs/            |
-| [剑指 Offer II 091. 粉刷房子](src/动态规划) | https://leetcode.cn/problems/JEj789/                     |
-| [322. 零钱兑换](src/动态规划)               | https://leetcode.cn/problems/coin-change/                |
-| [62. 不同路径](src/动态规划)                | https://leetcode.cn/problems/unique-paths/               |
-| [63. 不同路径 II](src/动态规划)             | https://leetcode.cn/problems/unique-paths-ii/            |
-| [416. 分割等和子集](src/动态规划)           | https://leetcode.cn/problems/partition-equal-subset-sum/ |
+| [0 - 1 背包问题](src/动态规划/0 - 1背包)    |                                                          |
+| [416. 分割等和子集](src/动态规划/0 - 1背包) | https://leetcode.cn/problems/partition-equal-subset-sum/ |
+
+### 完全背包
+
+| 题目                                     | LeetCode                                      |
+| ---------------------------------------- | --------------------------------------------- |
+| [322. 零钱兑换](src/动态规划/完全背包)   | https://leetcode.cn/problems/coin-change/     |
+| [139. 单词拆分](src/动态规划/完全背包)   | https://leetcode.cn/problems/word-break/      |
+| [279. 完全平方数](src/动态规划/完全背包) | https://leetcode.cn/problems/perfect-squares/ |
 
 ### 子序列问题
 
@@ -243,8 +257,6 @@ class TreeNode {
 
 ## 排序算法专题 ⭐️
 
-### 高频
-
 - [x] [冒泡排序](src/排序算法专题)
 - [x] [选择排序](src/排序算法专题)
 - [x] [插入排序](src/排序算法专题)
@@ -252,9 +264,12 @@ class TreeNode {
 - [x] [快速排序](src/排序算法专题)
 - [x] [希尔排序](src/排序算法专题)
 
-### 低频
-
 - [ ] [堆排序](src/排序算法专题)
 - [ ] [基数排序](src/排序算法专题)
 - [ ] [计数排序](src/排序算法专题)
 - [ ] [桶排序](src/排序算法专题)
+
+## 题库推荐
+
+- [**LeetCode 热题 100**](https://leetcode.cn/studyplan/top-100-liked/)
+- [**剑指 Offer**](https://leetcode.cn/studyplan/coding-interviews/)
