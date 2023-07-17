@@ -1,10 +1,30 @@
-# 🐳TypeScript-Algorithms
+# 🐳TypeScript-LeetCode
 
-## 描述
+## 描述⭐️⭐️⭐️
 
 **仓库建设中......**
 
-## 二分查找 ⭐️
+对题目分类：
+
+- 二分查找
+- 数组
+- 链表
+- 栈与队列
+- 字符串
+- 哈希表
+- 双指针
+- 二叉树
+- 动态规划
+- 回溯
+
+已刷的题库：
+
+- LeetCode 热题 100
+- 剑指 Offer
+
+> 题库和分类题目有部分重复。
+
+## 二分查找 
 
 ### 推荐题目
 
@@ -17,7 +37,7 @@
 | [50. Pow(x, n)](src/二分查找)                                  | https://leetcode.cn/problems/powx-n/                                                  |
 | [34. 在排序数组中查找元素的第一个和最后一个位置](src/二分查找) | https://leetcode.cn/problems/find-first-and-last-position-of-element-in-sorted-array/ |
 
-## 数组 ⭐️
+## 数组 
 
 ### 推荐题目
 
@@ -33,7 +53,7 @@
 | [59. 螺旋矩阵 II](src/数组)       | https://leetcode.cn/problems/spiral-matrix-ii/          |
 | [200. 岛屿数量](src/数组)         | https://leetcode.cn/problems/number-of-islands/         |
 
-## 链表 ⭐️
+## 链表 
 
 ### data-structure
 
@@ -70,7 +90,7 @@ class ListNode {
 | [138. 复制带随机指针的链表](src/链表)       | https://leetcode.cn/problems/copy-list-with-random-pointer/         |
 | [2. 两数相加](src/链表)                     | https://leetcode.cn/problems/add-two-numbers/                       |
 
-## 哈希表 ⭐️
+## 哈希表 
 
 ### 推荐题目
 
@@ -83,7 +103,7 @@ class ListNode {
 | [454. 四数相加 II](src/哈希表)      | https://leetcode.cn/problems/4sum-ii/                    |
 | [347. 前 K 个高频元素](src/哈希表)  | https://leetcode.cn/problems/top-k-frequent-elements     |
 
-## 字符串 ⭐️
+## 字符串 
 
 ### 推荐题目
 
@@ -99,7 +119,7 @@ class ListNode {
 | [211. 添加与搜索单词](src/字符串)                | https://leetcode.cn/problems/design-add-and-search-words-data-structure/         |
 | [28. 找出字符串中第一个匹配项的下标](src/字符串) | https://leetcode.cn/problems/find-the-index-of-the-first-occurrence-in-a-string/ |
 
-## 双指针⭐️
+## 双指针
 
 | 题目                                        | LeetCode                                                     |
 | ------------------------------------------- | ------------------------------------------------------------ |
@@ -111,7 +131,7 @@ class ListNode {
 | [26. 删除有序数组中的重复项](src/双指针)    | https://leetcode.cn/problems/remove-duplicates-from-sorted-array |
 | [80. 删除有序数组中的重复项 II](src/双指针) | https://leetcode.cn/problems/remove-duplicates-from-sorted-array-ii |
 
-## 栈与队列 ⭐️
+## 栈与队列 
 
 ### 推荐题目
 
@@ -126,7 +146,7 @@ class ListNode {
 | [739. 每日温度](src/栈与队列)                      | https://leetcode.cn/problems/daily-temperatures/                      |
 | [239. 滑动窗口最大值](src/栈与队列)                | https://leetcode.cn/problems/sliding-window-maximum/                  |
 
-## 二叉树 ⭐️
+## 二叉树 
 
 ### data-structure
 
@@ -201,7 +221,7 @@ class TreeNode {
 | [235. 二叉搜索树的最近公共祖先](src/二叉树/二叉树公共祖先问题) | https://leetcode.cn/problems/lowest-common-ancestor-of-a-binary-search-tree/ |
 | [236. 二叉树的最近公共祖先](src/二叉树/二叉树公共祖先问题)     | https://leetcode.cn/problems/lowest-common-ancestor-of-a-binary-tree/        |
 
-## 动态规划 ⭐️
+## 动态规划 
 
 ### 基础题目
 
@@ -241,7 +261,7 @@ class TreeNode {
 | [1143. 最长公共子序列](src/动态规划/子序列问题)  | https://leetcode.cn/problems/longest-common-subsequence/                |
 | [53. 最大子数组和](src/动态规划/子序列问题)      | https://leetcode.cn/problems/maximum-subarray/                          |
 
-## 回溯 ⭐️
+## 回溯 
 
 ### 推荐题目
 
@@ -255,7 +275,7 @@ class TreeNode {
 | [39. 组合总和](src/回溯)           | https://leetcode.cn/problems/combination-sum/                |
 | [216. 组合总和 III](src/回溯)      | https://leetcode.cn/problems/combination-sum-iii             |
 
-## 排序算法专题 ⭐️
+## 排序算法专题 
 
 - [x] [冒泡排序](src/排序算法专题)
 - [x] [选择排序](src/排序算法专题)
