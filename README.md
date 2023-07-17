@@ -205,16 +205,16 @@ class TreeNode {
 
 ### 基础题目
 
-| 题目                                        | LeetCode                                               |
-| ------------------------------------------- | ------------------------------------------------------ |
-| [509. 斐波那契数](src/动态规划)             | https://leetcode.cn/problems/fibonacci-number/         |
-| [746. 使用最小花费爬楼梯](src/动态规划)     | https://leetcode.cn/problems/min-cost-climbing-stairs/ |
-| [70. 爬楼梯](src/动态规划)                  | https://leetcode.cn/problems/climbing-stairs/          |
-| [剑指 Offer II 091. 粉刷房子](src/动态规划) | https://leetcode.cn/problems/JEj789/                   |
-| [322. 零钱兑换](src/动态规划)               | https://leetcode.cn/problems/coin-change/              |
-| [62. 不同路径](src/动态规划)                | https://leetcode.cn/problems/unique-paths/             |
-| [63. 不同路径 II](src/动态规划)             | https://leetcode.cn/problems/unique-paths-ii/          |
-| [343. 整数拆分](src/动态规划)               | https://leetcode.cn/problems/integer-break/            |
+| 题目                                        | LeetCode                                                 |
+| ------------------------------------------- | -------------------------------------------------------- |
+| [509. 斐波那契数](src/动态规划)             | https://leetcode.cn/problems/fibonacci-number/           |
+| [70. 爬楼梯](src/动态规划)                  | https://leetcode.cn/problems/climbing-stairs/            |
+| [746. 使用最小花费爬楼梯](src/动态规划)     | https://leetcode.cn/problems/min-cost-climbing-stairs/   |
+| [96. 不同的二叉搜索树](src/动态规划)        | https://leetcode.cn/problems/unique-binary-search-trees/ |
+| [剑指 Offer II 091. 粉刷房子](src/动态规划) | https://leetcode.cn/problems/JEj789/                     |
+| [62. 不同路径](src/动态规划)                | https://leetcode.cn/problems/unique-paths/               |
+| [63. 不同路径 II](src/动态规划)             | https://leetcode.cn/problems/unique-paths-ii/            |
+| [343. 整数拆分](src/动态规划)               | https://leetcode.cn/problems/integer-break/              |
 
 ### 0 - 1 背包
 
