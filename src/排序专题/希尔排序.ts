@@ -16,7 +16,7 @@ export default function shellSort(arr: number[]): number[] {
       let j = i;
       const temp = arr[i];
 
-      while (j >= gap && arr[j - gap] > arr[j]) {
+      while (j - gap >= 0 && arr[j - gap] > arr[j]) {
         arr[j] = arr[j - gap];
         j -= gap;
       }

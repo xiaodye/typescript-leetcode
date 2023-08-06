@@ -16,7 +16,7 @@ export default function insertSort(arr: number[]): number[] {
     let j = i;
     const temp = arr[i];
 
-    while (j >= 1 && arr[j - 1] > temp) {
+    while (j - 1 >= 0 && arr[j - 1] > temp) {
       // 这个赋值操作相当于索引为j-1的元素往后挪，不用担心arr[j]，它已经提前被保存到了temp
       arr[j] = arr[j - 1];
       j--;
