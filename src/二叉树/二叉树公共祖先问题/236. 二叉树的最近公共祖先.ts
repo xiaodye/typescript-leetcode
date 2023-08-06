@@ -12,6 +12,13 @@ export default function lowestCommonAncestor(
   p: TreeNode | null,
   q: TreeNode | null
 ): TreeNode | null {
+  /**
+   * 三种情况
+   * 1. p 和 q 在 root 的子树上，且分在两侧
+   * 2. p = root, p 是公共祖先
+   * 3. q = root, q 是公共祖先
+   */
+
   // 若当前结点不存在（意味着无效）或者等于 p 或 q （意味着找到目标），则直接返回
   if (!root || root === p || root === q) return root;
 
