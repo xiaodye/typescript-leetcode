@@ -11,7 +11,7 @@ export default function permute(nums: number[]): number[][] {
   // used 用于记录之前已经添加的元素，path用于记录排列组合
   const res: number[][] = [];
   const path: number[] = [];
-  const used = new Array<boolean>(nums.length).fill(false);
+  const used: boolean[] = [];
 
   function backtrack(nth: number): void {
     if (nth === nums.length) {
