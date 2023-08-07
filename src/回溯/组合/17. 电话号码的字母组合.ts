@@ -23,6 +23,12 @@ export default function letterCombinations(digits: string): string[] {
     [9, "wxyz"],
   ]);
 
+  /**
+   * 回溯
+   * @param index 记录遍历到第几个数字了，可以看成索引
+   * @param str
+   * @returns
+   */
   function backtrack(index: number, str: string): void {
     if (index === digits.length) {
       records.push(str);

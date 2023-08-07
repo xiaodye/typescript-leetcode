@@ -9,10 +9,12 @@
 export default function combinationSum3(k: number, n: number): number[][] {
   const res: number[][] = [];
   const combine: number[] = [];
+  let sum = 0;
 
   function backtrack(start: number): void {
-    const sum = combine.reduce((prev, curr) => prev + curr, 0);
+    // 剪枝
     if (sum > n) return;
+
     if (combine.length === k && sum === n) {
       res.push([...combine]);
       return;
@@ -20,8 +22,11 @@ export default function combinationSum3(k: number, n: number): number[][] {
 
     for (let i = start; i <= 9; i++) {
       combine.push(i);
+      sum += i;
       backtrack(i + 1);
+
       combine.pop();
+      sum -= i;
     }
   }
 

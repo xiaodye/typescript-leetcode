@@ -12,15 +12,21 @@ export default function combinationSum(candidates: number[], target: number): nu
   const combine: number[] = [];
 
   function backtrack(index: number, sum: number): void {
+    // 剪枝
     if (sum > target) return;
+
+    // 终止条件
     if (sum === target) {
       res.push([...combine]);
+      return;
     }
 
     for (let i = index; i < candidates.length; i++) {
       combine.push(candidates[i]);
       sum += candidates[i];
+
       backtrack(i, sum);
+
       combine.pop();
       sum -= candidates[i];
     }
