@@ -6,7 +6,12 @@
  * @returns
  */
 export default function rob(nums: number[]): number {
+  // dp[i]: 前 i 个房屋最多可以偷窃的金额
+  // 帮助理解的重要点：盗窃的房屋一定是间隔的（间隔为 1）
+  // 所以说，其实就只有两种情况，要么从 0 开始，要么从 1 开始
   const dp: number[] = [];
+
+  // dp 初始化
   dp[0] = nums[0];
   dp[1] = Math.max(nums[0], nums[1]);
 
