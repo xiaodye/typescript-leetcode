@@ -14,7 +14,7 @@ export default function lengthOfLongestSubstring(s: string): number {
 
   for (let i = 0; i < s.length; i++) {
     // 当j大于s.length时，就可以结束了
-    if (j > s.length) break;
+    if (j >= s.length) break;
 
     // 第一次不用删除
     if (i !== 0) {
