@@ -1,4 +1,4 @@
-import LinkNode from "../data-structure/LinkNode";
+import DLinkedNode from "../data-structure/DLinkedNode";
 
 /**
  * 设计链表的实现。
@@ -14,13 +14,13 @@ import LinkNode from "../data-structure/LinkNode";
  */
 export default class MyLinkedList {
   public size: number;
-  public head: LinkNode | null;
-  public tail: LinkNode | null;
+  public head: DLinkedNode | null;
+  public tail: DLinkedNode | null;
 
   constructor() {
     this.size = 0;
-    this.head = new LinkNode(-1);
-    this.tail = new LinkNode(-1);
+    this.head = new DLinkedNode(-1);
+    this.tail = new DLinkedNode(-1);
     this.head.next = this.tail;
     this.tail.prev = this.head;
   }
@@ -31,7 +31,7 @@ export default class MyLinkedList {
   }
 
   addAtHead(val: number): void {
-    const node = new LinkNode(val);
+    const node = new DLinkedNode(val);
 
     node.next = this.head.next;
     node.prev = this.head;
@@ -42,7 +42,7 @@ export default class MyLinkedList {
   }
 
   addAtTail(val: number): void {
-    const node = new LinkNode(val);
+    const node = new DLinkedNode(val);
 
     node.next = this.tail;
     node.prev = this.tail.prev;
@@ -60,7 +60,7 @@ export default class MyLinkedList {
     } else if (index < 0) {
       this.addAtHead(val);
     } else {
-      const node = new LinkNode(val);
+      const node = new DLinkedNode(val);
       let curr = this.getNode(index);
 
       node.next = curr;
@@ -83,7 +83,7 @@ export default class MyLinkedList {
     }
   }
 
-  getNode(index: number): LinkNode | null {
+  getNode(index: number): DLinkedNode | null {
     if (index < 0 || index > this.size - 1) {
       return null;
     }

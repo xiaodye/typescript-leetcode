@@ -10,21 +10,26 @@ import ListNode from "../data-structure/ListNode";
  * @returns
  */
 export default function swapPairs(head: ListNode | null): ListNode | null {
-  const dummy = new ListNode(-1, head);
+  // 空链表或者 1 个节点情况
+  if (!head || !head.next) return head;
 
+  // 创建一个虚拟头结点
+  const dummy = new ListNode(-1, head);
   let curr = dummy;
 
+  // 每次交换 curr 后面两个节点
   while (curr.next && curr.next.next) {
-    let node1 = curr.next;
-    let node2 = curr.next.next.next;
+    const node1 = curr.next;
+    const node2 = curr.next.next;
+    const node3 = curr.next.next.next;
 
     // 三个步骤
-    curr.next = curr.next.next;
-    curr.next.next = node1;
-    curr.next.next.next = node2;
+    curr.next = node2;
+    node1.next = node3;
+    node2.next = node1;
 
-    // curr移动两位，准备下一轮交换
-    curr = curr.next.next;
+    // 前进
+    curr = node1;
   }
 
   return dummy.next;
