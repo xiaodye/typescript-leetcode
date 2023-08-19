@@ -7,6 +7,8 @@
 export default function singleNumber(nums: number[]): number {
   let res = 0;
 
+  // a^a === 0;
+  // a^0 === a;
   for (let i = 0; i < nums.length; i++) {
     res ^= nums[i];
   }
