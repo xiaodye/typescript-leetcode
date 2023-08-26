@@ -17,7 +17,7 @@ export default function nextPermutation(nums: number[]): void {
     j--;
   }
 
-  // !如果在步骤 1 找不到符合的相邻元素对，说明当前 [begin,end) 为一个降序顺序，则直接跳到步骤 4
+  // 如果在步骤 1 找不到符合的相邻元素对，说明当前 [begin,end) 为一个降序顺序，则直接跳到步骤 4
   if (i >= 0) {
     // 2. 在 [j,end) 从后向前 查找第一个满足 A[i] < A[k] 的 k
     while (nums[i] >= nums[k]) {

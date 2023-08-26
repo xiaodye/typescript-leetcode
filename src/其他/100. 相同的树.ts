@@ -7,7 +7,7 @@ import TreeNode from "../data-structure/TreeNode";
  * @param q
  * @returns
  */
-function isSameTree(p: TreeNode | null, q: TreeNode | null): boolean {
+export default function isSameTree(p: TreeNode | null, q: TreeNode | null): boolean {
   // p === null && q === null true
   // p === null || q === null false
   // p.val !== q.val false
