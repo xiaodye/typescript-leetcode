@@ -5,21 +5,30 @@
  * @returns
  */
 export default function longestCommonPrefix(strs: string[]): string {
-  if (strs.length == 0) return "";
+  // 解法：纵向扫描
+  // 考虑空数组情况
+  if (strs.length === 0) return "";
+  // 考虑只有一个字符串情况
+  if (strs.length === 1) return strs[0];
 
-  const minLen = Math.min(...strs.map((str) => str.length));
+  let res = "";
 
-  const prefix: string[] = [];
+  for (let i = 0; i < strs[0].length; i++) {
+    const char = strs[0][i];
 
-  for (let i = 0; i < minLen; i++) {
-    const chars = strs.map((str) => str[i]);
-
-    if (new Set([...chars]).size !== 1) {
-      return prefix.join("");
-    } else {
-      prefix.push(chars[0]);
+    for (let j = 1; j < strs.length; j++) {
+      // 两种情况
+      // 1. i 越界，不够长
+      // 2. 字符不匹配
+      if (i >= strs[j].length || char !== strs[j][i]) {
+        return res;
+      }
     }
+
+    // 内层for循环未退出，说明匹配成功，添加到res;
+    res += char;
   }
 
-  return prefix.join("");
+  // 出现所有字符串都一样的情况
+  return res;
 }
