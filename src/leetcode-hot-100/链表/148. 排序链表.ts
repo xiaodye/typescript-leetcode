@@ -32,7 +32,7 @@ export default function sortList(head: ListNode | null): ListNode | null {
  * @param list2
  * @returns
  */
-function mergeList(list1: ListNode, list2: ListNode): ListNode {
+function mergeList(list1: ListNode | null, list2: ListNode | null): ListNode | null {
   if (!list1 && !list2) return null;
 
   const dummyHead = new ListNode(-1);
