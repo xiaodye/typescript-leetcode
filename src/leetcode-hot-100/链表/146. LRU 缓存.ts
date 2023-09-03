@@ -33,33 +33,27 @@ export default class LRUCache {
     this.dummyTail.prev = this.dummyHead;
   }
 
+  /**
+   * 如果关键字 key 存在于缓存中，则返回关键字的值，否则返回 -1 。
+   * @param key
+   * @returns
+   */
   get(key: number): number {
     const node = this.map.get(key);
     if (!node) return -1;
 
+    this.removeFromList(node); // 从链表中移除该节点
+    this.addToHead(node); // 再把该节点移动到链表头部
+
     return node.value;
   }
 
-  moveToHead(node: DLinkedNode) {
-    this.removeFromList(node); // 先从链表中删除
-    this.addToHead(node); // 再加到链表的头部
-  }
-
-  removeFromList(node: DLinkedNode) {
-    let temp1 = node.prev; // 暂存它的后继节点
-    let temp2 = node.next; // 暂存它的前驱节点
-    temp1.next = temp2; // 前驱节点的next指向后继节点
-    temp2.prev = temp1; // 后继节点的prev指向前驱节点
-  }
-
-  addToHead(node: DLinkedNode) {
-    // 插入到虚拟头结点和真实头结点之间
-    node.prev = this.dummyHead; // node的prev指针，指向虚拟头结点
-    node.next = this.dummyHead.next; // node的next指针，指向原来的真实头结点
-    this.dummyHead.next.prev = node; // 原来的真实头结点的prev，指向node
-    this.dummyHead.next = node; // 虚拟头结点的next，指向node
-  }
-
+  /**
+   * 如果关键字 key 已经存在，则变更其数据值 value ；如果不存在，则向缓存中插入该组 key-value 。
+   * 如果插入操作导致关键字数量超过 capacity ，则应该 逐出 最久未使用的关键字。
+   * @param key
+   * @param value
+   */
   put(key: number, value: number): void {
     const node = this.map.get(key); // 获取链表中的node
 
@@ -67,28 +61,56 @@ export default class LRUCache {
       // 不存在于链表，是新数据
       if (this.count === this.capacity) {
         // 容量已满
-        this.removeLRUItem(); // 删除最远一次使用的数据
+        const tail = this.popTail(); // 删除链表中的尾结点
+        this.map.delete(tail.key); // 从 map 中删除它
+        this.count--; // 当前数目减一
       }
 
+      // 创建一个新节点
       const newNode = new DLinkedNode(key, value); // 创建新的节点
-      this.map.set(key, newNode); // 存入哈希表
+      this.map.set(key, newNode); // 存入 map
       this.addToHead(newNode); // 将节点添加到链表头部
-      this.count++; // 缓存数目+1
+      this.count++; // 缓存数目 +1
     } else {
-      // 已经存在于链表，老数据
+      // 已经存在于链表
       node.value = value; // 更新value
-      this.moveToHead(node); // 将节点移到链表头部
+      this.removeFromList(node); // 从链表中移除该节点
+      this.addToHead(node); // 再把该节点移动到链表头部
     }
   }
 
-  removeLRUItem() {
-    // 删除“老家伙”
-    let tail = this.popTail(); // 将它从链表尾部删除
-    this.map.delete(tail.key); // 哈希表中也将它删除
-    this.count--; // 缓存数目-1
+  /**
+   * 从链表中移除该节点
+   * @param node
+   * @returns
+   */
+  removeFromList(node: DLinkedNode): DLinkedNode {
+    let temp1 = node.prev; // 暂存它的后继节点
+    let temp2 = node.next; // 暂存它的前驱节点
+    temp1.next = temp2; // 前驱节点的next指向后继节点
+    temp2.prev = temp1; // 后继节点的prev指向前驱节点
+
+    // 返回被删除的节点
+    return node;
   }
 
-  popTail() {
+  /**
+   * 把一个节点添加到链表头部
+   * @param node
+   */
+  addToHead(node: DLinkedNode): void {
+    // 将该节点插入到虚拟头结点和第一个节点之间，作为第一个节点
+    node.prev = this.dummyHead;
+    node.next = this.dummyHead.next;
+    this.dummyHead.next.prev = node;
+    this.dummyHead.next = node;
+  }
+
+  /**
+   * 删除链表中尾结点，不是虚拟尾结点
+   * @returns
+   */
+  popTail(): DLinkedNode {
     // 删除链表尾节点
     const tail = this.dummyTail.prev; // 通过虚拟尾节点找到它
     this.removeFromList(tail); // 删除该真实尾节点
