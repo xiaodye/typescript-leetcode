@@ -4,47 +4,45 @@
  * @returns 最长回文子串
  */
 export default function longestPalindrome(s: string): string {
-  // 初始化一个二维数组，dp[i][j]表示字符串索引[i-j]的子串是否为回文字符串
-  const dp = Array.from({ length: s.length }, () => new Array<0 | 1>(s.length).fill(0));
+  // 当字符串长度 小于2时，显然是回文串
+  if (s.length < 2) return s;
 
-  // 初始化最长回文子串的两个端点值
-  let start = 0;
+  const len = s.length;
+  let begin = 0;
   let end = 0;
+  const dp = Array.from({ length: len }, () => new Array<boolean>(len).fill(false));
 
-  // 初始化最长回文子串的初始值为1
-  for (let i = 0; i < s.length; i++) {
-    dp[i][i] = 1;
+  // 1. 确定 dp 含义: dp[i][j]: s[i...j] 是否回文串
+  // dp[i][j] = (s[i] === s[j]) && dp[i+1][j-1]
+  // 2. 初始化dp, 当字符串长度为1时是回文字符串, dp[i][i] = true
+
+  for (let i = 0; i < len; i++) {
+    dp[i][i] = true;
   }
 
-  // 处理长度为2的子串
-  for (let i = 0; i < s.length - 1; i++) {
-    if (s[i] === s[i + 1]) {
-      dp[i][i + 1] = 1;
-      start = i;
-      end = i + 1;
-    }
-  }
-
-  // n 代表子串的长度，从3开始递增
-  for (let n = 2; n <= s.length; n++) {
-    // 下面的两层循环，用来实现状态转移方程
-    for (let i = 0; i < s.length - n + 1; i++) {
-      // i和j指向子串的两个端点
-      let j = i + n - 1;
-      if (dp[i + 1][j - 1] === 1) {
-        if (s[i] === s[j]) {
-          dp[i][j] = 1;
-          start = i;
-          end = j;
+  // 一列一列的填写
+  for (let j = 0; j < len; j++) {
+    // 注意：只需要上三角
+    for (let i = 0; i < j; i++) {
+      if (s[i] !== s[j]) {
+        dp[i][j] = false;
+      } else {
+        // 看区间dp[i+1][j-1] 元素数量是否小于2
+        // j - 1 - (i + 1) + 1 < 2 =>j - i < 3
+        if (j - i < 3) {
+          dp[i][j] = true;
+        } else {
+          dp[i][j] = dp[i + 1][j - 1];
         }
+      }
+
+      // 只要dp[i][j] === true 成立，就表示子串 s[i..j] 是回文，此时记录回文长度和起始位置
+      if (dp[i][j] && j - i > end - begin) {
+        begin = i;
+        end = j;
       }
     }
   }
 
-  // 截取子串
-  return s.slice(start, end + 1);
+  return s.substring(begin, end + 1);
 }
-
-// test
-console.log(longestPalindrome("babad"));
-debugger;
