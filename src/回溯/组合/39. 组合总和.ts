@@ -8,6 +8,10 @@
  * @returns
  */
 export default function combinationSum(candidates: number[], target: number): number[][] {
+  // 回溯-组合问题-原数组无重复元素
+  // 1. 没有顺序要求
+  // 2. 允许重复元素
+  // 3. 个数不限制
   const res: number[][] = [];
   const combine: number[] = [];
 

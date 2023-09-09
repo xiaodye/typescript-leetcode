@@ -5,27 +5,24 @@
  * @returns
  */
 export default function subsets(nums: number[]): number[][] {
-  const len = nums.length;
-  const subset: number[] = [];
+  // 子集-组合的一种特殊情况-无重复元素
+  // 1. 元素只能使用一次
+  // 2. 无顺序要求
   const res: number[][] = [];
+  const subset: number[] = [];
 
-  // 定义 backtrack 函数，start: 开始位置
-  function backtrack(start: number) {
-    // 每次进入，都意味着组合内容更新了一次，故直接推入结果数组
+  function backstrack(index: number): void {
+    // 收集每个叶子节点
     res.push([...subset]);
 
-    for (let i = start; i < len; i++) {
-      // 情况一: nums[i]在子集
+    for (let i = index; i < nums.length; i++) {
       subset.push(nums[i]);
-
-      backtrack(i + 1);
-
-      // 情况二: nums[i]不在子集
+      backstrack(i + 1);
       subset.pop();
     }
   }
 
-  backtrack(0);
+  backstrack(0);
 
   return res;
 }

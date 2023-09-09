@@ -9,18 +9,19 @@
  * @returns
  */
 export default function letterCombinations(digits: string): string[] {
+  // 回溯-组合-从每个数中选取一个字母进行组合
   if (digits.length === 0) return [];
 
-  const records: string[] = [];
-  const map = new Map<number, string>([
-    [2, "abc"],
-    [3, "def"],
-    [4, "ghi"],
-    [5, "jkl"],
-    [6, "mno"],
-    [7, "pqrs"],
-    [8, "tuv"],
-    [9, "wxyz"],
+  const res: string[] = [];
+  const map = new Map<string, string>([
+    ["2", "abc"],
+    ["3", "def"],
+    ["4", "ghi"],
+    ["5", "jkl"],
+    ["6", "mno"],
+    ["7", "pqrs"],
+    ["8", "tuv"],
+    ["9", "wxyz"],
   ]);
 
   /**
@@ -31,12 +32,12 @@ export default function letterCombinations(digits: string): string[] {
    */
   function backtrack(index: number, str: string): void {
     if (index === digits.length) {
-      records.push(str);
+      res.push(str);
       return;
     }
 
     // 取到待查找的数字，获取对应的字母组合
-    const letters = map.get(Number(digits[index]));
+    const letters = map.get(digits[index]);
 
     for (let i = 0; i < letters.length; i++) {
       backtrack(index + 1, str + letters[i]);
@@ -45,5 +46,5 @@ export default function letterCombinations(digits: string): string[] {
 
   backtrack(0, "");
 
-  return records;
+  return res;
 }

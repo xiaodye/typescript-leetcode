@@ -7,30 +7,35 @@
  * @returns
  */
 export default function combinationSum3(k: number, n: number): number[][] {
+  // 回溯-组合问题-原数组没有重复数
+  // 1. 没有顺序要求
+  // 2. 不能有重复的数
+  // 3. 个数有限制
   const res: number[][] = [];
   const combine: number[] = [];
-  let sum = 0;
 
-  function backtrack(start: number): void {
-    // 剪枝
+  function backtrack(start: number, sum: number): void {
+    // 边界
     if (sum > n) return;
-
+    if (combine.length === k && sum < n) return;
     if (combine.length === k && sum === n) {
       res.push([...combine]);
       return;
     }
 
-    for (let i = start; i <= 9; i++) {
+    // 剪枝：9 - (k - combine.length) + 1
+    for (let i = start; i <= 9 - (k - combine.length) + 1; i++) {
       combine.push(i);
       sum += i;
-      backtrack(i + 1);
+      backtrack(i + 1, sum);
 
+      // 回溯
       combine.pop();
       sum -= i;
     }
   }
 
-  backtrack(1);
+  backtrack(1, 0);
 
   return res;
 }

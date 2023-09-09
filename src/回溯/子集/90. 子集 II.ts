@@ -5,29 +5,35 @@
  * @returns
  */
 export default function subsetsWithDup(nums: number[]): number[][] {
+  // 回溯-子集问题-原数组有重复元素
+  // 1. 没有顺序要求
+  // 2. 每个元素只能使用一次
+
   const res: number[][] = [];
   const subset: number[] = [];
   const used: boolean[] = [];
 
-  function backtrack(startIndex: number) {
+  function backstrack(index: number): void {
     res.push([...subset]);
 
-    for (let i = startIndex; i < nums.length; i++) {
-      if (i > 0 && nums[i] === nums[i - 1] && !used[i - 1]) {
-        continue;
-      }
+    for (let i = index; i < nums.length; i++) {
+      // 去重
+      if (i > 0 && nums[i - 1] === nums[i] && !used[i - 1]) continue;
 
       subset.push(nums[i]);
       used[i] = true;
-      backtrack(i + 1);
+      // 递归
+      backstrack(i + 1);
+
+      // 回溯
       subset.pop();
       used[i] = false;
     }
   }
 
+  // 需要排个序
   nums.sort((a, b) => a - b);
-
-  backtrack(0);
+  backstrack(0);
 
   return res;
 }
