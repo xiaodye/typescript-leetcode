@@ -11,18 +11,18 @@ export default function subsets(nums: number[]): number[][] {
   const res: number[][] = [];
   const subset: number[] = [];
 
-  function backstrack(index: number): void {
+  function backtrack(index: number): void {
     // 收集每个叶子节点
     res.push([...subset]);
 
     for (let i = index; i < nums.length; i++) {
       subset.push(nums[i]);
-      backstrack(i + 1);
+      backtrack(i + 1);
       subset.pop();
     }
   }
 
-  backstrack(0);
+  backtrack(0);
 
   return res;
 }

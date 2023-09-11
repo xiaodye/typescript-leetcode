@@ -13,7 +13,7 @@ export default function subsetsWithDup(nums: number[]): number[][] {
   const subset: number[] = [];
   const used: boolean[] = [];
 
-  function backstrack(index: number): void {
+  function backtrack(index: number): void {
     res.push([...subset]);
 
     for (let i = index; i < nums.length; i++) {
@@ -23,7 +23,7 @@ export default function subsetsWithDup(nums: number[]): number[][] {
       subset.push(nums[i]);
       used[i] = true;
       // 递归
-      backstrack(i + 1);
+      backtrack(i + 1);
 
       // 回溯
       subset.pop();
@@ -33,7 +33,7 @@ export default function subsetsWithDup(nums: number[]): number[][] {
 
   // 需要排个序
   nums.sort((a, b) => a - b);
-  backstrack(0);
+  backtrack(0);
 
   return res;
 }
