@@ -5,22 +5,22 @@
  * @returns
  */
 export default function removeDuplicates(nums: number[]): number {
-  if (nums.length <= 2) return nums.length;
+    if (nums.length <= 2) return nums.length;
 
-  let slow = 2;
-  let fast = 2;
+    let slow = 2;
+    let fast = 2;
 
-  // 从第二个元素开始
-  while (fast < nums.length) {
-    // 重复元素已有两个，跳过
-    if (nums[fast] === nums[slow - 2]) {
-      fast++;
-    } else {
-      nums[slow] = nums[fast];
-      slow++;
-      fast++;
+    // 从第二个元素开始
+    while (fast < nums.length) {
+        // 重复元素已有两个，跳过
+        if (nums[fast] === nums[slow - 2]) {
+            fast++;
+        } else {
+            nums[slow] = nums[fast];
+            slow++;
+            fast++;
+        }
     }
-  }
 
-  return slow;
+    return slow;
 }

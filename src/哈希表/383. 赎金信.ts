@@ -13,29 +13,29 @@
  * @returns
  */
 export default function canConstruct(ransomNote: string, magazine: string): boolean {
-  if (ransomNote.length > magazine.length) return false;
+    if (ransomNote.length > magazine.length) return false;
 
-  // key: 字符, value: 个数
-  const visted = new Map<string, number>();
+    // key: 字符, value: 个数
+    const visted = new Map<string, number>();
 
-  // 先遍历 magazine, 存储每个字符次数
-  for (let i = 0; i < magazine.length; i++) {
-    if (visted.has(magazine[i])) {
-      visted.set(magazine[i], visted.get(magazine[i]) + 1);
-    } else {
-      visted.set(magazine[i], 1);
-    }
-  }
-
-  for (let i = 0; i < ransomNote.length; i++) {
-    const char = ransomNote[i];
-
-    if (!visted.has(char) || visted.get(char) === 0) {
-      return false;
+    // 先遍历 magazine, 存储每个字符次数
+    for (let i = 0; i < magazine.length; i++) {
+        if (visted.has(magazine[i])) {
+            visted.set(magazine[i], visted.get(magazine[i]) + 1);
+        } else {
+            visted.set(magazine[i], 1);
+        }
     }
 
-    visted.set(char, visted.get(char) - 1);
-  }
+    for (let i = 0; i < ransomNote.length; i++) {
+        const char = ransomNote[i];
 
-  return true;
+        if (!visted.has(char) || visted.get(char) === 0) {
+            return false;
+        }
+
+        visted.set(char, visted.get(char) - 1);
+    }
+
+    return true;
 }

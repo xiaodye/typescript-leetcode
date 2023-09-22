@@ -11,24 +11,24 @@
  * @returns
  */
 export default function minSubArrayLen(target: number, nums: number[]): number {
-  let minLen = Infinity;
-  let sum = 0;
+    let minLen = Infinity;
+    let sum = 0;
 
-  // 定义双指针 i, j
-  let i = 0;
+    // 定义双指针 i, j
+    let i = 0;
 
-  for (let j = 0; j < nums.length; j++) {
-    sum += nums[j];
+    for (let j = 0; j < nums.length; j++) {
+        sum += nums[j];
 
-    while (sum >= target) {
-      const len = j - i + 1;
-      minLen = Math.min(minLen, len);
+        while (sum >= target) {
+            const len = j - i + 1;
+            minLen = Math.min(minLen, len);
 
-      // 收缩窗口
-      sum -= nums[i];
-      i++;
+            // 收缩窗口
+            sum -= nums[i];
+            i++;
+        }
     }
-  }
 
-  return minLen === Infinity ? 0 : minLen;
+    return minLen === Infinity ? 0 : minLen;
 }

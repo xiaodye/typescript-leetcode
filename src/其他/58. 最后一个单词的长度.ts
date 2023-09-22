@@ -5,22 +5,22 @@
  * @returns
  */
 export default function lengthOfLastWord(s: string): number {
-  // 1. 去除首尾空格
-  // 2. 从后往前遍历，直到遇到空格
+    // 1. 去除首尾空格
+    // 2. 从后往前遍历，直到遇到空格
 
-  let i = s.length - 1;
-  let len = 0;
+    let i = s.length - 1;
+    let len = 0;
 
-  // 去掉尾部空格
-  while (s[i] === " ") i--;
+    // 去掉尾部空格
+    while (s[i] === " ") i--;
 
-  // 统计长度
-  while (s[i] !== " ") {
-    len++;
-    i--;
+    // 统计长度
+    while (s[i] !== " ") {
+        len++;
+        i--;
 
-    if (i < 0) break;
-  }
+        if (i < 0) break;
+    }
 
-  return len;
+    return len;
 }

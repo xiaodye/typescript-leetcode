@@ -8,12 +8,12 @@ import TreeNode from "../data-structure/TreeNode";
  * @returns
  */
 export default function lowestCommonAncestor(root: TreeNode, p: TreeNode, q: TreeNode): TreeNode {
-  if (!root || p === root || q === root) return root;
+    if (!root || p === root || q === root) return root;
 
-  const leftNode = lowestCommonAncestor(root.left, p, q);
-  const rightNode = lowestCommonAncestor(root.right, p, q);
+    const leftNode = lowestCommonAncestor(root.left, p, q);
+    const rightNode = lowestCommonAncestor(root.right, p, q);
 
-  if (leftNode && rightNode) return root;
+    if (leftNode && rightNode) return root;
 
-  return leftNode ?? rightNode;
+    return leftNode ?? rightNode;
 }

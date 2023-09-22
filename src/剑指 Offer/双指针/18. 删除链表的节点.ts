@@ -8,16 +8,16 @@ import ListNode from "../../data-structure/ListNode";
  * @returns
  */
 export default function deleteNode(head: ListNode, val: number): ListNode {
-  const dummy = new ListNode(-1, head);
-  let curr = dummy;
+    const dummy = new ListNode(-1, head);
+    let curr = dummy;
 
-  while (curr && curr.next) {
-    if (curr.next.val === val) {
-      curr.next = curr.next.next;
-    } else {
-      curr = curr.next;
+    while (curr && curr.next) {
+        if (curr.next.val === val) {
+            curr.next = curr.next.next;
+        } else {
+            curr = curr.next;
+        }
     }
-  }
 
-  return dummy.next;
+    return dummy.next;
 }

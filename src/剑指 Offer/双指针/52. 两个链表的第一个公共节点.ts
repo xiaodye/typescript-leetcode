@@ -7,16 +7,16 @@ import ListNode from "../../data-structure/ListNode";
  * @returns
  */
 export default function getIntersectionNode(headA: ListNode, headB: ListNode): ListNode {
-  // 若其中一个链表为空，则肯定不存在公共节点
-  if (!headA || !headB) return null;
+    // 若其中一个链表为空，则肯定不存在公共节点
+    if (!headA || !headB) return null;
 
-  let p1 = headA;
-  let p2 = headB;
+    let p1 = headA;
+    let p2 = headB;
 
-  while (p1 !== p2) {
-    p1 = p1 !== null ? p1.next : headB;
-    p2 = p2 !== null ? p2.next : headA;
-  }
+    while (p1 !== p2) {
+        p1 = p1 !== null ? p1.next : headB;
+        p2 = p2 !== null ? p2.next : headA;
+    }
 
-  return p1;
+    return p1;
 }

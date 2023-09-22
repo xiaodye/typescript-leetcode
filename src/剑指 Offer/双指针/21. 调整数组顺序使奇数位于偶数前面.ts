@@ -4,19 +4,19 @@
  * @returns
  */
 export default function exchange(nums: number[]): number[] {
-  if (nums.length === 0) return nums;
+    if (nums.length === 0) return nums;
 
-  const res: number[] = [];
-  let left = 0;
-  let right = nums.length - 1;
+    const res: number[] = [];
+    let left = 0;
+    let right = nums.length - 1;
 
-  for (let i = 0; i < nums.length; i++) {
-    if (nums[i] % 2 === 1) {
-      res[left++] = nums[i];
-    } else {
-      res[right--] = nums[i];
+    for (let i = 0; i < nums.length; i++) {
+        if (nums[i] % 2 === 1) {
+            res[left++] = nums[i];
+        } else {
+            res[right--] = nums[i];
+        }
     }
-  }
 
-  return res;
+    return res;
 }

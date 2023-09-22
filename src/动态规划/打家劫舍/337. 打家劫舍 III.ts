@@ -8,30 +8,30 @@ import TreeNode from "../../data-structure/TreeNode";
  * @param root
  */
 export default function rob(root: TreeNode | null): number {
-  // 一定是要后序遍历，因为通过递归函数的返回值来做下一步计算
-  // 如果抢了当前节点，两个孩子就不能动，如果没抢当前节点，就可以考虑抢左右孩子（注意这里说的是“考虑”）
+    // 一定是要后序遍历，因为通过递归函数的返回值来做下一步计算
+    // 如果抢了当前节点，两个孩子就不能动，如果没抢当前节点，就可以考虑抢左右孩子（注意这里说的是“考虑”）
 
-  const map = new Map<TreeNode, number>();
+    const map = new Map<TreeNode, number>();
 
-  function traverse(root: TreeNode): number {
-    if (!root) return 0;
-    if (!root.left && !root.right) return root.val;
-    if (map.has(root)) return map.get(root);
+    function traverse(root: TreeNode): number {
+        if (!root) return 0;
+        if (!root.left && !root.right) return root.val;
+        if (map.has(root)) return map.get(root);
 
-    // 第一种情况，考虑父节点
-    let amount1 = root.val;
-    if (root.left) amount1 += rob(root.left.left) + rob(root.left.right);
-    if (root.right) amount1 += rob(root.right.left) + rob(root.right.right);
+        // 第一种情况，考虑父节点
+        let amount1 = root.val;
+        if (root.left) amount1 += rob(root.left.left) + rob(root.left.right);
+        if (root.right) amount1 += rob(root.right.left) + rob(root.right.right);
 
-    // 第二种情况，不考虑父节点，而考虑左右两个子节点（并不是一定要考虑，具体看递归情况）
-    let amount2 = rob(root.left) + rob(root.right);
+        // 第二种情况，不考虑父节点，而考虑左右两个子节点（并不是一定要考虑，具体看递归情况）
+        let amount2 = rob(root.left) + rob(root.right);
 
-    // 记忆化
-    map.set(root, Math.max(amount1, amount2));
+        // 记忆化
+        map.set(root, Math.max(amount1, amount2));
 
-    // 取其中的最大值
-    return Math.max(amount1, amount2);
-  }
+        // 取其中的最大值
+        return Math.max(amount1, amount2);
+    }
 
-  return traverse(root);
+    return traverse(root);
 }

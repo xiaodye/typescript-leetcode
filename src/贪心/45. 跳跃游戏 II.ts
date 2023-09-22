@@ -8,27 +8,27 @@
  * @returns
  */
 export default function jump(nums: number[]): number {
-  // 步数
-  let steps = 0;
+    // 步数
+    let steps = 0;
 
-  // end：下一次可达距离，maxPos：用于遍历中，记录最大可达距离
-  let end = 0;
-  let maxPos = 0;
+    // end：下一次可达距离，maxPos：用于遍历中，记录最大可达距离
+    let end = 0;
+    let maxPos = 0;
 
-  for (let i = 0; i < nums.length - 1; i++) {
-    // 当i + nums[i] >= len - 1，说明可以达到最后了，退出循环
-    if (i + nums[i] >= nums.length - 1) {
-      steps++;
-      break;
+    for (let i = 0; i < nums.length - 1; i++) {
+        // 当i + nums[i] >= len - 1，说明可以达到最后了，退出循环
+        if (i + nums[i] >= nums.length - 1) {
+            steps++;
+            break;
+        }
+
+        maxPos = Math.max(maxPos, i + nums[i]);
+
+        if (i === end) {
+            end = maxPos;
+            steps++;
+        }
     }
 
-    maxPos = Math.max(maxPos, i + nums[i]);
-
-    if (i === end) {
-      end = maxPos;
-      steps++;
-    }
-  }
-
-  return steps;
+    return steps;
 }

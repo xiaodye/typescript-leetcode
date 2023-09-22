@@ -5,17 +5,17 @@
  * @returns
  */
 export default function topKFrequent(nums: number[], k: number): number[] {
-  // key: 数字, value: 次数
-  const map = new Map<number, number>();
+    // key: 数字, value: 次数
+    const map = new Map<number, number>();
 
-  for (let i = 0; i < nums.length; i++) {
-    if (map.has(nums[i])) {
-      map.set(nums[i], map.get(nums[i]) + 1);
-    } else {
-      map.set(nums[i], 1);
+    for (let i = 0; i < nums.length; i++) {
+        if (map.has(nums[i])) {
+            map.set(nums[i], map.get(nums[i]) + 1);
+        } else {
+            map.set(nums[i], 1);
+        }
     }
-  }
 
-  // 先去重，再按频率排序，再截取数组
-  return [...new Set(nums)].sort((a, b) => map.get(b) - map.get(a)).slice(0, k);
+    // 先去重，再按频率排序，再截取数组
+    return [...new Set(nums)].sort((a, b) => map.get(b) - map.get(a)).slice(0, k);
 }

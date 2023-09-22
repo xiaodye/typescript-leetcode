@@ -13,108 +13,108 @@ import DLinkedNode from "../data-structure/DLinkedNode";
  *
  */
 export default class MyLinkedList {
-  public size: number;
-  public head: DLinkedNode | null;
-  public tail: DLinkedNode | null;
+    public size: number;
+    public head: DLinkedNode | null;
+    public tail: DLinkedNode | null;
 
-  constructor() {
-    this.size = 0;
-    this.head = new DLinkedNode(-1);
-    this.tail = new DLinkedNode(-1);
-    this.head.next = this.tail;
-    this.tail.prev = this.head;
-  }
-
-  get(index: number): number {
-    const node = this.getNode(index);
-    return node === null ? -1 : node.val;
-  }
-
-  addAtHead(val: number): void {
-    const node = new DLinkedNode(val);
-
-    node.next = this.head.next;
-    node.prev = this.head;
-    this.head.next.prev = node;
-    this.head.next = node;
-
-    this.size++;
-  }
-
-  addAtTail(val: number): void {
-    const node = new DLinkedNode(val);
-
-    node.next = this.tail;
-    node.prev = this.tail.prev;
-    this.tail.prev.next = node;
-    this.tail.prev = node;
-
-    this.size++;
-  }
-
-  addAtIndex(index: number, val: number): void {
-    if (index > this.size) {
-      return;
-    } else if (index === this.size) {
-      this.addAtTail(val);
-    } else if (index < 0) {
-      this.addAtHead(val);
-    } else {
-      const node = new DLinkedNode(val);
-      let curr = this.getNode(index);
-
-      node.next = curr;
-      node.prev = curr.prev;
-      curr.prev.next = node;
-      curr.prev = node;
-
-      this.size++;
-    }
-  }
-
-  deleteAtIndex(index: number): void {
-    const curr = this.getNode(index);
-
-    if (curr !== null) {
-      curr.prev.next = curr.next;
-      curr.next.prev = curr.prev;
-
-      this.size--;
-    }
-  }
-
-  getNode(index: number): DLinkedNode | null {
-    if (index < 0 || index > this.size - 1) {
-      return null;
+    constructor() {
+        this.size = 0;
+        this.head = new DLinkedNode(-1);
+        this.tail = new DLinkedNode(-1);
+        this.head.next = this.tail;
+        this.tail.prev = this.head;
     }
 
-    const isLeft = index < this.size / 2;
-    let curr = isLeft ? this.head : this.tail;
-
-    if (isLeft) {
-      for (let i = 0; i <= index; i++) {
-        curr = curr.next;
-      }
-    } else {
-      for (let i = 0; i < this.size - index; i++) {
-        curr = curr.prev;
-      }
+    get(index: number): number {
+        const node = this.getNode(index);
+        return node === null ? -1 : node.val;
     }
 
-    return curr;
-  }
+    addAtHead(val: number): void {
+        const node = new DLinkedNode(val);
+
+        node.next = this.head.next;
+        node.prev = this.head;
+        this.head.next.prev = node;
+        this.head.next = node;
+
+        this.size++;
+    }
+
+    addAtTail(val: number): void {
+        const node = new DLinkedNode(val);
+
+        node.next = this.tail;
+        node.prev = this.tail.prev;
+        this.tail.prev.next = node;
+        this.tail.prev = node;
+
+        this.size++;
+    }
+
+    addAtIndex(index: number, val: number): void {
+        if (index > this.size) {
+            return;
+        } else if (index === this.size) {
+            this.addAtTail(val);
+        } else if (index < 0) {
+            this.addAtHead(val);
+        } else {
+            const node = new DLinkedNode(val);
+            let curr = this.getNode(index);
+
+            node.next = curr;
+            node.prev = curr.prev;
+            curr.prev.next = node;
+            curr.prev = node;
+
+            this.size++;
+        }
+    }
+
+    deleteAtIndex(index: number): void {
+        const curr = this.getNode(index);
+
+        if (curr !== null) {
+            curr.prev.next = curr.next;
+            curr.next.prev = curr.prev;
+
+            this.size--;
+        }
+    }
+
+    getNode(index: number): DLinkedNode | null {
+        if (index < 0 || index > this.size - 1) {
+            return null;
+        }
+
+        const isLeft = index < this.size / 2;
+        let curr = isLeft ? this.head : this.tail;
+
+        if (isLeft) {
+            for (let i = 0; i <= index; i++) {
+                curr = curr.next;
+            }
+        } else {
+            for (let i = 0; i < this.size - index; i++) {
+                curr = curr.prev;
+            }
+        }
+
+        return curr;
+    }
 }
 
 // test
 function linkedListToString(linkedList: MyLinkedList) {
-  let curr = linkedList.head;
-  let str = "";
-  while (curr) {
-    str += curr.val + "->";
-    curr = curr.next;
-  }
+    let curr = linkedList.head;
+    let str = "";
+    while (curr) {
+        str += curr.val + "->";
+        curr = curr.next;
+    }
 
-  console.log(str);
+    console.log(str);
 }
 
 const linkedList = new MyLinkedList();

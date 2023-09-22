@@ -8,21 +8,21 @@
  * @returns
  */
 export default function findDisappearedNumbers(nums: number[]): number[] {
-  const res: number[] = [];
-  const n = nums.length;
+    const res: number[] = [];
+    const n = nums.length;
 
-  for (let i = 0; i < n; i++) {
-    const x = (nums[i] - 1) % n;
-    nums[x] += n;
-  }
-
-  for (let i = 0; i < n; i++) {
-    if (nums[i] <= n) {
-      res.push(i + 1);
+    for (let i = 0; i < n; i++) {
+        const x = (nums[i] - 1) % n;
+        nums[x] += n;
     }
-  }
 
-  return res;
+    for (let i = 0; i < n; i++) {
+        if (nums[i] <= n) {
+            res.push(i + 1);
+        }
+    }
+
+    return res;
 }
 
 /**
@@ -35,29 +35,29 @@ export default function findDisappearedNumbers(nums: number[]): number[] {
  * @returns
  */
 export function findDisappearedNumbers2(nums: number[]): number[] {
-  const len = nums.length;
-  nums = [...new Set(nums)].sort((a, b) => a - b);
-  const res: number[] = [];
+    const len = nums.length;
+    nums = [...new Set(nums)].sort((a, b) => a - b);
+    const res: number[] = [];
 
-  let i = 0;
-  let j = 1;
+    let i = 0;
+    let j = 1;
 
-  while (j <= len && i < nums.length) {
-    if (nums[i] === j) {
-      i++;
-      j++;
-    } else {
-      res.push(j);
-      j++;
+    while (j <= len && i < nums.length) {
+        if (nums[i] === j) {
+            i++;
+            j++;
+        } else {
+            res.push(j);
+            j++;
+        }
     }
-  }
 
-  while (j <= len) {
-    res.push(j);
-    j++;
-  }
+    while (j <= len) {
+        res.push(j);
+        j++;
+    }
 
-  return res;
+    return res;
 }
 
 debugger;

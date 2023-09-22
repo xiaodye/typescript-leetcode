@@ -4,22 +4,22 @@
  * @param matrix
  */
 export default function rotate(matrix: number[][]): void {
-  // 主要看下标怎么变，[i][j] = [j][len - 1 - i]
-  // 直接换会导致有些数据会被替换，需要创建新数组
-  const len = matrix.length;
-  const newMatrix = Array.from({ length: len }, () => new Array<number>(len).fill(0));
+    // 主要看下标怎么变，[i][j] = [j][len - 1 - i]
+    // 直接换会导致有些数据会被替换，需要创建新数组
+    const len = matrix.length;
+    const newMatrix = Array.from({ length: len }, () => new Array<number>(len).fill(0));
 
-  // 把新的数组复制到 newMatrix
-  for (let i = 0; i < len; i++) {
-    for (let j = 0; j < len; j++) {
-      newMatrix[j][len - 1 - i] = matrix[i][j];
+    // 把新的数组复制到 newMatrix
+    for (let i = 0; i < len; i++) {
+        for (let j = 0; j < len; j++) {
+            newMatrix[j][len - 1 - i] = matrix[i][j];
+        }
     }
-  }
 
-  // 更新数组
-  for (let i = 0; i < len; i++) {
-    for (let j = 0; j < len; j++) {
-      matrix[i][j] = newMatrix[i][j];
+    // 更新数组
+    for (let i = 0; i < len; i++) {
+        for (let j = 0; j < len; j++) {
+            matrix[i][j] = newMatrix[i][j];
+        }
     }
-  }
 }

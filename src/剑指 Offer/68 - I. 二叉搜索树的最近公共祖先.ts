@@ -8,15 +8,15 @@ import TreeNode from "../data-structure/TreeNode";
  * @returns
  */
 export default function lowestCommonAncestor(
-  root: TreeNode | null,
-  p: TreeNode | null,
-  q: TreeNode | null
+    root: TreeNode | null,
+    p: TreeNode | null,
+    q: TreeNode | null,
 ): TreeNode | null {
-  if (p.val > root.val && q.val > root.val) {
-    return lowestCommonAncestor(root.right, p, q);
-  } else if (p.val < root.val && q.val < root.val) {
-    return lowestCommonAncestor(root.left, p, q);
-  } else {
-    return root;
-  }
+    if (p.val > root.val && q.val > root.val) {
+        return lowestCommonAncestor(root.right, p, q);
+    } else if (p.val < root.val && q.val < root.val) {
+        return lowestCommonAncestor(root.left, p, q);
+    } else {
+        return root;
+    }
 }

@@ -5,24 +5,24 @@
  * @returns
  */
 export default function findContinuousSequence(target: number): number[][] {
-  const res: number[][] = [];
-  const deque: number[] = [];
-  let sum = 0;
+    const res: number[][] = [];
+    const deque: number[] = [];
+    let sum = 0;
 
-  for (let i = 1; i <= Math.ceil(target / 2); i++) {
-    deque.push(i);
-    sum += i;
+    for (let i = 1; i <= Math.ceil(target / 2); i++) {
+        deque.push(i);
+        sum += i;
 
-    // 当前窗口元素和大于 target, 首部出队
-    while (sum > target) {
-      const front = deque.shift();
-      sum -= front;
+        // 当前窗口元素和大于 target, 首部出队
+        while (sum > target) {
+            const front = deque.shift();
+            sum -= front;
+        }
+
+        if (sum === target) {
+            res.push([...deque]);
+        }
     }
 
-    if (sum === target) {
-      res.push([...deque]);
-    }
-  }
-
-  return res;
+    return res;
 }

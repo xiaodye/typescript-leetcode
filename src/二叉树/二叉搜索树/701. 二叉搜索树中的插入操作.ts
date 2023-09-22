@@ -8,16 +8,16 @@ import TreeNode from "../../data-structure/TreeNode";
  * @returns
  */
 export default function insertIntoBST(root: TreeNode | null, val: number): TreeNode | null {
-  if (!root) {
-    root = new TreeNode(val);
+    if (!root) {
+        root = new TreeNode(val);
+        return root;
+    }
+
+    if (root.val > val) {
+        root.left = insertIntoBST(root.left, val);
+    } else {
+        root.right = insertIntoBST(root.right, val);
+    }
+
     return root;
-  }
-
-  if (root.val > val) {
-    root.left = insertIntoBST(root.left, val);
-  } else {
-    root.right = insertIntoBST(root.right, val);
-  }
-
-  return root;
 }

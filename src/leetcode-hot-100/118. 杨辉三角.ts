@@ -4,22 +4,24 @@
  * @param numRows
  * @returns
  */
-export default function generate(numRows: number): number[][] {
-  const dp = Array.from({ length: numRows + 1 }, () => new Array<number>(numRows + 1).fill(0));
-  const res: number[][] = [];
+function generate(numRows: number): number[][] {
+    const dp = Array.from({ length: numRows + 1 }, () => new Array<number>(numRows + 1).fill(0));
+    const res: number[][] = [];
 
-  dp[0][1] = 1;
-  res.push([1]);
+    dp[0][1] = 1;
+    res.push([1]);
 
-  for (let i = 1; i < numRows; i++) {
-    const arr: number[] = [];
-    for (let j = 1; j < i + 2; j++) {
-      dp[i][j] = dp[i - 1][j - 1] + dp[i - 1][j];
-      arr.push(dp[i][j]);
+    for (let i = 1; i < numRows; i++) {
+        const arr: number[] = [];
+        for (let j = 1; j < i + 2; j++) {
+            dp[i][j] = dp[i - 1][j - 1] + dp[i - 1][j];
+            arr.push(dp[i][j]);
+        }
+
+        res.push(arr);
     }
 
-    res.push(arr);
-  }
-
-  return res;
+    return res;
 }
+
+export default generate;

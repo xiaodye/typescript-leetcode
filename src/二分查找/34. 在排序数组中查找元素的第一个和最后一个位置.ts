@@ -13,14 +13,14 @@
  * @returns
  */
 export default function searchRange(nums: number[], target: number): number[] {
-  const leftIndex = binarySearch(nums, target - 1);
-  const rightIndex = binarySearch(nums, target) - 1;
+    const leftIndex = binarySearch(nums, target - 1);
+    const rightIndex = binarySearch(nums, target) - 1;
 
-  if (leftIndex <= rightIndex && nums[leftIndex] === target) {
-    return [leftIndex, rightIndex];
-  }
+    if (leftIndex <= rightIndex && nums[leftIndex] === target) {
+        return [leftIndex, rightIndex];
+    }
 
-  return [-1, -1];
+    return [-1, -1];
 }
 
 /**
@@ -30,20 +30,20 @@ export default function searchRange(nums: number[], target: number): number[] {
  * @returns
  */
 function binarySearch(nums: number[], target: number): number {
-  let left = 0;
-  let right = nums.length - 1;
-  let ans = nums.length;
+    let left = 0;
+    let right = nums.length - 1;
+    let ans = nums.length;
 
-  while (left <= right) {
-    const mid = Math.floor(left + (right - left) / 2);
+    while (left <= right) {
+        const mid = Math.floor(left + (right - left) / 2);
 
-    if (nums[mid] > target) {
-      right = mid - 1;
-      ans = mid;
-    } else {
-      left = mid + 1;
+        if (nums[mid] > target) {
+            right = mid - 1;
+            ans = mid;
+        } else {
+            left = mid + 1;
+        }
     }
-  }
 
-  return ans;
+    return ans;
 }

@@ -5,18 +5,18 @@
  * @returns
  */
 export default function numSquares(n: number): number {
-  // dp[i]: 和为 i 的完全平方数的最小数量
-  // dp[i] = Math.min(dp[i - 1*1]+1, dp[i - 2*2]+1, ...)
-  const dp = new Array<number>(n + 1).fill(Infinity);
+    // dp[i]: 和为 i 的完全平方数的最小数量
+    // dp[i] = Math.min(dp[i - 1*1]+1, dp[i - 2*2]+1, ...)
+    const dp = new Array<number>(n + 1).fill(Infinity);
 
-  // 初始化 dp ，dp[0] = 0; 0 就是什么都不放
-  dp[0] = 0;
+    // 初始化 dp ，dp[0] = 0; 0 就是什么都不放
+    dp[0] = 0;
 
-  for (let i = 1; i <= n; i++) {
-    for (let j = 0; j * j <= i; j++) {
-      dp[i] = Math.min(dp[i], dp[i - j * j] + 1);
+    for (let i = 1; i <= n; i++) {
+        for (let j = 0; j * j <= i; j++) {
+            dp[i] = Math.min(dp[i], dp[i - j * j] + 1);
+        }
     }
-  }
 
-  return dp[n];
+    return dp[n];
 }

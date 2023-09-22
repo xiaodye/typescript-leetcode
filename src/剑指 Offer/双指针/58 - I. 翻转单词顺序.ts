@@ -5,27 +5,27 @@
  * @returns
  */
 export default function reverseWords(s: string): string {
-  const dequeue: string[] = [];
-  let word = "";
+    const dequeue: string[] = [];
+    let word = "";
 
-  let l = 0;
-  let r = s.length - 1;
+    let l = 0;
+    let r = s.length - 1;
 
-  while (s[l] === " ") l++;
-  while (s[r] === " ") r--;
+    while (s[l] === " ") l++;
+    while (s[r] === " ") r--;
 
-  while (l <= r) {
-    if (s[l] === " " && word !== "") {
-      dequeue.unshift(word);
-      word = "";
-    } else if (s[l] !== " ") {
-      word += s[l];
+    while (l <= r) {
+        if (s[l] === " " && word !== "") {
+            dequeue.unshift(word);
+            word = "";
+        } else if (s[l] !== " ") {
+            word += s[l];
+        }
+
+        l++;
     }
 
-    l++;
-  }
+    dequeue.unshift(word);
 
-  dequeue.unshift(word);
-
-  return dequeue.join(" ");
+    return dequeue.join(" ");
 }

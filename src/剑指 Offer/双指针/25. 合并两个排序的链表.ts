@@ -7,23 +7,23 @@ import ListNode from "../../data-structure/ListNode";
  * @returns
  */
 export default function mergeTwoLists(l1: ListNode, l2: ListNode): ListNode {
-  // 创建一个虚拟头结点，因为我们不知道哪个是第一个节点
-  const dummy = new ListNode(-1);
-  let curr = dummy;
+    // 创建一个虚拟头结点，因为我们不知道哪个是第一个节点
+    const dummy = new ListNode(-1);
+    let curr = dummy;
 
-  while (l1 && l2) {
-    if (l1.val <= l2.val) {
-      curr.next = l1;
-      l1 = l1.next;
-    } else {
-      curr.next = l2;
-      l2 = l2.next;
+    while (l1 && l2) {
+        if (l1.val <= l2.val) {
+            curr.next = l1;
+            l1 = l1.next;
+        } else {
+            curr.next = l2;
+            l2 = l2.next;
+        }
+
+        curr = curr.next;
     }
 
-    curr = curr.next;
-  }
+    curr.next = l1 ? l1 : l2;
 
-  curr.next = l1 ? l1 : l2;
-
-  return dummy.next;
+    return dummy.next;
 }

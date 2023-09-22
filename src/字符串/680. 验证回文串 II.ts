@@ -4,21 +4,21 @@
  * @returns
  */
 export default function validPalindrome(s: string): boolean {
-  // 定义头尾指针
-  let l = 0;
-  let r = s.length - 1;
+    // 定义头尾指针
+    let l = 0;
+    let r = s.length - 1;
 
-  while (l < r) {
-    // 如果出现不等的情况，可以试着删除左边或者右边一个字符在做判断
-    if (s[l] !== s[r]) {
-      return isPalindrome(s, l + 1, r) || isPalindrome(s, l, r - 1);
+    while (l < r) {
+        // 如果出现不等的情况，可以试着删除左边或者右边一个字符在做判断
+        if (s[l] !== s[r]) {
+            return isPalindrome(s, l + 1, r) || isPalindrome(s, l, r - 1);
+        }
+
+        l++;
+        r--;
     }
 
-    l++;
-    r--;
-  }
-
-  return true;
+    return true;
 }
 
 /**
@@ -29,13 +29,13 @@ export default function validPalindrome(s: string): boolean {
  * @returns
  */
 function isPalindrome(str: string, l: number, r: number): boolean {
-  while (l < r) {
-    if (str[l] != str[r]) {
-      return false;
-    }
+    while (l < r) {
+        if (str[l] != str[r]) {
+            return false;
+        }
 
-    l++;
-    r--;
-  }
-  return true; // 始终没有不一样，返回true
+        l++;
+        r--;
+    }
+    return true; // 始终没有不一样，返回true
 }

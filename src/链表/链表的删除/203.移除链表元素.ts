@@ -12,19 +12,19 @@ import ListNode from "../../data-structure/ListNode";
  * @returns
  */
 export default function removeElements(head: ListNode | null, val: number): ListNode | null {
-  // 定义一个虚拟头结点
-  const dummy = new ListNode(-1, head);
+    // 定义一个虚拟头结点
+    const dummy = new ListNode(-1, head);
 
-  // curr用于遍历
-  let curr = dummy;
+    // curr用于遍历
+    let curr = dummy;
 
-  while (curr.next) {
-    if (curr.next.val === val) {
-      curr.next = curr.next.next;
-    } else {
-      curr = curr.next;
+    while (curr.next) {
+        if (curr.next.val === val) {
+            curr.next = curr.next.next;
+        } else {
+            curr = curr.next;
+        }
     }
-  }
 
-  return dummy.next;
+    return dummy.next;
 }

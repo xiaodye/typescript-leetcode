@@ -6,18 +6,18 @@ import ListNode from "../../data-structure/ListNode";
  * @returns
  */
 export default function reverseList(head: ListNode): ListNode {
-  if (!head || !head.next) return head;
+    if (!head || !head.next) return head;
 
-  let prev: ListNode = null;
-  let next: ListNode = null;
-  let curr = head;
+    let prev: ListNode = null;
+    let next: ListNode = null;
+    let curr = head;
 
-  while (curr) {
-    next = curr.next;
-    curr.next = prev;
-    prev = curr;
-    curr = next;
-  }
+    while (curr) {
+        next = curr.next;
+        curr.next = prev;
+        prev = curr;
+        curr = next;
+    }
 
-  return prev;
+    return prev;
 }

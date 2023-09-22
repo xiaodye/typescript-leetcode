@@ -6,21 +6,21 @@
  * @returns
  */
 export default function removeDuplicates(nums: number[]): number {
-  if (nums.length <= 1) return nums.length;
+    if (nums.length <= 1) return nums.length;
 
-  // 数组有序，相同元素一定会相同
-  // 采用双指针，快慢指针
+    // 数组有序，相同元素一定会相同
+    // 采用双指针，快慢指针
 
-  let i = 1;
+    let i = 1;
 
-  // 从第二个元素开始
-  for (let j = 1; j < nums.length; j++) {
-    if (nums[j] === nums[j - 1]) continue;
+    // 从第二个元素开始
+    for (let j = 1; j < nums.length; j++) {
+        if (nums[j] === nums[j - 1]) continue;
 
-    nums[i] = nums[j];
-    i++;
-  }
+        nums[i] = nums[j];
+        i++;
+    }
 
-  // 最终 i 对应的位置最后元素的索引位置 + 1, 即数组长度
-  return i;
+    // 最终 i 对应的位置最后元素的索引位置 + 1, 即数组长度
+    return i;
 }

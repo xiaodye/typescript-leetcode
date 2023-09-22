@@ -6,18 +6,18 @@
  * @returns
  */
 export default function missingNumber(nums: number[]): number {
-  let l = 0;
-  let r = nums.length - 1;
+    let l = 0;
+    let r = nums.length - 1;
 
-  while (l <= r) {
-    const mid = Math.floor(l + (r - l) / 2);
+    while (l <= r) {
+        const mid = Math.floor(l + (r - l) / 2);
 
-    if (nums[mid] === mid) {
-      l = mid + 1;
-    } else {
-      r = mid - 1;
+        if (nums[mid] === mid) {
+            l = mid + 1;
+        } else {
+            r = mid - 1;
+        }
     }
-  }
 
-  return l;
+    return l;
 }

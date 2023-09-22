@@ -5,21 +5,21 @@
  * @returns
  */
 export default function dailyTemperatures(temperatures: number[]): number[] {
-  const len = temperatures.length;
-  const res = new Array<number>(len).fill(0);
+    const len = temperatures.length;
+    const res = new Array<number>(len).fill(0);
 
-  // 初始化一个递减栈
-  const stack: number[] = [];
+    // 初始化一个递减栈
+    const stack: number[] = [];
 
-  for (let i = 0; i < len; i++) {
-    while (stack.length !== 0 && temperatures[i] > temperatures[stack[stack.length - 1]]) {
-      const top = stack.pop();
-      res[top] = i - top;
+    for (let i = 0; i < len; i++) {
+        while (stack.length !== 0 && temperatures[i] > temperatures[stack[stack.length - 1]]) {
+            const top = stack.pop();
+            res[top] = i - top;
+        }
+
+        // 存储索引
+        stack.push(i);
     }
 
-    // 存储索引
-    stack.push(i);
-  }
-
-  return res;
+    return res;
 }

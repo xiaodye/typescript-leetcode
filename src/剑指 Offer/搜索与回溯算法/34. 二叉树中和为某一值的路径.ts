@@ -8,30 +8,30 @@ import TreeNode from "../../data-structure/TreeNode";
  * @returns
  */
 export default function pathSum(root: TreeNode, targetSum: number): number[][] {
-  if (!root) return [];
+    if (!root) return [];
 
-  const res: number[][] = [];
-  const path: number[] = [];
+    const res: number[][] = [];
+    const path: number[] = [];
 
-  function backtrack(root: TreeNode, currSum: number): void {
-    if (!root) return;
+    function backtrack(root: TreeNode, currSum: number): void {
+        if (!root) return;
 
-    path.push(root.val);
-    currSum -= root.val;
+        path.push(root.val);
+        currSum -= root.val;
 
-    // 节点为叶子节点，且和为targetSum
-    if (!root.left && !root.right && currSum === 0) {
-      res.push([...path]);
+        // 节点为叶子节点，且和为targetSum
+        if (!root.left && !root.right && currSum === 0) {
+            res.push([...path]);
+        }
+
+        backtrack(root.left, currSum);
+        backtrack(root.right, currSum);
+
+        // 回溯
+        path.pop();
     }
 
-    backtrack(root.left, currSum);
-    backtrack(root.right, currSum);
+    backtrack(root, targetSum);
 
-    // 回溯
-    path.pop();
-  }
-
-  backtrack(root, targetSum);
-
-  return res;
+    return res;
 }

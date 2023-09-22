@@ -4,11 +4,11 @@
  * @returns
  */
 export default function printNumbers(n: number): number[] {
-  const res: number[] = [];
+    const res: number[] = [];
 
-  for (let i = 1; i < Math.pow(10, n); i++) {
-    res.push(i);
-  }
+    for (let i = 1; i < Math.pow(10, n); i++) {
+        res.push(i);
+    }
 
-  return res;
+    return res;
 }

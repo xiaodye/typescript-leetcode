@@ -7,21 +7,21 @@ import TreeNode from "../../data-structure/TreeNode";
  * @returns
  */
 export default function sortedArrayToBST(nums: number[]): TreeNode | null {
-  if (nums.length === 0) return null;
+    if (nums.length === 0) return null;
 
-  // 定义一个递归函数，用于构造BST
-  function buildBST(left: number, right: number): TreeNode | null {
-    if (left > right) return null;
+    // 定义一个递归函数，用于构造BST
+    function buildBST(left: number, right: number): TreeNode | null {
+        if (left > right) return null;
 
-    const mid = Math.floor(left + (right - left) / 2);
-    const root = new TreeNode(nums[mid]);
+        const mid = Math.floor(left + (right - left) / 2);
+        const root = new TreeNode(nums[mid]);
 
-    // 递归构造左右子树
-    root.left = buildBST(left, mid - 1);
-    root.right = buildBST(mid + 1, right);
+        // 递归构造左右子树
+        root.left = buildBST(left, mid - 1);
+        root.right = buildBST(mid + 1, right);
 
-    return root;
-  }
+        return root;
+    }
 
-  return buildBST(0, nums.length - 1);
+    return buildBST(0, nums.length - 1);
 }

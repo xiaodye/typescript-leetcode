@@ -7,20 +7,20 @@ import TreeNode from "../../data-structure/TreeNode";
  * @param inorder
  */
 export default function buildTree(preorder: number[], inorder: number[]): TreeNode {
-  const len = preorder.length;
+    const len = preorder.length;
 
-  function build(preL: number, preR: number, inL: number, inR: number): TreeNode {
-    if (preL > preR) return null;
+    function build(preL: number, preR: number, inL: number, inR: number): TreeNode {
+        if (preL > preR) return null;
 
-    const root = new TreeNode(preorder[preL]);
-    const k = inorder.indexOf(root.val);
-    const numLeft = k - inL;
+        const root = new TreeNode(preorder[preL]);
+        const k = inorder.indexOf(root.val);
+        const numLeft = k - inL;
 
-    root.left = build(preL + 1, preL + numLeft, inL, k - 1);
-    root.right = build(preL + numLeft + 1, preR, k + 1, inR);
+        root.left = build(preL + 1, preL + numLeft, inL, k - 1);
+        root.right = build(preL + numLeft + 1, preR, k + 1, inR);
 
-    return root;
-  }
+        return root;
+    }
 
-  return build(0, len - 1, 0, len - 1);
+    return build(0, len - 1, 0, len - 1);
 }

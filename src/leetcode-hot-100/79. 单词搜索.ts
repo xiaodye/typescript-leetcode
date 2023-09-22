@@ -7,48 +7,48 @@
  * @returns
  */
 export default function exist(board: string[][], word: string): boolean {
-  const rows = board.length;
-  const columns = board[0].length;
-  const visted = Array.from({ length: rows }, () => new Array<boolean>(columns).fill(false));
-  const directions = [
-    [0, 1],
-    [0, -1],
-    [1, 0],
-    [-1, 0],
-  ];
+    const rows = board.length;
+    const columns = board[0].length;
+    const visted = Array.from({ length: rows }, () => new Array<boolean>(columns).fill(false));
+    const directions = [
+        [0, 1],
+        [0, -1],
+        [1, 0],
+        [-1, 0],
+    ];
 
-  function dfs(i: number, j: number, k: number): boolean {
-    if (board[i][j] !== word[k]) return false;
-    if (k === word.length - 1) return true;
+    function dfs(i: number, j: number, k: number): boolean {
+        if (board[i][j] !== word[k]) return false;
+        if (k === word.length - 1) return true;
 
-    visted[i][j] = true;
+        visted[i][j] = true;
 
-    let res = false;
+        let res = false;
 
-    for (const [dx, dy] of directions) {
-      const newi = i + dx;
-      const newj = j + dy;
+        for (const [dx, dy] of directions) {
+            const newi = i + dx;
+            const newj = j + dy;
 
-      if (newi >= 0 && newi < rows && newj >= 0 && newj < columns && !visted[newi][newj]) {
-        const flag = dfs(newi, newj, k + 1);
+            if (newi >= 0 && newi < rows && newj >= 0 && newj < columns && !visted[newi][newj]) {
+                const flag = dfs(newi, newj, k + 1);
 
-        if (flag) {
-          res = true;
-          break;
+                if (flag) {
+                    res = true;
+                    break;
+                }
+            }
         }
-      }
+
+        visted[i][j] = false;
+        return res;
     }
 
-    visted[i][j] = false;
-    return res;
-  }
-
-  for (let i = 0; i < rows; i++) {
-    for (let j = 0; j < columns; j++) {
-      const flag = dfs(i, j, 0);
-      if (flag) return true;
+    for (let i = 0; i < rows; i++) {
+        for (let j = 0; j < columns; j++) {
+            const flag = dfs(i, j, 0);
+            if (flag) return true;
+        }
     }
-  }
 
-  return false;
+    return false;
 }

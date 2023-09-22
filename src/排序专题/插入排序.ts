@@ -7,26 +7,26 @@
  * @returns
  */
 export default function insertSort(arr: number[]): number[] {
-  /**
-   * 外层循环代表要进行的轮数，每轮可以排序好一个数。
-   * i用于标识每次被插入的元素的索引，temp用来保存当前需要插入的元素。
-   * j用于定位要插入的位置。
-   */
-  for (let i = 1; i < arr.length; i++) {
-    let j = i;
-    const temp = arr[i];
+    /**
+     * 外层循环代表要进行的轮数，每轮可以排序好一个数。
+     * i用于标识每次被插入的元素的索引，temp用来保存当前需要插入的元素。
+     * j用于定位要插入的位置。
+     */
+    for (let i = 1; i < arr.length; i++) {
+        let j = i;
+        const temp = arr[i];
 
-    while (j - 1 >= 0 && arr[j - 1] > temp) {
-      // 这个赋值操作相当于索引为j-1的元素往后挪，不用担心arr[j]，它已经提前被保存到了temp
-      arr[j] = arr[j - 1];
-      j--;
+        while (j - 1 >= 0 && arr[j - 1] > temp) {
+            // 这个赋值操作相当于索引为j-1的元素往后挪，不用担心arr[j]，它已经提前被保存到了temp
+            arr[j] = arr[j - 1];
+            j--;
+        }
+
+        // 循环让位，最后得到的 j 就是 temp 的正确索引
+        arr[j] = temp;
     }
 
-    // 循环让位，最后得到的 j 就是 temp 的正确索引
-    arr[j] = temp;
-  }
-
-  return arr;
+    return arr;
 }
 
 // test

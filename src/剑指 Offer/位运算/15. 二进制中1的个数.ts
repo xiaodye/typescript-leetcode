@@ -4,13 +4,13 @@
  * @returns
  */
 export default function hammingWeight(n: number): number {
-  let res = 0;
+    let res = 0;
 
-  while (n !== 0) {
-    // 每次反转最低位的1，最终变成0
-    n &= n - 1;
-    res++;
-  }
+    while (n !== 0) {
+        // 每次反转最低位的1，最终变成0
+        n &= n - 1;
+        res++;
+    }
 
-  return res;
+    return res;
 }

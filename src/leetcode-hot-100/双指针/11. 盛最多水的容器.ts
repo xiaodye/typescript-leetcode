@@ -6,20 +6,20 @@
  * @returns
  */
 export default function maxArea(height: number[]): number {
-  let l = 0;
-  let r = height.length - 1;
-  let area = 0;
+    let l = 0;
+    let r = height.length - 1;
+    let area = 0;
 
-  while (l < r) {
-    area = Math.max(Math.min(height[l], height[r]) * (r - l), area);
+    while (l < r) {
+        area = Math.max(Math.min(height[l], height[r]) * (r - l), area);
 
-    // 只能移动短板 area 才有可能增大
-    if (height[l] <= height[r]) {
-      l++;
-    } else {
-      r--;
+        // 只能移动短板 area 才有可能增大
+        if (height[l] <= height[r]) {
+            l++;
+        } else {
+            r--;
+        }
     }
-  }
 
-  return area;
+    return area;
 }

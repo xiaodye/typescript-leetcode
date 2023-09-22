@@ -7,17 +7,17 @@ import ListNode from "../data-structure/ListNode";
  * @returns
  */
 export default function middleNode(head: ListNode | null): ListNode | null {
-  // 只有一个节点情况
-  if (!head || !head.next) return head;
+    // 只有一个节点情况
+    if (!head || !head.next) return head;
 
-  // 快慢指针
-  let slow = head;
-  let fast = head;
+    // 快慢指针
+    let slow = head;
+    let fast = head;
 
-  while (fast && fast.next) {
-    slow = slow.next;
-    fast = fast.next.next;
-  }
+    while (fast && fast.next) {
+        slow = slow.next;
+        fast = fast.next.next;
+    }
 
-  return slow;
+    return slow;
 }

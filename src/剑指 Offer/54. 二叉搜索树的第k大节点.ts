@@ -7,20 +7,20 @@ import TreeNode from "../data-structure/TreeNode";
  * @returns
  */
 export default function kthLargest(root: TreeNode | null, k: number): number {
-  let res = 0;
+    let res = 0;
 
-  function traversal(root: TreeNode): void {
-    if (!root || k === 0) return;
+    function traversal(root: TreeNode): void {
+        if (!root || k === 0) return;
 
-    traversal(root.right);
-    if (--k === 0) {
-      res = root.val;
-      return;
+        traversal(root.right);
+        if (--k === 0) {
+            res = root.val;
+            return;
+        }
+        traversal(root.left);
     }
-    traversal(root.left);
-  }
 
-  traversal(root);
+    traversal(root);
 
-  return res;
+    return res;
 }

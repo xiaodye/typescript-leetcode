@@ -9,9 +9,9 @@
  * @returns
  */
 export default function intersection(nums1: number[], nums2: number[]): number[] {
-  // 对两个数组进行去重，生成 set
-  const nums1_set = new Set(nums1);
-  const nums2_set = new Set(nums2);
+    // 对两个数组进行去重，生成 set
+    const nums1_set = new Set(nums1);
+    const nums2_set = new Set(nums2);
 
-  return [...nums1_set].filter((x) => nums2_set.has(x));
+    return [...nums1_set].filter((x) => nums2_set.has(x));
 }

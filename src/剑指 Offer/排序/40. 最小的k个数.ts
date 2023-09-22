@@ -5,13 +5,13 @@
  * @returns
  */
 export default function getLeastNumbers(arr: number[], k: number): number[] {
-  arr.sort((a, b) => a - b);
+    arr.sort((a, b) => a - b);
 
-  const res: number[] = [];
+    const res: number[] = [];
 
-  for (let i = 0; i < k; i++) {
-    res.push(arr[i]);
-  }
+    for (let i = 0; i < k; i++) {
+        res.push(arr[i]);
+    }
 
-  return res;
+    return res;
 }

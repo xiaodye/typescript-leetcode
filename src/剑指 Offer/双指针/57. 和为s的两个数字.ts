@@ -6,19 +6,19 @@
  * @returns
  */
 export default function twoSum(nums: number[], target: number): number[] {
-  let i = 0;
-  let j = nums.length - 1;
+    let i = 0;
+    let j = nums.length - 1;
 
-  while (i < j) {
-    const sum = nums[i] + nums[j];
-    if (sum === target) {
-      return [nums[i], nums[j]];
-    } else if (sum > target) {
-      j--;
-    } else {
-      i++;
+    while (i < j) {
+        const sum = nums[i] + nums[j];
+        if (sum === target) {
+            return [nums[i], nums[j]];
+        } else if (sum > target) {
+            j--;
+        } else {
+            i++;
+        }
     }
-  }
 
-  return [];
+    return [];
 }

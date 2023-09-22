@@ -7,19 +7,19 @@
  * @returns
  */
 export default function combinationSum4(nums: number[], target: number): number {
-  // dp[i]: 凑成目标数 i 的排列组合数
-  // dp[i] = sum(dp[i - nums[0]], dp[i- nums[1]],...)
-  // dp[0] = 1; 凑成 0 的排列组合数有一种，就是什么都不放
-  const dp = new Array<number>(target + 1).fill(0);
-  dp[0] = 1;
+    // dp[i]: 凑成目标数 i 的排列组合数
+    // dp[i] = sum(dp[i - nums[0]], dp[i- nums[1]],...)
+    // dp[0] = 1; 凑成 0 的排列组合数有一种，就是什么都不放
+    const dp = new Array<number>(target + 1).fill(0);
+    dp[0] = 1;
 
-  for (let i = 1; i <= target; i++) {
-    for (let j = 0; j < nums.length; j++) {
-      if (i >= nums[j]) {
-        dp[i] += dp[i - nums[j]];
-      }
+    for (let i = 1; i <= target; i++) {
+        for (let j = 0; j < nums.length; j++) {
+            if (i >= nums[j]) {
+                dp[i] += dp[i - nums[j]];
+            }
+        }
     }
-  }
 
-  return dp[target];
+    return dp[target];
 }

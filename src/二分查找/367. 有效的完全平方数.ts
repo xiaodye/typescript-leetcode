@@ -5,21 +5,21 @@
  * @returns
  */
 export default function isPerfectSquare(num: number): boolean {
-  let l = 1;
-  let r = num;
+    let l = 1;
+    let r = num;
 
-  while (l <= r) {
-    const mid = Math.floor(l + (r - l) / 2);
-    const square = mid * mid;
+    while (l <= r) {
+        const mid = Math.floor(l + (r - l) / 2);
+        const square = mid * mid;
 
-    if (square > num) {
-      r = mid - 1;
-    } else if (square < num) {
-      l = mid + 1;
-    } else {
-      return true;
+        if (square > num) {
+            r = mid - 1;
+        } else if (square < num) {
+            l = mid + 1;
+        } else {
+            return true;
+        }
     }
-  }
 
-  return false;
+    return false;
 }

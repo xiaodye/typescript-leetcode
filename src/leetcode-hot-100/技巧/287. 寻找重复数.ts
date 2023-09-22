@@ -6,15 +6,15 @@
  * @returns
  */
 export default function findDuplicate(nums: number[]): number {
-  const set = new Set<number>();
+    const set = new Set<number>();
 
-  for (let i = 0; i < nums.length; i++) {
-    if (!set.has(nums[i])) {
-      set.add(nums[i]);
-    } else {
-      return nums[i];
+    for (let i = 0; i < nums.length; i++) {
+        if (!set.has(nums[i])) {
+            set.add(nums[i]);
+        } else {
+            return nums[i];
+        }
     }
-  }
 
-  return 0;
+    return 0;
 }

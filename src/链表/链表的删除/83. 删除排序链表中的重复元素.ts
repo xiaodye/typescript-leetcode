@@ -6,16 +6,16 @@ import ListNode from "../../data-structure/ListNode";
  * @returns
  */
 export default function deleteDuplicates(head: ListNode | null): ListNode | null {
-  let curr = head;
+    let curr = head;
 
-  while (curr && curr.next) {
-    // 相等则删除不等则跳过
-    if (curr.val === curr.next.val) {
-      curr.next = curr.next.next;
-    } else {
-      curr = curr.next;
+    while (curr && curr.next) {
+        // 相等则删除不等则跳过
+        if (curr.val === curr.next.val) {
+            curr.next = curr.next.next;
+        } else {
+            curr = curr.next;
+        }
     }
-  }
 
-  return head;
+    return head;
 }

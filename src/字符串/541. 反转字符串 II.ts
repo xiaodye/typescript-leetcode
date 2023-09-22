@@ -10,21 +10,21 @@
  * @param k
  */
 export default function reverseStr(s: string, k: number): string {
-  const arr = s.split("");
+    const arr = s.split("");
 
-  for (let i = 0; i < arr.length; i += 2 * k) {
-    if ((i % 2) * k === 0) {
-      reverse(arr, i, Math.min(i + k, arr.length) - 1);
+    for (let i = 0; i < arr.length; i += 2 * k) {
+        if ((i % 2) * k === 0) {
+            reverse(arr, i, Math.min(i + k, arr.length) - 1);
+        }
     }
-  }
 
-  return arr.join("");
+    return arr.join("");
 }
 
 function reverse(arr: string[], l: number, r: number): void {
-  while (l < r) {
-    [arr[l], arr[r]] = [arr[r], arr[l]];
-    l++;
-    r--;
-  }
+    while (l < r) {
+        [arr[l], arr[r]] = [arr[r], arr[l]];
+        l++;
+        r--;
+    }
 }

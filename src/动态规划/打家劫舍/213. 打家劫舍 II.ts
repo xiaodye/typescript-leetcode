@@ -7,29 +7,29 @@
  * @returns
  */
 export default function rob(nums: number[]): number {
-  // 数组成环了，那么首尾元素一定不能同时存在，可以分为两种情况处理，这样就和打家劫舍I 一样了
-  // 1. 考虑首元素，不考虑尾元素
-  // 2. 考虑尾元素，不考虑首元素
+    // 数组成环了，那么首尾元素一定不能同时存在，可以分为两种情况处理，这样就和打家劫舍I 一样了
+    // 1. 考虑首元素，不考虑尾元素
+    // 2. 考虑尾元素，不考虑首元素
 
-  if (nums.length === 1) return nums[0];
+    if (nums.length === 1) return nums[0];
 
-  const len = nums.length;
+    const len = nums.length;
 
-  const cost1 = robRange(nums, 0, len - 2);
-  const cost2 = robRange(nums, 1, len - 1);
+    const cost1 = robRange(nums, 0, len - 2);
+    const cost2 = robRange(nums, 1, len - 1);
 
-  return Math.max(cost1, cost2);
+    return Math.max(cost1, cost2);
 }
 
 function robRange(nums: number[], l: number, r: number): number {
-  const dp = new Array<number>(nums.length).fill(0);
-  // dp 初始化
-  dp[l] = nums[l];
-  dp[l + 1] = Math.max(nums[l], nums[l + 1]);
+    const dp = new Array<number>(nums.length).fill(0);
+    // dp 初始化
+    dp[l] = nums[l];
+    dp[l + 1] = Math.max(nums[l], nums[l + 1]);
 
-  for (let i = l + 2; i <= r; i++) {
-    dp[i] = Math.max(dp[i - 1], dp[i - 2] + nums[i]);
-  }
+    for (let i = l + 2; i <= r; i++) {
+        dp[i] = Math.max(dp[i - 1], dp[i - 2] + nums[i]);
+    }
 
-  return dp[r];
+    return dp[r];
 }

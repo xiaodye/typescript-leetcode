@@ -6,26 +6,26 @@ import TreeNode from "../../data-structure/TreeNode";
  * @returns
  */
 export default function isValidBST(root: TreeNode): boolean {
-  if (!root) return true;
+    if (!root) return true;
 
-  const stack: TreeNode[] = [];
-  let curr = root;
-  let prevVal = -Infinity;
+    const stack: TreeNode[] = [];
+    let curr = root;
+    let prevVal = -Infinity;
 
-  while (curr || stack.length !== 0) {
-    while (curr) {
-      stack.push(curr);
-      curr = curr.left;
+    while (curr || stack.length !== 0) {
+        while (curr) {
+            stack.push(curr);
+            curr = curr.left;
+        }
+
+        curr = stack.pop();
+
+        // 如果中序遍历得到的节点的值小于等于前一个，说明不是二叉搜索树
+        if (curr.val <= prevVal) return false;
+
+        prevVal = curr.val;
+        curr = curr.right;
     }
 
-    curr = stack.pop();
-
-    // 如果中序遍历得到的节点的值小于等于前一个，说明不是二叉搜索树
-    if (curr.val <= prevVal) return false;
-
-    prevVal = curr.val;
-    curr = curr.right;
-  }
-
-  return true;
+    return true;
 }

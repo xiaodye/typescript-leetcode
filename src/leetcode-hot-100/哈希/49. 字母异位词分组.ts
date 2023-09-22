@@ -5,18 +5,18 @@
  * @returns
  */
 export default function groupAnagrams(strs: string[]): string[][] {
-  const map = new Map<string, string[]>();
+    const map = new Map<string, string[]>();
 
-  for (let i = 0; i < strs.length; i++) {
-    // 对字符串进行排序
-    const key = strs[i].split("").sort().join("");
+    for (let i = 0; i < strs.length; i++) {
+        // 对字符串进行排序
+        const key = strs[i].split("").sort().join("");
 
-    if (map.has(key)) {
-      map.get(key).push(strs[i]);
-    } else {
-      map.set(key, [strs[i]]);
+        if (map.has(key)) {
+            map.get(key).push(strs[i]);
+        } else {
+            map.set(key, [strs[i]]);
+        }
     }
-  }
 
-  return [...map.values()];
+    return [...map.values()];
 }

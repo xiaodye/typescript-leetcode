@@ -7,28 +7,28 @@
  * @returns
  */
 export default function decodeString(s: string): string {
-  const strStack: string[] = [];
-  const numStack: number[] = [];
-  let num = 0;
-  let res = "";
+    const strStack: string[] = [];
+    const numStack: number[] = [];
+    let num = 0;
+    let res = "";
 
-  for (let i = 0; i < s.length; i++) {
-    // 当字符为数字时
-    if (!Number.isNaN(Number(s[i]))) {
-      num = num * 10 + Number(s[i]);
-    } else if (s[i] === "[") {
-      strStack.push(res);
-      res = "";
-      numStack.push(num);
-      num = 0;
-    } else if (s[i] === "]") {
-      const repeatTimes = numStack.pop();
+    for (let i = 0; i < s.length; i++) {
+        // 当字符为数字时
+        if (!Number.isNaN(Number(s[i]))) {
+            num = num * 10 + Number(s[i]);
+        } else if (s[i] === "[") {
+            strStack.push(res);
+            res = "";
+            numStack.push(num);
+            num = 0;
+        } else if (s[i] === "]") {
+            const repeatTimes = numStack.pop();
 
-      res = strStack.pop() + res.repeat(repeatTimes);
-    } else {
-      res += s[i];
+            res = strStack.pop() + res.repeat(repeatTimes);
+        } else {
+            res += s[i];
+        }
     }
-  }
 
-  return res;
+    return res;
 }

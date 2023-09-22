@@ -7,23 +7,27 @@
  * 返回 左上角 (row1, col1) 、右下角 (row2, col2) 所描述的子矩阵的元素 总和 。
  */
 export default class NumMatrix {
-  private sums: number[][];
+    private sums: number[][];
 
-  constructor(matrix: number[][]) {
-    const m = matrix.length;
-    const n = matrix[0].length;
-    this.sums = Array.from({ length: m + 1 }, () => new Array<number>(n + 1).fill(0));
+    constructor(matrix: number[][]) {
+        const m = matrix.length;
+        const n = matrix[0].length;
+        this.sums = Array.from({ length: m + 1 }, () => new Array<number>(n + 1).fill(0));
 
-    for (let i = 1; i <= m; i++) {
-      for (let j = 1; j <= n; j++) {
-        this.sums[i][j] = this.sums[i - 1][j] + this.sums[i][j - 1] - this.sums[i - 1][j - 1] + matrix[i - 1][j - 1];
-      }
+        for (let i = 1; i <= m; i++) {
+            for (let j = 1; j <= n; j++) {
+                this.sums[i][j] =
+                    this.sums[i - 1][j] + this.sums[i][j - 1] - this.sums[i - 1][j - 1] + matrix[i - 1][j - 1];
+            }
+        }
     }
-  }
 
-  sumRegion(row1: number, col1: number, row2: number, col2: number): number {
-    return (
-      this.sums[row2 + 1][col2 + 1] - this.sums[row2 + 1][col1] - this.sums[row1][col2 + 1] + this.sums[row1][col1]
-    );
-  }
+    sumRegion(row1: number, col1: number, row2: number, col2: number): number {
+        return (
+            this.sums[row2 + 1][col2 + 1] -
+            this.sums[row2 + 1][col1] -
+            this.sums[row1][col2 + 1] +
+            this.sums[row1][col1]
+        );
+    }
 }

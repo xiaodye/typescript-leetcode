@@ -9,11 +9,11 @@ import TreeNode from "../../data-structure/TreeNode";
  * @returns
  */
 export default function hasPathSum(root: TreeNode | null, targetSum: number): boolean {
-  if (!root) return false;
+    if (!root) return false;
 
-  if (!root.left && !root.right) {
-    return root.val === targetSum;
-  }
+    if (!root.left && !root.right) {
+        return root.val === targetSum;
+    }
 
-  return hasPathSum(root.left, targetSum - root.val) || hasPathSum(root.right, targetSum - root.val);
+    return hasPathSum(root.left, targetSum - root.val) || hasPathSum(root.right, targetSum - root.val);
 }

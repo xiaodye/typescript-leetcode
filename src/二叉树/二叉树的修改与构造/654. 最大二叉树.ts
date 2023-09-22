@@ -11,24 +11,24 @@ import TreeNode from "../../data-structure/TreeNode";
  * @returns
  */
 export default function constructMaximumBinaryTree(nums: number[]): TreeNode | null {
-  if (nums.length === 1) {
-    return new TreeNode(nums[0]);
-  }
+    if (nums.length === 1) {
+        return new TreeNode(nums[0]);
+    }
 
-  // 求数组中的最大值及其下标，创建根节点
-  const max = Math.max(...nums);
-  const maxIndex = nums.indexOf(max);
-  const root = new TreeNode(max);
+    // 求数组中的最大值及其下标，创建根节点
+    const max = Math.max(...nums);
+    const maxIndex = nums.indexOf(max);
+    const root = new TreeNode(max);
 
-  // 构建左子树
-  if (maxIndex > 0) {
-    root.left = constructMaximumBinaryTree(nums.slice(0, maxIndex));
-  }
+    // 构建左子树
+    if (maxIndex > 0) {
+        root.left = constructMaximumBinaryTree(nums.slice(0, maxIndex));
+    }
 
-  // 构建右子树
-  if (maxIndex < nums.length - 1) {
-    root.right = constructMaximumBinaryTree(nums.slice(maxIndex + 1, nums.length));
-  }
+    // 构建右子树
+    if (maxIndex < nums.length - 1) {
+        root.right = constructMaximumBinaryTree(nums.slice(maxIndex + 1, nums.length));
+    }
 
-  return root;
+    return root;
 }

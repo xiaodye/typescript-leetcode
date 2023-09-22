@@ -14,33 +14,33 @@
  * @returns
  */
 export default function evalRPN(tokens: string[]): number {
-  const stack: number[] = [];
+    const stack: number[] = [];
 
-  for (const char of tokens) {
-    if (["+", "-", "*", "/"].includes(char)) {
-      let num1 = stack.pop();
-      let num2 = stack.pop();
+    for (const char of tokens) {
+        if (["+", "-", "*", "/"].includes(char)) {
+            let num1 = stack.pop();
+            let num2 = stack.pop();
 
-      switch (char) {
-        case "+":
-          stack.push(num2 + num1);
-          break;
-        case "-":
-          stack.push(num2 - num1);
-          break;
-        case "*":
-          stack.push(num2 * num1);
-          break;
-        case "/":
-          stack.push(num2 / num1 > 0 ? Math.floor(num2 / num1) : Math.ceil(num2 / num1));
-          break;
-        default:
-          break;
-      }
-    } else {
-      stack.push(Number.parseInt(char));
+            switch (char) {
+                case "+":
+                    stack.push(num2 + num1);
+                    break;
+                case "-":
+                    stack.push(num2 - num1);
+                    break;
+                case "*":
+                    stack.push(num2 * num1);
+                    break;
+                case "/":
+                    stack.push(num2 / num1 > 0 ? Math.floor(num2 / num1) : Math.ceil(num2 / num1));
+                    break;
+                default:
+                    break;
+            }
+        } else {
+            stack.push(Number.parseInt(char));
+        }
     }
-  }
 
-  return stack.pop();
+    return stack.pop();
 }

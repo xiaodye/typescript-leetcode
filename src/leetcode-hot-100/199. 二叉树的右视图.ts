@@ -6,30 +6,30 @@ import TreeNode from "../data-structure/TreeNode";
  * @returns
  */
 export default function rightSideView(root: TreeNode | null): number[] {
-  if (!root) return [];
+    if (!root) return [];
 
-  const res: number[] = [];
+    const res: number[] = [];
 
-  // 创建一个队列，根元素先进队列
-  const queue: TreeNode[] = [root];
+    // 创建一个队列，根元素先进队列
+    const queue: TreeNode[] = [root];
 
-  while (queue.length !== 0) {
-    const len = queue.length;
+    while (queue.length !== 0) {
+        const len = queue.length;
 
-    // 遍历当前层元素
-    for (let i = 0; i < len; i++) {
-      const top = queue.shift();
+        // 遍历当前层元素
+        for (let i = 0; i < len; i++) {
+            const top = queue.shift();
 
-      // 如果存在左或右子节点，则进队列
-      if (top.left) queue.push(top.left);
-      if (top.right) queue.push(top.right);
+            // 如果存在左或右子节点，则进队列
+            if (top.left) queue.push(top.left);
+            if (top.right) queue.push(top.right);
 
-      // 记录每层的最后一个元素
-      if (i === len - 1) {
-        res.push(top.val);
-      }
+            // 记录每层的最后一个元素
+            if (i === len - 1) {
+                res.push(top.val);
+            }
+        }
     }
-  }
 
-  return res;
+    return res;
 }

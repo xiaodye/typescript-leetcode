@@ -8,31 +8,31 @@ import TreeNode from "../data-structure/TreeNode";
  * @returns
  */
 export default function pathSum(root: TreeNode | null, targetSum: number): number {
-  // key: 前缀和，value:数量
-  const map = new Map<number, number>([[0, 1]]);
-  let res = 0;
+    // key: 前缀和，value:数量
+    const map = new Map<number, number>([[0, 1]]);
+    let res = 0;
 
-  function dfs(root: TreeNode | null, prefixSum: number): void {
-    if (!root) return;
+    function dfs(root: TreeNode | null, prefixSum: number): void {
+        if (!root) return;
 
-    // 当前前缀和
-    prefixSum += root.val;
+        // 当前前缀和
+        prefixSum += root.val;
 
-    // 获取存在路径和为targetSum的祖先节点数量
-    const count = map.get(prefixSum - targetSum) ?? 0;
-    res += count;
+        // 获取存在路径和为targetSum的祖先节点数量
+        const count = map.get(prefixSum - targetSum) ?? 0;
+        res += count;
 
-    // 记录前缀和
-    map.set(prefixSum, (map.get(prefixSum) ?? 0) + 1);
+        // 记录前缀和
+        map.set(prefixSum, (map.get(prefixSum) ?? 0) + 1);
 
-    dfs(root.left, prefixSum);
-    dfs(root.right, prefixSum);
+        dfs(root.left, prefixSum);
+        dfs(root.right, prefixSum);
 
-    // 状态恢复
-    map.set(prefixSum, map.get(prefixSum) - 1);
-  }
+        // 状态恢复
+        map.set(prefixSum, map.get(prefixSum) - 1);
+    }
 
-  dfs(root, 0);
+    dfs(root, 0);
 
-  return res;
+    return res;
 }

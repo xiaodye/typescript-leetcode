@@ -6,22 +6,22 @@ import TreeNode from "../../data-structure/TreeNode";
  * @returns
  */
 export default function postorderTraversal(root: TreeNode | null): number[] {
-  if (!root) return [];
+    if (!root) return [];
 
-  const res: number[] = [];
+    const res: number[] = [];
 
-  function postorderTraversalNode(root: TreeNode | null): void {
-    if (!root) return;
+    function postorderTraversalNode(root: TreeNode | null): void {
+        if (!root) return;
 
-    // 左右根
-    postorderTraversalNode(root.left);
-    postorderTraversalNode(root.right);
-    res.push(root.val);
-  }
+        // 左右根
+        postorderTraversalNode(root.left);
+        postorderTraversalNode(root.right);
+        res.push(root.val);
+    }
 
-  postorderTraversalNode(root);
+    postorderTraversalNode(root);
 
-  return res;
+    return res;
 }
 
 /**
@@ -30,21 +30,21 @@ export default function postorderTraversal(root: TreeNode | null): number[] {
  * @returns
  */
 export function postorderTraversal2(root: TreeNode | null): number[] {
-  if (!root) return [];
+    if (!root) return [];
 
-  // 定义一个结果数组，存储节点值
-  const res: number[] = [];
+    // 定义一个结果数组，存储节点值
+    const res: number[] = [];
 
-  // 定义一个栈
-  const stack: TreeNode[] = [root];
+    // 定义一个栈
+    const stack: TreeNode[] = [root];
 
-  while (stack.length !== 0) {
-    const curr = stack.pop();
-    res.unshift(curr.val);
+    while (stack.length !== 0) {
+        const curr = stack.pop();
+        res.unshift(curr.val);
 
-    if (curr.left) stack.push(curr.left);
-    if (curr.right) stack.push(curr.right);
-  }
+        if (curr.left) stack.push(curr.left);
+        if (curr.right) stack.push(curr.right);
+    }
 
-  return res;
+    return res;
 }

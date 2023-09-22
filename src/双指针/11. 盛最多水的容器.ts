@@ -6,19 +6,19 @@
  * @returns
  */
 export default function maxArea(height: number[]): number {
-  let i = 0;
-  let j = height.length - 1;
-  let res = 0;
+    let i = 0;
+    let j = height.length - 1;
+    let res = 0;
 
-  while (i < j) {
-    if (height[i] <= height[j]) {
-      res = Math.max(res, height[i] * (j - i));
-      i++;
-    } else {
-      res = Math.max(res, height[j] * (j - i));
-      j--;
+    while (i < j) {
+        if (height[i] <= height[j]) {
+            res = Math.max(res, height[i] * (j - i));
+            i++;
+        } else {
+            res = Math.max(res, height[j] * (j - i));
+            j--;
+        }
     }
-  }
 
-  return res;
+    return res;
 }

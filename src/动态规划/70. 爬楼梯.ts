@@ -4,17 +4,17 @@
  * @returns
  */
 export default function climbStairs(n: number): number {
-  const f: number[] = [];
+    const f: number[] = [];
 
-  // 初始化已知值
-  f[1] = 1;
-  f[2] = 2;
+    // 初始化已知值
+    f[1] = 1;
+    f[2] = 2;
 
-  for (let i = 3; i <= n; i++) {
-    f[i] = f[i - 1] + f[i - 2];
-  }
+    for (let i = 3; i <= n; i++) {
+        f[i] = f[i - 1] + f[i - 2];
+    }
 
-  return f[n];
+    return f[n];
 }
 
 // test

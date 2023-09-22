@@ -8,39 +8,39 @@ import TreeNode from "../../data-structure/TreeNode";
  * @returns
  */
 export default function deleteNode(root: TreeNode | null, key: number): TreeNode | null {
-  if (!root) return root;
+    if (!root) return root;
 
-  if (root.val > key) {
-    root.left = deleteNode(root.left, key);
-  } else if (root.val < key) {
-    root.right = deleteNode(root.right, key);
-  } else {
-    /**
-     * 四种情况：
-     * 1.要删除的节点为叶子节点，直接删除
-     * 2.无左又右
-     * 3.无右有左
-     * 4.有左有右，寻找右子树的最左节点
-     */
-    if (!root.left && !root.right) {
-      return null;
-    } else if (!root.left) {
-      root = root.right;
-    } else if (!root.right) {
-      root = root.left;
+    if (root.val > key) {
+        root.left = deleteNode(root.left, key);
+    } else if (root.val < key) {
+        root.right = deleteNode(root.right, key);
     } else {
-      let successor = root.right;
+        /**
+         * 四种情况：
+         * 1.要删除的节点为叶子节点，直接删除
+         * 2.无左又右
+         * 3.无右有左
+         * 4.有左有右，寻找右子树的最左节点
+         */
+        if (!root.left && !root.right) {
+            return null;
+        } else if (!root.left) {
+            root = root.right;
+        } else if (!root.right) {
+            root = root.left;
+        } else {
+            let successor = root.right;
 
-      // 寻找右子树的最左节点
-      while (successor.left) {
-        successor = successor.left;
-      }
+            // 寻找右子树的最左节点
+            while (successor.left) {
+                successor = successor.left;
+            }
 
-      // 更新root值，并把右子树的最左节点删除
-      root.val = successor.val;
-      root.right = deleteNode(root.right, successor.val);
+            // 更新root值，并把右子树的最左节点删除
+            root.val = successor.val;
+            root.right = deleteNode(root.right, successor.val);
+        }
     }
-  }
 
-  return root;
+    return root;
 }

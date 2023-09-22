@@ -6,13 +6,13 @@ import TreeNode from "../../data-structure/TreeNode";
  * @returns
  */
 export default function isSymmetric(root: TreeNode | null): boolean {
-  return check(root.left, root.right);
+    return check(root.left, root.right);
 }
 
 function check(left: TreeNode, right: TreeNode): boolean {
-  if (!left && !right) return true;
-  if (!left || !right) return false;
-  if (left.val !== right.val) return false;
+    if (!left && !right) return true;
+    if (!left || !right) return false;
+    if (left.val !== right.val) return false;
 
-  return check(left.left, right.right) && check(left.right, right.left);
+    return check(left.left, right.right) && check(left.right, right.left);
 }

@@ -8,13 +8,13 @@ import TreeNode from "../data-structure/TreeNode";
  * @returns
  */
 export default function isSameTree(p: TreeNode | null, q: TreeNode | null): boolean {
-  // p === null && q === null true
-  // p === null || q === null false
-  // p.val !== q.val false
-  if (!p && !q) return true;
-  if (!p || !q) return false;
-  if (p.val !== q.val) return false;
+    // p === null && q === null true
+    // p === null || q === null false
+    // p.val !== q.val false
+    if (!p && !q) return true;
+    if (!p || !q) return false;
+    if (p.val !== q.val) return false;
 
-  // 递归子节点
-  return isSameTree(p.left, q.left) && isSameTree(p.right, q.right);
+    // 递归子节点
+    return isSameTree(p.left, q.left) && isSameTree(p.right, q.right);
 }

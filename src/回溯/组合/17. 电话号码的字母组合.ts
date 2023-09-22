@@ -9,42 +9,42 @@
  * @returns
  */
 export default function letterCombinations(digits: string): string[] {
-  // 回溯-组合-从每个数中选取一个字母进行组合
-  if (digits.length === 0) return [];
+    // 回溯-组合-从每个数中选取一个字母进行组合
+    if (digits.length === 0) return [];
 
-  const res: string[] = [];
-  const map = new Map<string, string>([
-    ["2", "abc"],
-    ["3", "def"],
-    ["4", "ghi"],
-    ["5", "jkl"],
-    ["6", "mno"],
-    ["7", "pqrs"],
-    ["8", "tuv"],
-    ["9", "wxyz"],
-  ]);
+    const res: string[] = [];
+    const map = new Map<string, string>([
+        ["2", "abc"],
+        ["3", "def"],
+        ["4", "ghi"],
+        ["5", "jkl"],
+        ["6", "mno"],
+        ["7", "pqrs"],
+        ["8", "tuv"],
+        ["9", "wxyz"],
+    ]);
 
-  /**
-   * 回溯
-   * @param index 记录遍历到第几个数字了，可以看成索引
-   * @param str
-   * @returns
-   */
-  function backtrack(index: number, str: string): void {
-    if (index === digits.length) {
-      res.push(str);
-      return;
+    /**
+     * 回溯
+     * @param index 记录遍历到第几个数字了，可以看成索引
+     * @param str
+     * @returns
+     */
+    function backtrack(index: number, str: string): void {
+        if (index === digits.length) {
+            res.push(str);
+            return;
+        }
+
+        // 取到待查找的数字，获取对应的字母组合
+        const letters = map.get(digits[index]);
+
+        for (let i = 0; i < letters.length; i++) {
+            backtrack(index + 1, str + letters[i]);
+        }
     }
 
-    // 取到待查找的数字，获取对应的字母组合
-    const letters = map.get(digits[index]);
+    backtrack(0, "");
 
-    for (let i = 0; i < letters.length; i++) {
-      backtrack(index + 1, str + letters[i]);
-    }
-  }
-
-  backtrack(0, "");
-
-  return res;
+    return res;
 }

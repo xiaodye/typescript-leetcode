@@ -11,22 +11,22 @@ import ListNode from "../data-structure/ListNode";
  * @returns
  */
 export default function getIntersectionNode(headA: ListNode | null, headB: ListNode | null): ListNode | null {
-  const visited = new Set<ListNode>();
+    const visited = new Set<ListNode>();
 
-  let temp = headA;
+    let temp = headA;
 
-  // 先把链表a的节点添加到set
-  while (temp) {
-    visited.add(temp);
-    temp = temp.next;
-  }
+    // 先把链表a的节点添加到set
+    while (temp) {
+        visited.add(temp);
+        temp = temp.next;
+    }
 
-  temp = headB;
+    temp = headB;
 
-  while (temp) {
-    if (visited.has(temp)) return temp;
-    temp = temp.next;
-  }
+    while (temp) {
+        if (visited.has(temp)) return temp;
+        temp = temp.next;
+    }
 
-  return null;
+    return null;
 }

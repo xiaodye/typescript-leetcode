@@ -5,28 +5,28 @@
  * @param nums
  */
 export default function sortColors(nums: number[]): void {
-  let i = 0;
-  let j = 0;
+    let i = 0;
+    let j = 0;
 
-  while (j < nums.length) {
-    if (nums[j] === 0) {
-      [nums[i], nums[j]] = [nums[j], nums[i]];
-      i++;
-      j++;
-    } else {
-      j++;
+    while (j < nums.length) {
+        if (nums[j] === 0) {
+            [nums[i], nums[j]] = [nums[j], nums[i]];
+            i++;
+            j++;
+        } else {
+            j++;
+        }
     }
-  }
 
-  j = i;
+    j = i;
 
-  while (j < nums.length) {
-    if (nums[j] === 1) {
-      [nums[i], nums[j]] = [nums[j], nums[i]];
-      i++;
-      j++;
-    } else {
-      j++;
+    while (j < nums.length) {
+        if (nums[j] === 1) {
+            [nums[i], nums[j]] = [nums[j], nums[i]];
+            i++;
+            j++;
+        } else {
+            j++;
+        }
     }
-  }
 }

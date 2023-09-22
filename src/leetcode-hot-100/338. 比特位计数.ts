@@ -4,22 +4,22 @@
  * @returns
  */
 export default function countBits(n: number): number[] {
-  const res: number[] = [];
+    const res: number[] = [];
 
-  for (let i = 0; i <= n; i++) {
-    res.push(countOnes(i));
-  }
+    for (let i = 0; i <= n; i++) {
+        res.push(countOnes(i));
+    }
 
-  return res;
+    return res;
 }
 
 function countOnes(x: number): number {
-  let count = 0;
+    let count = 0;
 
-  while (x > 0) {
-    x &= x - 1;
-    count++;
-  }
+    while (x > 0) {
+        x &= x - 1;
+        count++;
+    }
 
-  return count;
+    return count;
 }

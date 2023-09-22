@@ -10,28 +10,28 @@ import TreeNode from "../../data-structure/TreeNode";
  * @returns
  */
 export default function binaryTreePaths(root: TreeNode | null): string[] {
-  const paths: string[] = [];
+    const paths: string[] = [];
 
-  // 深度优先遍历，前序遍历
-  function dfs(root: TreeNode, path: string): void {
-    if (!root) return;
+    // 深度优先遍历，前序遍历
+    function dfs(root: TreeNode, path: string): void {
+        if (!root) return;
 
-    // 1. 拼接到 path
-    path += root.val;
+        // 1. 拼接到 path
+        path += root.val;
 
-    // 2. 判断当前节点是否叶子节点，到头了
-    if (!root.left && !root.right) {
-      paths.push(path);
-      return;
+        // 2. 判断当前节点是否叶子节点，到头了
+        if (!root.left && !root.right) {
+            paths.push(path);
+            return;
+        }
+
+        // 3. 非叶子节点，向下搜索
+        path += "->";
+        dfs(root.left, path);
+        dfs(root.right, path);
     }
 
-    // 3. 非叶子节点，向下搜索
-    path += "->";
-    dfs(root.left, path);
-    dfs(root.right, path);
-  }
+    dfs(root, "");
 
-  dfs(root, "");
-
-  return paths;
+    return paths;
 }

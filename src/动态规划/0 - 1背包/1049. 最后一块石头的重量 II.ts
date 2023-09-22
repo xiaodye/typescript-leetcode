@@ -5,26 +5,26 @@
  * @returns
  */
 export default function lastStoneWeightII(stones: number[]): number {
-  //  可以看成是背包容量
-  const sum = stones.reduce((total, curr) => total + curr, 0);
-  const n = Math.floor(sum / 2);
+    //  可以看成是背包容量
+    const sum = stones.reduce((total, curr) => total + curr, 0);
+    const n = Math.floor(sum / 2);
 
-  const dp = Array.from({ length: stones.length }, () => new Array<number>(n + 1).fill(0));
+    const dp = Array.from({ length: stones.length }, () => new Array<number>(n + 1).fill(0));
 
-  // 初始化 dp，首行
-  for (let i = stones[0]; i <= n; i++) {
-    dp[0][i] = stones[0];
-  }
-
-  for (let i = 1; i < stones.length; i++) {
-    for (let j = 1; j <= n; j++) {
-      if (j >= stones[i]) {
-        dp[i][j] = Math.max(dp[i - 1][j], dp[i - 1][j - stones[i]] + stones[i]);
-      } else {
-        dp[i][j] = dp[i - 1][j];
-      }
+    // 初始化 dp，首行
+    for (let i = stones[0]; i <= n; i++) {
+        dp[0][i] = stones[0];
     }
-  }
 
-  return sum - dp[stones.length - 1][n] * 2;
+    for (let i = 1; i < stones.length; i++) {
+        for (let j = 1; j <= n; j++) {
+            if (j >= stones[i]) {
+                dp[i][j] = Math.max(dp[i - 1][j], dp[i - 1][j - stones[i]] + stones[i]);
+            } else {
+                dp[i][j] = dp[i - 1][j];
+            }
+        }
+    }
+
+    return sum - dp[stones.length - 1][n] * 2;
 }

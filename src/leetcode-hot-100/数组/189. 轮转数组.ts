@@ -4,17 +4,17 @@
  * @param k
  */
 export default function rotate(nums: number[], k: number): void {
-  k = k % nums.length;
+    k = k % nums.length;
 
-  reverse(nums, 0, nums.length - 1);
-  reverse(nums, 0, k - 1);
-  reverse(nums, k, nums.length - 1);
+    reverse(nums, 0, nums.length - 1);
+    reverse(nums, 0, k - 1);
+    reverse(nums, k, nums.length - 1);
 }
 
 function reverse(nums: number[], l: number, r: number): void {
-  while (l < r) {
-    [nums[l], nums[r]] = [nums[r], nums[l]];
-    l++;
-    r--;
-  }
+    while (l < r) {
+        [nums[l], nums[r]] = [nums[r], nums[l]];
+        l++;
+        r--;
+    }
 }

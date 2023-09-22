@@ -8,35 +8,35 @@
  * @returns
  */
 export default function combinationSum(candidates: number[], target: number): number[][] {
-  // 回溯-组合问题-原数组无重复元素
-  // 1. 没有顺序要求
-  // 2. 允许重复元素
-  // 3. 个数不限制
-  const res: number[][] = [];
-  const combine: number[] = [];
+    // 回溯-组合问题-原数组无重复元素
+    // 1. 没有顺序要求
+    // 2. 允许重复元素
+    // 3. 个数不限制
+    const res: number[][] = [];
+    const combine: number[] = [];
 
-  function backtrack(index: number, sum: number): void {
-    // 剪枝
-    if (sum > target) return;
+    function backtrack(index: number, sum: number): void {
+        // 剪枝
+        if (sum > target) return;
 
-    // 终止条件
-    if (sum === target) {
-      res.push([...combine]);
-      return;
+        // 终止条件
+        if (sum === target) {
+            res.push([...combine]);
+            return;
+        }
+
+        for (let i = index; i < candidates.length; i++) {
+            combine.push(candidates[i]);
+            sum += candidates[i];
+
+            backtrack(i, sum);
+
+            combine.pop();
+            sum -= candidates[i];
+        }
     }
 
-    for (let i = index; i < candidates.length; i++) {
-      combine.push(candidates[i]);
-      sum += candidates[i];
+    backtrack(0, 0);
 
-      backtrack(i, sum);
-
-      combine.pop();
-      sum -= candidates[i];
-    }
-  }
-
-  backtrack(0, 0);
-
-  return res;
+    return res;
 }

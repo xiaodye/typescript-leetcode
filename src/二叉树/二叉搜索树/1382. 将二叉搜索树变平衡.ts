@@ -7,32 +7,32 @@ import TreeNode from "../../data-structure/TreeNode";
  * @returns
  */
 export default function balanceBST(root: TreeNode | null): TreeNode | null {
-  // nums 是二叉树中序遍历序列
-  const nums: number[] = [];
+    // nums 是二叉树中序遍历序列
+    const nums: number[] = [];
 
-  function inorder(root: TreeNode | null): void {
-    if (!root) return;
+    function inorder(root: TreeNode | null): void {
+        if (!root) return;
 
-    if (root.left) inorder(root.left);
-    nums.push(root.val);
-    if (root.right) inorder(root.right);
-  }
+        if (root.left) inorder(root.left);
+        nums.push(root.val);
+        if (root.right) inorder(root.right);
+    }
 
-  function buildAVL(left: number, right: number): TreeNode | null {
-    if (left > right) return null;
+    function buildAVL(left: number, right: number): TreeNode | null {
+        if (left > right) return null;
 
-    const mid = Math.floor(left + (right - left) / 2);
-    const root = new TreeNode(nums[mid]);
+        const mid = Math.floor(left + (right - left) / 2);
+        const root = new TreeNode(nums[mid]);
 
-    root.left = buildAVL(left, mid - 1);
-    root.right = buildAVL(mid + 1, right);
+        root.left = buildAVL(left, mid - 1);
+        root.right = buildAVL(mid + 1, right);
 
-    return root;
-  }
+        return root;
+    }
 
-  // 获取二叉树的中序遍历序列
-  inorder(root);
+    // 获取二叉树的中序遍历序列
+    inorder(root);
 
-  // 根据中序遍历序列构造平衡二叉搜索树
-  return buildAVL(0, nums.length - 1);
+    // 根据中序遍历序列构造平衡二叉搜索树
+    return buildAVL(0, nums.length - 1);
 }

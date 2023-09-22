@@ -4,13 +4,13 @@
  * @returns
  */
 export default function replaceSpace(s: string): string {
-  const arr: string[] = [...s];
+    const arr: string[] = [...s];
 
-  for (let i = 0; i < arr.length; i++) {
-    if (arr[i] === " ") {
-      arr[i] = "%20";
+    for (let i = 0; i < arr.length; i++) {
+        if (arr[i] === " ") {
+            arr[i] = "%20";
+        }
     }
-  }
 
-  return arr.join("");
+    return arr.join("");
 }

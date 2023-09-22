@@ -9,44 +9,44 @@
  * @returns
  */
 export default function generateMatrix(n: number): number[][] {
-  // 初始化矩阵
-  const matrix = Array.from({ length: n }, () => new Array<number>(n).fill(0));
+    // 初始化矩阵
+    const matrix = Array.from({ length: n }, () => new Array<number>(n).fill(0));
 
-  let num = 1;
-  let [left, right, top, bottom] = [0, n - 1, 0, n - 1];
+    let num = 1;
+    let [left, right, top, bottom] = [0, n - 1, 0, n - 1];
 
-  // loop: 循环次数
-  let loop = Math.floor(n / 2);
+    // loop: 循环次数
+    let loop = Math.floor(n / 2);
 
-  // 左闭右开，上右下左
-  while (loop-- !== 0) {
-    for (let i = left; i < right; i++) {
-      matrix[top][i] = num++;
+    // 左闭右开，上右下左
+    while (loop-- !== 0) {
+        for (let i = left; i < right; i++) {
+            matrix[top][i] = num++;
+        }
+
+        for (let i = top; i < bottom; i++) {
+            matrix[i][right] = num++;
+        }
+
+        for (let i = right; i > left; i--) {
+            matrix[bottom][i] = num++;
+        }
+
+        for (let i = bottom; i > top; i--) {
+            matrix[i][left] = num++;
+        }
+
+        left++;
+        right--;
+        top++;
+        bottom--;
     }
 
-    for (let i = top; i < bottom; i++) {
-      matrix[i][right] = num++;
+    // 考虑奇数的情况，最中间还会有一个点未遍历
+    if (n % 2 === 1) {
+        const center = Math.floor(n / 2);
+        matrix[center][center] = n * n;
     }
 
-    for (let i = right; i > left; i--) {
-      matrix[bottom][i] = num++;
-    }
-
-    for (let i = bottom; i > top; i--) {
-      matrix[i][left] = num++;
-    }
-
-    left++;
-    right--;
-    top++;
-    bottom--;
-  }
-
-  // 考虑奇数的情况，最中间还会有一个点未遍历
-  if (n % 2 === 1) {
-    const center = Math.floor(n / 2);
-    matrix[center][center] = n * n;
-  }
-
-  return matrix;
+    return matrix;
 }

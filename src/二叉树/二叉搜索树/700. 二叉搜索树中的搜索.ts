@@ -8,13 +8,13 @@ import TreeNode from "../../data-structure/TreeNode";
  * @returns
  */
 export default function searchBST(root: TreeNode | null, val: number): TreeNode | null {
-  if (!root) return null;
+    if (!root) return null;
 
-  if (root.val > val) {
-    return searchBST(root.left, val);
-  } else if (root.val < val) {
-    return searchBST(root.right, val);
-  } else {
-    return root;
-  }
+    if (root.val > val) {
+        return searchBST(root.left, val);
+    } else if (root.val < val) {
+        return searchBST(root.right, val);
+    } else {
+        return root;
+    }
 }

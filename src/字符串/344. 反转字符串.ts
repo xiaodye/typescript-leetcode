@@ -3,9 +3,9 @@
  * @param s
  */
 export default function reverseString(s: string[]): void {
-  const len = s.length;
+    const len = s.length;
 
-  for (let i = 0, j = len - 1; i < j; i++, j--) {
-    [s[i], s[j]] = [s[j], s[i]];
-  }
+    for (let i = 0, j = len - 1; i < j; i++, j--) {
+        [s[i], s[j]] = [s[j], s[i]];
+    }
 }

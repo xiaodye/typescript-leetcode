@@ -12,31 +12,31 @@
  * @returns
  */
 export default function reverseWords(s: string): string {
-  // 定义双端队列
-  const deque: string[] = [];
-  let word = "";
+    // 定义双端队列
+    const deque: string[] = [];
+    let word = "";
 
-  let left = 0;
-  let right = s.length - 1;
+    let left = 0;
+    let right = s.length - 1;
 
-  // 去除首尾空格
-  while (s[left] === " ") left++;
-  while (s[right] === " ") right--;
+    // 去除首尾空格
+    while (s[left] === " ") left++;
+    while (s[right] === " ") right--;
 
-  while (left <= right) {
-    let char = s[left];
+    while (left <= right) {
+        let char = s[left];
 
-    if (char === " " && word !== "") {
-      deque.unshift(word);
-      word = "";
-    } else if (char !== " ") {
-      word += char;
+        if (char === " " && word !== "") {
+            deque.unshift(word);
+            word = "";
+        } else if (char !== " ") {
+            word += char;
+        }
+
+        left++;
     }
 
-    left++;
-  }
+    deque.unshift(word);
 
-  deque.unshift(word);
-
-  return deque.join(" ");
+    return deque.join(" ");
 }

@@ -7,25 +7,25 @@ import TreeNode from "../../data-structure/TreeNode";
  * @returns
  */
 export default function kthSmallest(root: TreeNode | null, k: number): number {
-  // 二叉树中序遍历得到的序列是递增的
-  // 遍历到的第 k 个数就是第 k 小的数，正数第 k 个
+    // 二叉树中序遍历得到的序列是递增的
+    // 遍历到的第 k 个数就是第 k 小的数，正数第 k 个
 
-  let res = 0;
+    let res = 0;
 
-  function inorder(root: TreeNode): void {
-    if (!root || k === 0) return;
+    function inorder(root: TreeNode): void {
+        if (!root || k === 0) return;
 
-    inorder(root.left);
+        inorder(root.left);
 
-    if (--k === 0) {
-      res = root.val;
-      return;
+        if (--k === 0) {
+            res = root.val;
+            return;
+        }
+
+        inorder(root.right);
     }
 
-    inorder(root.right);
-  }
+    inorder(root);
 
-  inorder(root);
-
-  return res;
+    return res;
 }

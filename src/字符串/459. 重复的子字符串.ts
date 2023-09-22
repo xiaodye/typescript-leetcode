@@ -4,7 +4,7 @@
  * @returns
  */
 export default function repeatedSubstringPattern(s: string): boolean {
-  const str = (s + s).slice(1, -1);
+    const str = (s + s).slice(1, -1);
 
-  return str.indexOf(s) !== -1;
+    return str.indexOf(s) !== -1;
 }

@@ -4,19 +4,19 @@
  * @returns
  */
 export default function singleNumber(nums: number[]): number {
-  const map = new Map<number, number>();
-  let res = 0;
+    const map = new Map<number, number>();
+    let res = 0;
 
-  for (const num of nums) {
-    map.set(num, (map.get(num) ?? 0) + 1);
-  }
-
-  for (const [num, count] of map) {
-    if (count === 1) {
-      res = num;
-      break;
+    for (const num of nums) {
+        map.set(num, (map.get(num) ?? 0) + 1);
     }
-  }
 
-  return res;
+    for (const [num, count] of map) {
+        if (count === 1) {
+            res = num;
+            break;
+        }
+    }
+
+    return res;
 }

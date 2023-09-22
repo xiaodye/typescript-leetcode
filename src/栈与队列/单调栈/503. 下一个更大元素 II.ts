@@ -6,21 +6,21 @@
  * @returns
  */
 export default function nextGreaterElements(nums: number[]): number[] {
-  const len = nums.length;
-  const res = new Array<number>(len).fill(-1);
+    const len = nums.length;
+    const res = new Array<number>(len).fill(-1);
 
-  // 储存索引
-  const stack: number[] = [];
+    // 储存索引
+    const stack: number[] = [];
 
-  // len * 2 -1 相当于遍历数组两次
-  for (let i = 0; i < len * 2 - 1; i++) {
-    while (stack.length !== 0 && nums[i % len] > nums[stack[stack.length - 1] % len]) {
-      const numIndex = stack.pop();
-      res[numIndex % len] = nums[i % len];
+    // len * 2 -1 相当于遍历数组两次
+    for (let i = 0; i < len * 2 - 1; i++) {
+        while (stack.length !== 0 && nums[i % len] > nums[stack[stack.length - 1] % len]) {
+            const numIndex = stack.pop();
+            res[numIndex % len] = nums[i % len];
+        }
+
+        stack.push(i);
     }
 
-    stack.push(i);
-  }
-
-  return res;
+    return res;
 }

@@ -7,20 +7,20 @@
  * @param coins
  */
 export default function change(amount: number, coins: number[]): number {
-  // dp[i] 表示金额之和等于 i 的硬币组合数
-  // dp[i] = sum(dp[i- coins[0]], dp[i - coins[1],...])
-  // dp[0] = 1; 金额为0 ，就是不放硬币 1种
+    // dp[i] 表示金额之和等于 i 的硬币组合数
+    // dp[i] = sum(dp[i- coins[0]], dp[i - coins[1],...])
+    // dp[0] = 1; 金额为0 ，就是不放硬币 1种
 
-  const dp = new Array<number>(amount + 1).fill(0);
-  dp[0] = 1;
+    const dp = new Array<number>(amount + 1).fill(0);
+    dp[0] = 1;
 
-  for (let i = 0; i < coins.length; i++) {
-    for (let j = 1; j <= amount; j++) {
-      if (j >= coins[i]) {
-        dp[j] += dp[j - coins[i]];
-      }
+    for (let i = 0; i < coins.length; i++) {
+        for (let j = 1; j <= amount; j++) {
+            if (j >= coins[i]) {
+                dp[j] += dp[j - coins[i]];
+            }
+        }
     }
-  }
 
-  return dp[amount];
+    return dp[amount];
 }

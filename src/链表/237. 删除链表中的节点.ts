@@ -7,7 +7,7 @@ import ListNode from "../data-structure/ListNode";
  * @param node
  */
 function deleteNode(node: ListNode | null): void {
-  // 我们只需要删除 next 这个节点，并且让 node.val = node.next
-  node.val = node.next.val;
-  node.next = node.next.next;
+    // 我们只需要删除 next 这个节点，并且让 node.val = node.next
+    node.val = node.next.val;
+    node.next = node.next.next;
 }

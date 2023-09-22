@@ -9,31 +9,31 @@ import ListNode from "../data-structure/ListNode";
  * @returns
  */
 export default function addTwoNumbers(l1: ListNode, l2: ListNode): ListNode {
-  const dummy = new ListNode(-1);
-  let curr = dummy;
-  let carry = 0;
+    const dummy = new ListNode(-1);
+    let curr = dummy;
+    let carry = 0;
 
-  while (l1 || l2) {
-    const n1 = l1 ? l1.val : 0;
-    const n2 = l2 ? l2.val : 0;
-    const sum = n1 + n2 + carry;
+    while (l1 || l2) {
+        const n1 = l1 ? l1.val : 0;
+        const n2 = l2 ? l2.val : 0;
+        const sum = n1 + n2 + carry;
 
-    carry = Math.floor(sum / 10);
+        carry = Math.floor(sum / 10);
 
-    curr.next = new ListNode(sum % 10);
-    curr = curr.next;
+        curr.next = new ListNode(sum % 10);
+        curr = curr.next;
 
-    if (l1) {
-      l1 = l1.next;
+        if (l1) {
+            l1 = l1.next;
+        }
+        if (l2) {
+            l2 = l2.next;
+        }
     }
-    if (l2) {
-      l2 = l2.next;
+
+    if (carry === 1) {
+        curr.next = new ListNode(carry);
     }
-  }
 
-  if (carry === 1) {
-    curr.next = new ListNode(carry);
-  }
-
-  return dummy.next;
+    return dummy.next;
 }

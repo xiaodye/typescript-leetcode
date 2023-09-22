@@ -8,24 +8,24 @@
  * @returns
  */
 export default function corpFlightBookings(bookings: number[][], n: number): number[] {
-  // 构建差分数组, n 个航班，初始座位数数都为 0
-  const diff = new Array<number>(n).fill(0);
-  const res: number[] = [];
+    // 构建差分数组, n 个航班，初始座位数数都为 0
+    const diff = new Array<number>(n).fill(0);
+    const res: number[] = [];
 
-  // 做区间增量
-  for (const booking of bookings) {
-    diff[booking[0] - 1] += booking[2];
+    // 做区间增量
+    for (const booking of bookings) {
+        diff[booking[0] - 1] += booking[2];
 
-    if (booking[1] < n) {
-      diff[booking[1]] -= booking[2];
+        if (booking[1] < n) {
+            diff[booking[1]] -= booking[2];
+        }
     }
-  }
 
-  // 输出结果数组
-  res[0] = diff[0];
-  for (let i = 1; i < n; i++) {
-    res[i] = res[i - 1] + diff[i];
-  }
+    // 输出结果数组
+    res[0] = diff[0];
+    for (let i = 1; i < n; i++) {
+        res[i] = res[i - 1] + diff[i];
+    }
 
-  return res;
+    return res;
 }

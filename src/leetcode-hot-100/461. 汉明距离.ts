@@ -6,13 +6,13 @@
  * @returns
  */
 export default function hammingDistance(x: number, y: number): number {
-  let s = x ^ y;
-  let res = 0;
+    let s = x ^ y;
+    let res = 0;
 
-  while (s !== 0) {
-    res += s & 1;
-    s >>= 1;
-  }
+    while (s !== 0) {
+        res += s & 1;
+        s >>= 1;
+    }
 
-  return res;
+    return res;
 }

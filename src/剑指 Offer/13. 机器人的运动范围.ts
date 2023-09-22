@@ -8,48 +8,48 @@
  * @returns
  */
 export default function movingCount(m: number, n: number, k: number): number {
-  let count = 0;
-  const visted = Array.from({ length: m }, () => new Array<boolean>(n).fill(false));
-  const direction = [
-    [1, 0],
-    [-1, 0],
-    [0, 1],
-    [0, -1],
-  ];
+    let count = 0;
+    const visted = Array.from({ length: m }, () => new Array<boolean>(n).fill(false));
+    const direction = [
+        [1, 0],
+        [-1, 0],
+        [0, 1],
+        [0, -1],
+    ];
 
-  function dfs(i: number, j: number): void {
-    count++;
-    visted[i][j] = true;
+    function dfs(i: number, j: number): void {
+        count++;
+        visted[i][j] = true;
 
-    for (const [dx, dy] of direction) {
-      const newi = i + dx;
-      const newj = j + dy;
+        for (const [dx, dy] of direction) {
+            const newi = i + dx;
+            const newj = j + dy;
 
-      if (
-        newi >= 0 &&
-        newi < m &&
-        newj >= 0 &&
-        newj < n &&
-        getDigitsSum(newi) + getDigitsSum(newj) <= k &&
-        !visted[newi][newj]
-      ) {
-        dfs(newi, newj);
-      }
+            if (
+                newi >= 0 &&
+                newi < m &&
+                newj >= 0 &&
+                newj < n &&
+                getDigitsSum(newi) + getDigitsSum(newj) <= k &&
+                !visted[newi][newj]
+            ) {
+                dfs(newi, newj);
+            }
+        }
     }
-  }
 
-  dfs(0, 0);
+    dfs(0, 0);
 
-  return count;
+    return count;
 }
 
 function getDigitsSum(num: number): number {
-  let sum = 0;
+    let sum = 0;
 
-  while (num > 0) {
-    sum += num % 10;
-    num = Math.floor(num / 10);
-  }
+    while (num > 0) {
+        sum += num % 10;
+        num = Math.floor(num / 10);
+    }
 
-  return sum;
+    return sum;
 }

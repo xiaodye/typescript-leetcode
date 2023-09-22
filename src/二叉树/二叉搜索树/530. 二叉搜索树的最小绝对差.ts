@@ -7,25 +7,25 @@ import TreeNode from "../../data-structure/TreeNode";
  * @returns
  */
 export default function getMinimumDifference(root: TreeNode): number {
-  const stack: TreeNode[] = [];
-  let curr = root;
-  let prev: TreeNode = null;
-  let res = Infinity;
+    const stack: TreeNode[] = [];
+    let curr = root;
+    let prev: TreeNode = null;
+    let res = Infinity;
 
-  while (curr || stack.length !== 0) {
-    while (curr) {
-      stack.push(curr);
-      curr = curr.left;
+    while (curr || stack.length !== 0) {
+        while (curr) {
+            stack.push(curr);
+            curr = curr.left;
+        }
+
+        curr = stack.pop();
+        if (prev) {
+            res = Math.min(res, curr.val - prev.val);
+        }
+
+        prev = curr;
+        curr = curr.right;
     }
 
-    curr = stack.pop();
-    if (prev) {
-      res = Math.min(res, curr.val - prev.val);
-    }
-
-    prev = curr;
-    curr = curr.right;
-  }
-
-  return res;
+    return res;
 }

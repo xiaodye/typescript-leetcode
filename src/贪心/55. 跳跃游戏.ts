@@ -6,18 +6,18 @@
  * @returns
  */
 export default function canJump(nums: number[]): boolean {
-  // 初始化最大可达位置，初始化为 0，代表 i = 0 是可达的
-  let maxJump = 0;
+    // 初始化最大可达位置，初始化为 0，代表 i = 0 是可达的
+    let maxJump = 0;
 
-  for (let i = 0; i < nums.length; i++) {
-    // 下一个位置不可达，返回 false
-    if (i > maxJump) return false;
+    for (let i = 0; i < nums.length; i++) {
+        // 下一个位置不可达，返回 false
+        if (i > maxJump) return false;
 
-    maxJump = Math.max(maxJump, i + nums[i]);
+        maxJump = Math.max(maxJump, i + nums[i]);
 
-    // 若当前maxJump > len - 1，说明已经可达，提前结束
-    if (maxJump >= nums.length - 1) return true;
-  }
+        // 若当前maxJump > len - 1，说明已经可达，提前结束
+        if (maxJump >= nums.length - 1) return true;
+    }
 
-  return false;
+    return false;
 }

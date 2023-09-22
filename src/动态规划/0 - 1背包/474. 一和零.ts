@@ -8,39 +8,39 @@
  * @returns
  */
 export default function findMaxForm(strs: string[], m: number, n: number): number {
-  // dp[i][j][k] 前 i 个字符串， j：0的数量 k: 1的数量
+    // dp[i][j][k] 前 i 个字符串， j：0的数量 k: 1的数量
 
-  const len = strs.length;
-  const dp: number[][][] = new Array(len + 1)
-    .fill([])
-    .map(() => new Array(m + 1).fill([]).map(() => new Array(n + 1).fill(0)));
+    const len = strs.length;
+    const dp: number[][][] = new Array(len + 1)
+        .fill([])
+        .map(() => new Array(m + 1).fill([]).map(() => new Array(n + 1).fill(0)));
 
-  for (let i = 1; i <= len; i++) {
-    const [zeros, ones] = getZerosOnes(strs[i - 1]);
+    for (let i = 1; i <= len; i++) {
+        const [zeros, ones] = getZerosOnes(strs[i - 1]);
 
-    for (let j = 0; j <= m; j++) {
-      for (let k = 0; k <= n; k++) {
-        if (j >= zeros && k >= ones) {
-          dp[i][j][k] = Math.max(dp[i - 1][j][k], dp[i - 1][j - zeros][k - ones] + 1);
-        } else {
-          dp[i][j][k] = dp[i - 1][j][k];
+        for (let j = 0; j <= m; j++) {
+            for (let k = 0; k <= n; k++) {
+                if (j >= zeros && k >= ones) {
+                    dp[i][j][k] = Math.max(dp[i - 1][j][k], dp[i - 1][j - zeros][k - ones] + 1);
+                } else {
+                    dp[i][j][k] = dp[i - 1][j][k];
+                }
+            }
         }
-      }
     }
-  }
 
-  return dp[len][m][n];
+    return dp[len][m][n];
 }
 
 function getZerosOnes(str: string) {
-  const zerosOnes: number[] = [0, 0];
-  for (let i = 0; i < str.length; i++) {
-    if (str[i] === "0") {
-      zerosOnes[0]++;
-    } else {
-      zerosOnes[1]++;
+    const zerosOnes: number[] = [0, 0];
+    for (let i = 0; i < str.length; i++) {
+        if (str[i] === "0") {
+            zerosOnes[0]++;
+        } else {
+            zerosOnes[1]++;
+        }
     }
-  }
 
-  return zerosOnes;
+    return zerosOnes;
 }

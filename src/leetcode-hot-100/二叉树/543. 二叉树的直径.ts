@@ -7,28 +7,28 @@ import TreeNode from "../../data-structure/TreeNode";
  * @param root
  */
 export default function diameterOfBinaryTree(root: TreeNode | null): number {
-  // 路径长度 === 节点数 - 1
-  // 节点数 === 树的高度
-  // 以某个节点为根的最长路径 === 左子树高度 + 右子树高度
-  // 求树中各个节点最长路径 === 左子树高度 + 右子树高度
+    // 路径长度 === 节点数 - 1
+    // 节点数 === 树的高度
+    // 以某个节点为根的最长路径 === 左子树高度 + 右子树高度
+    // 求树中各个节点最长路径 === 左子树高度 + 右子树高度
 
-  if (!root.left && !root.right) return 0;
+    if (!root.left && !root.right) return 0;
 
-  let max = 0;
+    let max = 0;
 
-  function depth(root: TreeNode): number {
-    if (!root) return 0;
+    function depth(root: TreeNode): number {
+        if (!root) return 0;
 
-    const left = depth(root.left);
-    const right = depth(root.right);
+        const left = depth(root.left);
+        const right = depth(root.right);
 
-    // 更新最大值
-    max = Math.max(max, left + right);
+        // 更新最大值
+        max = Math.max(max, left + right);
 
-    return Math.max(left, right) + 1;
-  }
+        return Math.max(left, right) + 1;
+    }
 
-  depth(root);
+    depth(root);
 
-  return max;
+    return max;
 }

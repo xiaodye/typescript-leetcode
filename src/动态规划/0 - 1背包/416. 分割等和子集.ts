@@ -4,33 +4,33 @@
  * @returns
  */
 export default function canPartition(nums: number[]): boolean {
-  // 数组长度小于2，不成立
-  if (nums.length < 2) return false;
+    // 数组长度小于2，不成立
+    if (nums.length < 2) return false;
 
-  const target = nums.reduce((prev, curr) => prev + curr) / 2;
+    const target = nums.reduce((prev, curr) => prev + curr) / 2;
 
-  // 1. sum / 2 不为整数，不成立
-  // 2. maxNum > taget，不成立
-  if (target % 1 !== 0) return false;
-  if (Math.max(...nums) > target) return false;
+    // 1. sum / 2 不为整数，不成立
+    // 2. maxNum > taget，不成立
+    if (target % 1 !== 0) return false;
+    if (Math.max(...nums) > target) return false;
 
-  // 初始化 dp:
-  const dp = Array.from({ length: nums.length }, () => new Array<boolean>(target + 1).fill(false));
+    // 初始化 dp:
+    const dp = Array.from({ length: nums.length }, () => new Array<boolean>(target + 1).fill(false));
 
-  // 初始化首行，首列全为false，不需要再初始化
-  dp[0][nums[0]] = true;
+    // 初始化首行，首列全为false，不需要再初始化
+    dp[0][nums[0]] = true;
 
-  for (let i = 1; i < nums.length; i++) {
-    for (let j = 1; j <= target; j++) {
-      if (nums[i] > j) {
-        dp[i][j] = dp[i - 1][j];
-      } else {
-        dp[i][j] = dp[i - 1][j] || dp[i - 1][j - nums[i]];
-      }
+    for (let i = 1; i < nums.length; i++) {
+        for (let j = 1; j <= target; j++) {
+            if (nums[i] > j) {
+                dp[i][j] = dp[i - 1][j];
+            } else {
+                dp[i][j] = dp[i - 1][j] || dp[i - 1][j - nums[i]];
+            }
+        }
     }
-  }
 
-  return dp[nums.length - 1][target];
+    return dp[nums.length - 1][target];
 }
 
 // test

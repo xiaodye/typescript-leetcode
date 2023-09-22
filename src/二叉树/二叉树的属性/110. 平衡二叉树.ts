@@ -6,7 +6,7 @@ import TreeNode from "../../data-structure/TreeNode";
  * @returns
  */
 export default function isBalanced(root: TreeNode | null): boolean {
-  return height(root) !== -1;
+    return height(root) !== -1;
 }
 
 /**
@@ -15,14 +15,14 @@ export default function isBalanced(root: TreeNode | null): boolean {
  * @returns
  */
 function height(root: TreeNode | null): number {
-  if (!root) return 0;
+    if (!root) return 0;
 
-  const leftHeight = height(root.left);
-  const rightHeight = height(root.right);
+    const leftHeight = height(root.left);
+    const rightHeight = height(root.right);
 
-  if (leftHeight === -1 || rightHeight === -1 || Math.abs(leftHeight - rightHeight) > 1) {
-    return -1;
-  }
+    if (leftHeight === -1 || rightHeight === -1 || Math.abs(leftHeight - rightHeight) > 1) {
+        return -1;
+    }
 
-  return Math.max(leftHeight, rightHeight) + 1;
+    return Math.max(leftHeight, rightHeight) + 1;
 }

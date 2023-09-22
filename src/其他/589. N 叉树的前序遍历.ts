@@ -1,10 +1,10 @@
 class Node {
-  val: number;
-  children: Node[];
-  constructor(val?: number) {
-    this.val = val === undefined ? 0 : val;
-    this.children = [];
-  }
+    val: number;
+    children: Node[];
+    constructor(val?: number) {
+        this.val = val === undefined ? 0 : val;
+        this.children = [];
+    }
 }
 
 /**
@@ -14,19 +14,19 @@ class Node {
  * @returns
  */
 export default function preorder(root: Node | null): number[] {
-  const res: number[] = [];
+    const res: number[] = [];
 
-  function traversal(root: Node): void {
-    if (!root) return;
+    function traversal(root: Node): void {
+        if (!root) return;
 
-    res.push(root.val);
+        res.push(root.val);
 
-    for (let i = 0; i < root.children.length; i++) {
-      traversal(root.children[i]);
+        for (let i = 0; i < root.children.length; i++) {
+            traversal(root.children[i]);
+        }
     }
-  }
 
-  traversal(root);
+    traversal(root);
 
-  return res;
+    return res;
 }

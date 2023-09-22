@@ -5,24 +5,24 @@
  * @returns
  */
 export default function subsets(nums: number[]): number[][] {
-  // 子集-组合的一种特殊情况-无重复元素
-  // 1. 元素只能使用一次
-  // 2. 无顺序要求
-  const res: number[][] = [];
-  const subset: number[] = [];
+    // 子集-组合的一种特殊情况-无重复元素
+    // 1. 元素只能使用一次
+    // 2. 无顺序要求
+    const res: number[][] = [];
+    const subset: number[] = [];
 
-  function backtrack(index: number): void {
-    // 收集每个叶子节点
-    res.push([...subset]);
+    function backtrack(index: number): void {
+        // 收集每个叶子节点
+        res.push([...subset]);
 
-    for (let i = index; i < nums.length; i++) {
-      subset.push(nums[i]);
-      backtrack(i + 1);
-      subset.pop();
+        for (let i = index; i < nums.length; i++) {
+            subset.push(nums[i]);
+            backtrack(i + 1);
+            subset.pop();
+        }
     }
-  }
 
-  backtrack(0);
+    backtrack(0);
 
-  return res;
+    return res;
 }

@@ -8,20 +8,20 @@ import TreeNode from "../../data-structure/TreeNode";
  * @returns
  */
 export default function buildTree(inorder: number[], postorder: number[]): TreeNode | null {
-  const len = inorder.length;
+    const len = inorder.length;
 
-  function build(inL: number, inR: number, postL: number, postR: number): TreeNode | null {
-    if (postL > postR) return null;
+    function build(inL: number, inR: number, postL: number, postR: number): TreeNode | null {
+        if (postL > postR) return null;
 
-    const root = new TreeNode(postorder[postR]);
-    const k = inorder.indexOf(root.val);
-    const numLeft = k - inL;
+        const root = new TreeNode(postorder[postR]);
+        const k = inorder.indexOf(root.val);
+        const numLeft = k - inL;
 
-    root.left = build(inL, k - 1, postL, postL + numLeft - 1);
-    root.right = build(k + 1, inR, postL + numLeft, postR - 1);
+        root.left = build(inL, k - 1, postL, postL + numLeft - 1);
+        root.right = build(k + 1, inR, postL + numLeft, postR - 1);
 
-    return root;
-  }
+        return root;
+    }
 
-  return build(0, len - 1, 0, len - 1);
+    return build(0, len - 1, 0, len - 1);
 }

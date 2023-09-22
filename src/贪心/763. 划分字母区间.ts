@@ -6,27 +6,27 @@
  * @returns
  */
 export default function partitionLabels(s: string): number[] {
-  // map 用于记录每个出现的字母最后出现的下标，key: 字母,value:最后出现的下标
-  const map = new Map<string, number>();
-  const res: number[] = [];
+    // map 用于记录每个出现的字母最后出现的下标，key: 字母,value:最后出现的下标
+    const map = new Map<string, number>();
+    const res: number[] = [];
 
-  // 记录每个字母最后出现的下标
-  for (let i = 0; i < s.length; i++) {
-    map.set(s[i], i);
-  }
-
-  // 一个片段的截止下标，随着遍历会更新
-  let start = 0;
-  let end = 0;
-
-  for (let i = 0; i < s.length; i++) {
-    end = Math.max(end, map.get(s[i]));
-
-    if (i === end) {
-      res.push(end - start + 1);
-      start = end + 1;
+    // 记录每个字母最后出现的下标
+    for (let i = 0; i < s.length; i++) {
+        map.set(s[i], i);
     }
-  }
 
-  return res;
+    // 一个片段的截止下标，随着遍历会更新
+    let start = 0;
+    let end = 0;
+
+    for (let i = 0; i < s.length; i++) {
+        end = Math.max(end, map.get(s[i]));
+
+        if (i === end) {
+            res.push(end - start + 1);
+            start = end + 1;
+        }
+    }
+
+    return res;
 }

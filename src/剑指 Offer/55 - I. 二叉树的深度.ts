@@ -6,10 +6,10 @@ import TreeNode from "../data-structure/TreeNode";
  * @returns
  */
 export default function maxDepth(root: TreeNode | null): number {
-  if (!root) return 0;
+    if (!root) return 0;
 
-  const leftHeight = maxDepth(root.left);
-  const rightHeight = maxDepth(root.right);
+    const leftHeight = maxDepth(root.left);
+    const rightHeight = maxDepth(root.right);
 
-  return Math.max(leftHeight, rightHeight) + 1;
+    return Math.max(leftHeight, rightHeight) + 1;
 }

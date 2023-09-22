@@ -6,21 +6,21 @@ import ListNode from "../data-structure/ListNode";
  * @returns
  */
 export default function reverseList(head: ListNode | null): ListNode | null {
-  if (!head || !head.next) return head;
+    if (!head || !head.next) return head;
 
-  // 定义三个指针，前驱，当前，后驱
-  let prev: ListNode = null;
-  let next: ListNode = null;
-  let curr = head;
+    // 定义三个指针，前驱，当前，后驱
+    let prev: ListNode = null;
+    let next: ListNode = null;
+    let curr = head;
 
-  while (curr) {
-    next = curr.next;
+    while (curr) {
+        next = curr.next;
 
-    // 先反转，prev向前，curr向前
-    curr.next = prev;
-    prev = curr;
-    curr = next;
-  }
+        // 先反转，prev向前，curr向前
+        curr.next = prev;
+        prev = curr;
+        curr = next;
+    }
 
-  return prev;
+    return prev;
 }

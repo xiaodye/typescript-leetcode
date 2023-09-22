@@ -6,29 +6,29 @@ import ListNode from "../data-structure/ListNode";
  * @returns
  */
 export default function detectCycle(head: ListNode | null): ListNode | null {
-  if (head === null) return null;
+    if (head === null) return null;
 
-  // 初始化快慢指针，慢指针一次走一步，快指针一次走两步
-  let slow = head;
-  let fast = head;
+    // 初始化快慢指针，慢指针一次走一步，快指针一次走两步
+    let slow = head;
+    let fast = head;
 
-  while (fast !== null && fast.next !== null) {
-    slow = slow.next;
-    fast = fast.next.next;
-
-    // 相遇了，说明肯定有环
-    if (slow === fast) {
-      slow = head;
-
-      // 现在开始，快慢指针都走一步，相遇点便是入环口
-      while (slow !== fast) {
+    while (fast !== null && fast.next !== null) {
         slow = slow.next;
-        fast = fast.next;
-      }
+        fast = fast.next.next;
 
-      return slow;
+        // 相遇了，说明肯定有环
+        if (slow === fast) {
+            slow = head;
+
+            // 现在开始，快慢指针都走一步，相遇点便是入环口
+            while (slow !== fast) {
+                slow = slow.next;
+                fast = fast.next;
+            }
+
+            return slow;
+        }
     }
-  }
 
-  return null;
+    return null;
 }

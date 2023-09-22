@@ -6,31 +6,31 @@ import TreeNode from "../../data-structure/TreeNode";
  * @returns
  */
 export default function levelOrder(root: TreeNode | null): number[][] {
-  if (!root) return [];
+    if (!root) return [];
 
-  // 定义一个队列，定义结果数组
-  const queue: TreeNode[] = [];
-  const res: number[][] = [];
+    // 定义一个队列，定义结果数组
+    const queue: TreeNode[] = [];
+    const res: number[][] = [];
 
-  queue.push(root);
+    queue.push(root);
 
-  while (queue.length !== 0) {
-    // len代表当前层节点数，arr用于存储节点
-    const len = queue.length;
-    const arr: number[] = [];
+    while (queue.length !== 0) {
+        // len代表当前层节点数，arr用于存储节点
+        const len = queue.length;
+        const arr: number[] = [];
 
-    for (let i = 0; i < len; i++) {
-      const top = queue.shift();
-      arr.push(top.val);
+        for (let i = 0; i < len; i++) {
+            const top = queue.shift();
+            arr.push(top.val);
 
-      // 如果存在左或右子节点，则进队列
-      if (top.left) queue.push(top.left);
-      if (top.right) queue.push(top.right);
+            // 如果存在左或右子节点，则进队列
+            if (top.left) queue.push(top.left);
+            if (top.right) queue.push(top.right);
+        }
+
+        // 此时已完成一层的遍历，push into res
+        res.push(arr);
     }
 
-    // 此时已完成一层的遍历，push into res
-    res.push(arr);
-  }
-
-  return res;
+    return res;
 }

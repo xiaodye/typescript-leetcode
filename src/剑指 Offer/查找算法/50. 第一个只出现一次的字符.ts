@@ -4,21 +4,21 @@
  * @returns
  */
 export default function firstUniqChar(s: string): string {
-  const map = new Map<string, number>();
+    const map = new Map<string, number>();
 
-  for (const char of s) {
-    if (map.has(char)) {
-      map.set(char, map.get(char) + 1);
-    } else {
-      map.set(char, 1);
+    for (const char of s) {
+        if (map.has(char)) {
+            map.set(char, map.get(char) + 1);
+        } else {
+            map.set(char, 1);
+        }
     }
-  }
 
-  for (const [key, value] of map) {
-    if (value === 1) {
-      return key;
+    for (const [key, value] of map) {
+        if (value === 1) {
+            return key;
+        }
     }
-  }
 
-  return " ";
+    return " ";
 }

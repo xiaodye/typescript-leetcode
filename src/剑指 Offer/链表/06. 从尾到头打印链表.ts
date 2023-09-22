@@ -6,14 +6,14 @@ import ListNode from "../../data-structure/ListNode";
  * @returns
  */
 export default function reversePrint(head: ListNode): number[] {
-  if (!head) return [];
+    if (!head) return [];
 
-  const res: number[] = [];
+    const res: number[] = [];
 
-  while (head) {
-    res.unshift(head.val);
-    head = head.next;
-  }
+    while (head) {
+        res.unshift(head.val);
+        head = head.next;
+    }
 
-  return res;
+    return res;
 }

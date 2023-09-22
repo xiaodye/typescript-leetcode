@@ -10,22 +10,22 @@
  * @returns
  */
 export default function isAnagram(s: string, t: string): boolean {
-  if (s.length !== t.length) return false;
+    if (s.length !== t.length) return false;
 
-  const table = new Array<number>(26).fill(0);
+    const table = new Array<number>(26).fill(0);
 
-  for (let i = 0; i < s.length; i++) {
-    table[s.codePointAt(i) - "a".codePointAt(0)]++;
-  }
+    for (let i = 0; i < s.length; i++) {
+        table[s.codePointAt(i) - "a".codePointAt(0)]++;
+    }
 
-  for (let i = 0; i < t.length; i++) {
-    table[t.codePointAt(i) - "a".codePointAt(0)]--;
+    for (let i = 0; i < t.length; i++) {
+        table[t.codePointAt(i) - "a".codePointAt(0)]--;
 
-    // 在 -- 的过程中，如果出现某个字符次数小于 0 的情况，那肯定是不符合异位词的
-    if (table[t.codePointAt(i) - "a".codePointAt(0)] < 0) return false;
-  }
+        // 在 -- 的过程中，如果出现某个字符次数小于 0 的情况，那肯定是不符合异位词的
+        if (table[t.codePointAt(i) - "a".codePointAt(0)] < 0) return false;
+    }
 
-  return true;
+    return true;
 }
 
 /**
@@ -39,11 +39,11 @@ export default function isAnagram(s: string, t: string): boolean {
  * @returns
  */
 export function isAnagram2(s: string, t: string) {
-  if (s.length !== t.length) return false;
+    if (s.length !== t.length) return false;
 
-  // 利用排序，若未字母异位词，排序后肯定相等
-  s = s.split("").sort().join("");
-  t = t.split("").sort().join("");
+    // 利用排序，若未字母异位词，排序后肯定相等
+    s = s.split("").sort().join("");
+    t = t.split("").sort().join("");
 
-  return s === t;
+    return s === t;
 }

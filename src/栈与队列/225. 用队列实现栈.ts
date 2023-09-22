@@ -3,30 +3,30 @@
  * 一个队列
  */
 export default class MyStack {
-  private queue: number[] = [];
+    private queue: number[] = [];
 
-  constructor() {}
+    constructor() {}
 
-  push(x: number): void {
-    this.queue.push(x);
-  }
-
-  pop(): number {
-    // 将队列头部的元素（除了最后一个元素外） 重新添加到队列尾部
-    for (let i = 0; i < this.queue.length - 1; i++) {
-      this.queue.push(this.queue.shift());
+    push(x: number): void {
+        this.queue.push(x);
     }
 
-    return this.queue.shift();
-  }
+    pop(): number {
+        // 将队列头部的元素（除了最后一个元素外） 重新添加到队列尾部
+        for (let i = 0; i < this.queue.length - 1; i++) {
+            this.queue.push(this.queue.shift());
+        }
 
-  top(): number {
-    return this.queue[this.queue.length - 1];
-  }
+        return this.queue.shift();
+    }
 
-  empty(): boolean {
-    return this.queue.length === 0;
-  }
+    top(): number {
+        return this.queue[this.queue.length - 1];
+    }
+
+    empty(): boolean {
+        return this.queue.length === 0;
+    }
 }
 
 /**
@@ -34,35 +34,35 @@ export default class MyStack {
  * 两个队列
  */
 export class MyStack2 {
-  private queue: number[] = [];
-  private _queue: number[] = [];
+    private queue: number[] = [];
+    private _queue: number[] = [];
 
-  constructor() {}
+    constructor() {}
 
-  push(x: number): void {
-    this.queue.push(x);
-  }
-
-  pop(): number {
-    while (this.queue.length > 1) {
-      this._queue.push(this.queue.shift());
+    push(x: number): void {
+        this.queue.push(x);
     }
 
-    // 出栈
-    let ans = this.queue.shift();
+    pop(): number {
+        while (this.queue.length > 1) {
+            this._queue.push(this.queue.shift());
+        }
 
-    while (this._queue.length !== 0) {
-      this.queue.push(this._queue.shift());
+        // 出栈
+        let ans = this.queue.shift();
+
+        while (this._queue.length !== 0) {
+            this.queue.push(this._queue.shift());
+        }
+
+        return ans;
     }
 
-    return ans;
-  }
+    top(): number {
+        return this.queue[this.queue.length - 1];
+    }
 
-  top(): number {
-    return this.queue[this.queue.length - 1];
-  }
-
-  empty(): boolean {
-    return this.queue.length === 0;
-  }
+    empty(): boolean {
+        return this.queue.length === 0;
+    }
 }

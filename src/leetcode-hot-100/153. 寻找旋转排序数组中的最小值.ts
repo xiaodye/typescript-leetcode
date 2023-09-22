@@ -4,22 +4,22 @@
  * @returns
  */
 export default function findMin(nums: number[]): number {
-  if (nums.length === 1 || nums[0] < nums[nums.length - 1]) {
-    return nums[0];
-  }
-
-  let l = 0;
-  let r = nums.length - 1;
-
-  while (l < r) {
-    const mid = Math.floor(l + (r - l) / 2);
-
-    if (nums[0] <= nums[mid]) {
-      l = mid + 1;
-    } else {
-      r = mid;
+    if (nums.length === 1 || nums[0] < nums[nums.length - 1]) {
+        return nums[0];
     }
-  }
 
-  return nums[l];
+    let l = 0;
+    let r = nums.length - 1;
+
+    while (l < r) {
+        const mid = Math.floor(l + (r - l) / 2);
+
+        if (nums[0] <= nums[mid]) {
+            l = mid + 1;
+        } else {
+            r = mid;
+        }
+    }
+
+    return nums[l];
 }

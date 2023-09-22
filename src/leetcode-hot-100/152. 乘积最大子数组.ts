@@ -6,22 +6,22 @@
  * @returns
  */
 export default function maxProduct(nums: number[]): number {
-  const maxF: number[] = [];
-  const minF: number[] = [];
-  let res = nums[0];
+    const maxF: number[] = [];
+    const minF: number[] = [];
+    let res = nums[0];
 
-  // 初识化 dp
-  maxF[0] = nums[0];
-  minF[0] = nums[0];
+    // 初识化 dp
+    maxF[0] = nums[0];
+    minF[0] = nums[0];
 
-  for (let i = 1; i < nums.length; i++) {
-    minF[i] = Math.min(minF[i - 1] * nums[i], maxF[i - 1] * nums[i], nums[i]);
-    maxF[i] = Math.max(minF[i - 1] * nums[i], maxF[i - 1] * nums[i], nums[i]);
+    for (let i = 1; i < nums.length; i++) {
+        minF[i] = Math.min(minF[i - 1] * nums[i], maxF[i - 1] * nums[i], nums[i]);
+        maxF[i] = Math.max(minF[i - 1] * nums[i], maxF[i - 1] * nums[i], nums[i]);
 
-    if (maxF[i] > res) {
-      res = maxF[i];
+        if (maxF[i] > res) {
+            res = maxF[i];
+        }
     }
-  }
 
-  return res;
+    return res;
 }

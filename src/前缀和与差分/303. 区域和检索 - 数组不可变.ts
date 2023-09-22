@@ -7,18 +7,18 @@
  * 包含 left 和 right 两点（也就是 nums[left] + nums[left + 1] + ... + nums[right] )
  */
 export default class NumArray {
-  private prefixSum: number[] = [];
+    private prefixSum: number[] = [];
 
-  constructor(nums: number[]) {
-    this.prefixSum[0] = 0;
+    constructor(nums: number[]) {
+        this.prefixSum[0] = 0;
 
-    // prefixSum[i] 表示前 i 项的和，比如 prefixSum[1] === 前  1 项的和 === nums[0]
-    for (let i = 0; i < nums.length; i++) {
-      this.prefixSum[i + 1] = this.prefixSum[i] + nums[i];
+        // prefixSum[i] 表示前 i 项的和，比如 prefixSum[1] === 前  1 项的和 === nums[0]
+        for (let i = 0; i < nums.length; i++) {
+            this.prefixSum[i + 1] = this.prefixSum[i] + nums[i];
+        }
     }
-  }
 
-  sumRange(left: number, right: number): number {
-    return this.prefixSum[right + 1] - this.prefixSum[left];
-  }
+    sumRange(left: number, right: number): number {
+        return this.prefixSum[right + 1] - this.prefixSum[left];
+    }
 }

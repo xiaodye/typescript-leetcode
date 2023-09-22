@@ -10,10 +10,10 @@ import TreeNode from "../../data-structure/TreeNode";
  * @returns
  */
 export default function countNodes(root: TreeNode | null): number {
-  if (!root) return 0;
+    if (!root) return 0;
 
-  const left = countNodes(root.left);
-  const right = countNodes(root.right);
+    const left = countNodes(root.left);
+    const right = countNodes(root.right);
 
-  return left + right + 1;
+    return left + right + 1;
 }

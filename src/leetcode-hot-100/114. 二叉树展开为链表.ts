@@ -7,23 +7,23 @@ import TreeNode from "../data-structure/TreeNode";
  * @param root
  */
 export default function flatten(root: TreeNode | null): void {
-  if (!root || (!root.left && !root.right)) return;
+    if (!root || (!root.left && !root.right)) return;
 
-  const nodes: TreeNode[] = [];
+    const nodes: TreeNode[] = [];
 
-  function preorder(root: TreeNode): void {
-    if (!root) return;
+    function preorder(root: TreeNode): void {
+        if (!root) return;
 
-    nodes.push(root);
+        nodes.push(root);
 
-    preorder(root.left);
-    preorder(root.right);
-  }
+        preorder(root.left);
+        preorder(root.right);
+    }
 
-  preorder(root);
+    preorder(root);
 
-  for (let i = 0; i < nodes.length - 1; i++) {
-    nodes[i].right = nodes[i + 1];
-    nodes[i].left = null;
-  }
+    for (let i = 0; i < nodes.length - 1; i++) {
+        nodes[i].right = nodes[i + 1];
+        nodes[i].left = null;
+    }
 }

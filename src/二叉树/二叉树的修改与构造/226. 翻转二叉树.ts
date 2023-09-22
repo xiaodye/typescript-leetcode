@@ -6,16 +6,16 @@ import TreeNode from "../../data-structure/TreeNode";
  * @returns
  */
 export default function invertTree(root: TreeNode | null): TreeNode | null {
-  // 边界，0 | 1 节点，无需翻转
-  if (!root || (!root.left && !root.right)) return root;
+    // 边界，0 | 1 节点，无需翻转
+    if (!root || (!root.left && !root.right)) return root;
 
-  // 2. 获取翻转后的左右子树
-  const left = invertTree(root.left);
-  const right = invertTree(root.right);
+    // 2. 获取翻转后的左右子树
+    const left = invertTree(root.left);
+    const right = invertTree(root.right);
 
-  // 3. 翻转当前节点
-  root.left = right;
-  root.right = left;
+    // 3. 翻转当前节点
+    root.left = right;
+    root.right = left;
 
-  return root;
+    return root;
 }

@@ -8,23 +8,23 @@
  * @param target
  */
 export default function twoSum(numbers: number[], target: number): number[] {
-  // 双指针-对撞指针
-  let left = 0;
-  let right = numbers.length - 1;
-  const res = [-1, -1];
+    // 双指针-对撞指针
+    let left = 0;
+    let right = numbers.length - 1;
+    const res = [-1, -1];
 
-  while (left < right) {
-    const total = numbers[left] + numbers[right];
-    if (total < target) {
-      left++;
-    } else if (total > target) {
-      right--;
-    } else {
-      res[0] = left + 1;
-      res[1] = right + 1;
-      break;
+    while (left < right) {
+        const total = numbers[left] + numbers[right];
+        if (total < target) {
+            left++;
+        } else if (total > target) {
+            right--;
+        } else {
+            res[0] = left + 1;
+            res[1] = right + 1;
+            break;
+        }
     }
-  }
 
-  return res;
+    return res;
 }

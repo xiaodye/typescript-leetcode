@@ -7,40 +7,40 @@
  * @returns
  */
 export default function combinationSum2(candidates: number[], target: number): number[][] {
-  const res: number[][] = [];
-  const combine: number[] = [];
-  let sum = 0;
+    const res: number[][] = [];
+    const combine: number[] = [];
+    let sum = 0;
 
-  // 用于去重
-  const used: boolean[] = [];
+    // 用于去重
+    const used: boolean[] = [];
 
-  // 需要先给 candidates 排个序
-  candidates.sort((a, b) => a - b);
+    // 需要先给 candidates 排个序
+    candidates.sort((a, b) => a - b);
 
-  function backtrack(begin: number): void {
-    if (sum > target) return;
-    if (sum === target) {
-      res.push([...combine]);
-      return;
+    function backtrack(begin: number): void {
+        if (sum > target) return;
+        if (sum === target) {
+            res.push([...combine]);
+            return;
+        }
+
+        for (let i = begin; i < candidates.length; i++) {
+            // 去重
+            if (i - 1 >= 0 && candidates[i] === candidates[i - 1] && !used[i - 1]) continue;
+
+            combine.push(candidates[i]);
+            sum += candidates[i];
+            used[i] = true;
+
+            backtrack(i + 1);
+
+            combine.pop();
+            sum -= candidates[i];
+            used[i] = false;
+        }
     }
 
-    for (let i = begin; i < candidates.length; i++) {
-      // 去重
-      if (i - 1 >= 0 && candidates[i] === candidates[i - 1] && !used[i - 1]) continue;
+    backtrack(0);
 
-      combine.push(candidates[i]);
-      sum += candidates[i];
-      used[i] = true;
-
-      backtrack(i + 1);
-
-      combine.pop();
-      sum -= candidates[i];
-      used[i] = false;
-    }
-  }
-
-  backtrack(0);
-
-  return res;
+    return res;
 }

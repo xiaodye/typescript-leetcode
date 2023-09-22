@@ -6,25 +6,25 @@
  * @returns
  */
 export default function findLengthOfLCIS(nums: number[]): number {
-  if (nums.length <= 1) return 1;
+    if (nums.length <= 1) return 1;
 
-  // dp[i]: 下标 i 结尾的最长递增子序列
-  // 递推式：dp[i] = dp[i - 1] + 1; (nums[i] > nums[i - 1])
-  // 初始化dp: 每项初始值均为 1
+    // dp[i]: 下标 i 结尾的最长递增子序列
+    // 递推式：dp[i] = dp[i - 1] + 1; (nums[i] > nums[i - 1])
+    // 初始化dp: 每项初始值均为 1
 
-  const len = nums.length;
-  const dp = new Array<number>(len).fill(1);
-  let maxLen = 1;
+    const len = nums.length;
+    const dp = new Array<number>(len).fill(1);
+    let maxLen = 1;
 
-  for (let i = 1; i < len; i++) {
-    if (nums[i] > nums[i - 1]) {
-      dp[i] = dp[i - 1] + 1;
+    for (let i = 1; i < len; i++) {
+        if (nums[i] > nums[i - 1]) {
+            dp[i] = dp[i - 1] + 1;
+        }
+
+        if (dp[i] > maxLen) {
+            maxLen = dp[i];
+        }
     }
 
-    if (dp[i] > maxLen) {
-      maxLen = dp[i];
-    }
-  }
-
-  return maxLen;
+    return maxLen;
 }

@@ -6,13 +6,13 @@ import TreeNode from "../data-structure/TreeNode";
  * @returns
  */
 export default function mirrorTree(root: TreeNode): TreeNode {
-  if (!root) return null;
+    if (!root) return null;
 
-  const left = mirrorTree(root.right);
-  const right = mirrorTree(root.left);
+    const left = mirrorTree(root.right);
+    const right = mirrorTree(root.left);
 
-  root.left = left;
-  root.right = right;
+    root.left = left;
+    root.right = right;
 
-  return root;
+    return root;
 }

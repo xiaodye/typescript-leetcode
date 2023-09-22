@@ -6,18 +6,18 @@
  * @returns
  */
 export default function reverse(x: number): number {
-  let res = 0;
+    let res = 0;
 
-  while (x !== 0) {
-    const temp = x % 10;
-    res = res * 10 + temp;
+    while (x !== 0) {
+        const temp = x % 10;
+        res = res * 10 + temp;
 
-    if (res < Math.pow(-2, 31) || res > Math.pow(2, 31) - 1) {
-      return 0;
+        if (res < Math.pow(-2, 31) || res > Math.pow(2, 31) - 1) {
+            return 0;
+        }
+
+        x = x > 0 ? Math.floor(x / 10) : Math.ceil(x / 10);
     }
 
-    x = x > 0 ? Math.floor(x / 10) : Math.ceil(x / 10);
-  }
-
-  return res;
+    return res;
 }

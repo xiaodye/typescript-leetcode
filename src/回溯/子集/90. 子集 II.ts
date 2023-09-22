@@ -5,35 +5,35 @@
  * @returns
  */
 export default function subsetsWithDup(nums: number[]): number[][] {
-  // 回溯-子集问题-原数组有重复元素
-  // 1. 没有顺序要求
-  // 2. 每个元素只能使用一次
+    // 回溯-子集问题-原数组有重复元素
+    // 1. 没有顺序要求
+    // 2. 每个元素只能使用一次
 
-  const res: number[][] = [];
-  const subset: number[] = [];
-  const used: boolean[] = [];
+    const res: number[][] = [];
+    const subset: number[] = [];
+    const used: boolean[] = [];
 
-  function backtrack(index: number): void {
-    res.push([...subset]);
+    function backtrack(index: number): void {
+        res.push([...subset]);
 
-    for (let i = index; i < nums.length; i++) {
-      // 去重
-      if (i > 0 && nums[i - 1] === nums[i] && !used[i - 1]) continue;
+        for (let i = index; i < nums.length; i++) {
+            // 去重
+            if (i > 0 && nums[i - 1] === nums[i] && !used[i - 1]) continue;
 
-      subset.push(nums[i]);
-      used[i] = true;
-      // 递归
-      backtrack(i + 1);
+            subset.push(nums[i]);
+            used[i] = true;
+            // 递归
+            backtrack(i + 1);
 
-      // 回溯
-      subset.pop();
-      used[i] = false;
+            // 回溯
+            subset.pop();
+            used[i] = false;
+        }
     }
-  }
 
-  // 需要排个序
-  nums.sort((a, b) => a - b);
-  backtrack(0);
+    // 需要排个序
+    nums.sort((a, b) => a - b);
+    backtrack(0);
 
-  return res;
+    return res;
 }

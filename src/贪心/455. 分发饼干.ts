@@ -7,21 +7,21 @@
  * @returns
  */
 export default function findContentChildren(g: number[], s: number[]): number {
-  let i = 0;
-  let j = 0;
+    let i = 0;
+    let j = 0;
 
-  // 给数组排个序
-  g.sort((a, b) => a - b);
-  s.sort((a, b) => a - b);
+    // 给数组排个序
+    g.sort((a, b) => a - b);
+    s.sort((a, b) => a - b);
 
-  while (i < g.length && j <= s.length) {
-    if (g[i] <= s[j]) {
-      i++;
-      j++;
-    } else {
-      j++;
+    while (i < g.length && j <= s.length) {
+        if (g[i] <= s[j]) {
+            i++;
+            j++;
+        } else {
+            j++;
+        }
     }
-  }
 
-  return i;
+    return i;
 }

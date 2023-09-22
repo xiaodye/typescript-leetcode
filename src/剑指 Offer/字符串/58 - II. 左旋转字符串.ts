@@ -6,5 +6,5 @@
  * @returns
  */
 export default function reverseLeftWords(s: string, n: number): string {
-  return s.slice(n) + s.slice(0, n);
+    return s.slice(n) + s.slice(0, n);
 }

@@ -7,18 +7,18 @@ import TreeNode from "../../data-structure/TreeNode";
  * @returns 新二叉树根节点
  */
 export default function buildTree(preorder: number[], inorder: number[]): TreeNode | null {
-  // 边界条件
-  if (preorder.length === 0) return null;
+    // 边界条件
+    if (preorder.length === 0) return null;
 
-  const rootVal = preorder[0];
-  const root = new TreeNode(rootVal);
+    const rootVal = preorder[0];
+    const root = new TreeNode(rootVal);
 
-  // mid 是 inorder 中根节点的下标，也是左子树节点数
-  const mid = inorder.indexOf(rootVal);
+    // mid 是 inorder 中根节点的下标，也是左子树节点数
+    const mid = inorder.indexOf(rootVal);
 
-  // 递归构建左右子树
-  root.left = buildTree(preorder.slice(1, mid + 1), inorder.slice(0, mid));
-  root.right = buildTree(preorder.slice(mid + 1), inorder.slice(mid + 1));
+    // 递归构建左右子树
+    root.left = buildTree(preorder.slice(1, mid + 1), inorder.slice(0, mid));
+    root.right = buildTree(preorder.slice(mid + 1), inorder.slice(mid + 1));
 
-  return root;
+    return root;
 }

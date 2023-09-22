@@ -7,25 +7,25 @@
  * @returns
  */
 export default function quickSort(arr: number[]): number[] {
-  if (arr.length <= 1) return arr;
+    if (arr.length <= 1) return arr;
 
-  // 把第一个元素作为基准元素
-  const pivot = arr[0];
+    // 把第一个元素作为基准元素
+    const pivot = arr[0];
 
-  const leftArr: number[] = [];
-  const rightArr: number[] = [];
+    const leftArr: number[] = [];
+    const rightArr: number[] = [];
 
-  // 对元素进行分堆，小于基准的放左边，大于的放右边
-  for (let i = 1; i < arr.length; i++) {
-    if (arr[i] <= pivot) {
-      leftArr.push(arr[i]);
-    } else {
-      rightArr.push(arr[i]);
+    // 对元素进行分堆，小于基准的放左边，大于的放右边
+    for (let i = 1; i < arr.length; i++) {
+        if (arr[i] <= pivot) {
+            leftArr.push(arr[i]);
+        } else {
+            rightArr.push(arr[i]);
+        }
     }
-  }
 
-  // 以此递归
-  return [...quickSort(leftArr), pivot, ...quickSort(rightArr)];
+    // 以此递归
+    return [...quickSort(leftArr), pivot, ...quickSort(rightArr)];
 }
 
 /**
@@ -36,15 +36,15 @@ export default function quickSort(arr: number[]): number[] {
  * @returns
  */
 export function quickSort2(arr: number[], l: number = 0, r: number = arr.length - 1): number[] {
-  // 数组元素小于 1 ，直接 return
-  if (r - l < 1) return arr;
+    // 数组元素小于 1 ，直接 return
+    if (r - l < 1) return arr;
 
-  const pivotIndex = partition(arr, l, r);
+    const pivotIndex = partition(arr, l, r);
 
-  quickSort2(arr, l, pivotIndex - 1);
-  quickSort2(arr, pivotIndex + 1, r);
+    quickSort2(arr, l, pivotIndex - 1);
+    quickSort2(arr, pivotIndex + 1, r);
 
-  return arr;
+    return arr;
 }
 
 /**
@@ -55,21 +55,21 @@ export function quickSort2(arr: number[], l: number = 0, r: number = arr.length 
  * @returns
  */
 function partition(arr: number[], l: number, r: number): number {
-  // 选取最后一个元素为基准元素
-  const pivot = arr[r];
+    // 选取最后一个元素为基准元素
+    const pivot = arr[r];
 
-  let i = l - 1;
+    let i = l - 1;
 
-  for (let j = l; j < r; j++) {
-    if (arr[j] < pivot) {
-      i++;
-      swap(arr, i, j);
+    for (let j = l; j < r; j++) {
+        if (arr[j] < pivot) {
+            i++;
+            swap(arr, i, j);
+        }
     }
-  }
 
-  swap(arr, i + 1, r);
+    swap(arr, i + 1, r);
 
-  return i + 1;
+    return i + 1;
 }
 
 /**
@@ -79,7 +79,7 @@ function partition(arr: number[], l: number, r: number): number {
  * @param j
  */
 function swap(arr: number[], i: number, j: number): void {
-  [arr[i], arr[j]] = [arr[j], arr[i]];
+    [arr[i], arr[j]] = [arr[j], arr[i]];
 }
 
 // test

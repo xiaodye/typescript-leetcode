@@ -6,20 +6,20 @@
  * @returns
  */
 export default function minArray(numbers: number[]): number {
-  let left = 0;
-  let right = numbers.length - 1;
+    let left = 0;
+    let right = numbers.length - 1;
 
-  while (left < right) {
-    const pivot = Math.floor(left + (right - left) / 2);
+    while (left < right) {
+        const pivot = Math.floor(left + (right - left) / 2);
 
-    if (numbers[pivot] < numbers[right]) {
-      right = pivot;
-    } else if (numbers[pivot] > numbers[right]) {
-      left = pivot + 1;
-    } else {
-      right--;
+        if (numbers[pivot] < numbers[right]) {
+            right = pivot;
+        } else if (numbers[pivot] > numbers[right]) {
+            left = pivot + 1;
+        } else {
+            right--;
+        }
     }
-  }
 
-  return numbers[left];
+    return numbers[left];
 }

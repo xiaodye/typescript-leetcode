@@ -6,13 +6,13 @@ import ListNode from "../data-structure/ListNode";
  * @returns
  */
 export default function hasCycle(head: ListNode | null): boolean {
-  const visted = new Set<ListNode>();
+    const visted = new Set<ListNode>();
 
-  while (head) {
-    if (visted.has(head)) return true;
-    visted.add(head);
-    head = head.next;
-  }
+    while (head) {
+        if (visted.has(head)) return true;
+        visted.add(head);
+        head = head.next;
+    }
 
-  return false;
+    return false;
 }

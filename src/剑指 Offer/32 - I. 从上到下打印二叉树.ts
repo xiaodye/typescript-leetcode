@@ -6,26 +6,26 @@ import TreeNode from "../data-structure/TreeNode";
  * @returns
  */
 export default function levelOrder(root: TreeNode): number[] {
-  if (!root) return [];
+    if (!root) return [];
 
-  // 定义队列，根元素先进队
-  const queue: TreeNode[] = [root];
-  const res: number[] = [];
+    // 定义队列，根元素先进队
+    const queue: TreeNode[] = [root];
+    const res: number[] = [];
 
-  while (queue.length !== 0) {
-    // 获取当前层的元素个数
-    const len = queue.length;
+    while (queue.length !== 0) {
+        // 获取当前层的元素个数
+        const len = queue.length;
 
-    // 遍历当前层的每个元素
-    for (let i = 0; i < len; i++) {
-      const top = queue.shift();
-      res.push(top.val);
+        // 遍历当前层的每个元素
+        for (let i = 0; i < len; i++) {
+            const top = queue.shift();
+            res.push(top.val);
 
-      // 把下一层的元素进队列
-      if (top.left) queue.push(top.left);
-      if (top.right) queue.push(top.right);
+            // 把下一层的元素进队列
+            if (top.left) queue.push(top.left);
+            if (top.right) queue.push(top.right);
+        }
     }
-  }
 
-  return res;
+    return res;
 }

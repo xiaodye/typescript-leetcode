@@ -7,27 +7,27 @@
  * @param capacity
  */
 export default function carPooling(trips: number[][], capacity: number): boolean {
-  // 构建一个差分数组，初始数组为公里数组，比如 0~7 公里，每个对应一个元素
-  // 需要确定数组的长度，从 trips[0] 找最大值
-  const len = trips.sort((a, b) => b[2] - a[2])[0][2];
-  const res: number[] = [];
+    // 构建一个差分数组，初始数组为公里数组，比如 0~7 公里，每个对应一个元素
+    // 需要确定数组的长度，从 trips[0] 找最大值
+    const len = trips.sort((a, b) => b[2] - a[2])[0][2];
+    const res: number[] = [];
 
-  // 初始乘客数都为 0，diff 中也全为 0
-  const diff = new Array<number>(len + 1).fill(0);
+    // 初始乘客数都为 0，diff 中也全为 0
+    const diff = new Array<number>(len + 1).fill(0);
 
-  for (const trip of trips) {
-    diff[trip[1]] += trip[0];
-    diff[trip[2]] -= trip[0];
-  }
+    for (const trip of trips) {
+        diff[trip[1]] += trip[0];
+        diff[trip[2]] -= trip[0];
+    }
 
-  // 构建结果数组
-  res[0] = diff[0];
-  if (res[0] > capacity) return false;
+    // 构建结果数组
+    res[0] = diff[0];
+    if (res[0] > capacity) return false;
 
-  for (let i = 1; i < diff.length; i++) {
-    res[i] = res[i - 1] + diff[i];
-    if (res[i] > capacity) return false;
-  }
+    for (let i = 1; i < diff.length; i++) {
+        res[i] = res[i - 1] + diff[i];
+        if (res[i] > capacity) return false;
+    }
 
-  return true;
+    return true;
 }

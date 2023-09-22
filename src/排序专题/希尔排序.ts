@@ -7,27 +7,27 @@
  * @returns
  */
 export default function shellSort(arr: number[]): number[] {
-  if (arr.length <= 1) return arr;
+    if (arr.length <= 1) return arr;
 
-  let gap = Math.floor(arr.length / 2);
+    let gap = Math.floor(arr.length / 2);
 
-  while (gap > 0) {
-    for (let i = gap; i < arr.length; i++) {
-      let j = i;
-      const temp = arr[i];
+    while (gap > 0) {
+        for (let i = gap; i < arr.length; i++) {
+            let j = i;
+            const temp = arr[i];
 
-      while (j - gap >= 0 && arr[j - gap] > arr[j]) {
-        arr[j] = arr[j - gap];
-        j -= gap;
-      }
+            while (j - gap >= 0 && arr[j - gap] > arr[j]) {
+                arr[j] = arr[j - gap];
+                j -= gap;
+            }
 
-      arr[j] = temp;
+            arr[j] = temp;
+        }
+
+        gap = Math.floor(gap / 2);
     }
 
-    gap = Math.floor(gap / 2);
-  }
-
-  return arr;
+    return arr;
 }
 
 // test

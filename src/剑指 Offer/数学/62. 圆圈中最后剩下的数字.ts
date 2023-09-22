@@ -5,13 +5,13 @@
  * @param m
  */
 export default function lastRemaining(n: number, m: number): number {
-  // 最终活下来那个人的初始位置
-  let pos = 0;
+    // 最终活下来那个人的初始位置
+    let pos = 0;
 
-  for (let i = 2; i <= n; i++) {
-    // 每次循环右移
-    pos = (pos + m) % i;
-  }
+    for (let i = 2; i <= n; i++) {
+        // 每次循环右移
+        pos = (pos + m) % i;
+    }
 
-  return pos;
+    return pos;
 }

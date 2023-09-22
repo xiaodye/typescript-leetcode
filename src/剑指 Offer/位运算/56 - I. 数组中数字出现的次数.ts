@@ -5,29 +5,29 @@
  * @returns
  */
 export default function singleNumbers(nums: number[]): number[] {
-  // x, y 分别为两个不相同的数字
-  let [x, y] = [0, 0];
+    // x, y 分别为两个不相同的数字
+    let [x, y] = [0, 0];
 
-  // n 用于存储 x 异或 y，m 用于记录 x 和 y 中第一个不同的位
-  let [n, m] = [0, 1];
+    // n 用于存储 x 异或 y，m 用于记录 x 和 y 中第一个不同的位
+    let [n, m] = [0, 1];
 
-  for (let i = 0; i < nums.length; i++) {
-    n ^= nums[i];
-  }
-
-  // 循环左移，计算 m
-  while ((n & m) === 0) {
-    m <<= 1;
-  }
-
-  // 遍历 nums 分组, 获取 x 和 y
-  for (let i = 0; i < nums.length; i++) {
-    if ((m & nums[i]) === 0) {
-      x ^= nums[i];
-    } else {
-      y ^= nums[i];
+    for (let i = 0; i < nums.length; i++) {
+        n ^= nums[i];
     }
-  }
 
-  return [x, y];
+    // 循环左移，计算 m
+    while ((n & m) === 0) {
+        m <<= 1;
+    }
+
+    // 遍历 nums 分组, 获取 x 和 y
+    for (let i = 0; i < nums.length; i++) {
+        if ((m & nums[i]) === 0) {
+            x ^= nums[i];
+        } else {
+            y ^= nums[i];
+        }
+    }
+
+    return [x, y];
 }

@@ -6,14 +6,14 @@
  * @returns
  */
 export default function cuttingRope(n: number): number {
-  const dp = new Array<number>(n + 1).fill(0);
+    const dp = new Array<number>(n + 1).fill(0);
 
-  for (let i = 2; i <= n; i++) {
-    for (let j = 1; j < i; j++) {
-      // dp[i] 表示将长度为 i 的绳子剪成至少两段绳子之后，这些绳子长度的最大乘积
-      dp[i] = Math.max(dp[i], j * (i - j), j * dp[i - j]);
+    for (let i = 2; i <= n; i++) {
+        for (let j = 1; j < i; j++) {
+            // dp[i] 表示将长度为 i 的绳子剪成至少两段绳子之后，这些绳子长度的最大乘积
+            dp[i] = Math.max(dp[i], j * (i - j), j * dp[i - j]);
+        }
     }
-  }
 
-  return dp[n];
+    return dp[n];
 }
