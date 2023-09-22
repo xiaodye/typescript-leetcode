@@ -3,7 +3,7 @@
  * @param n
  * @returns
  */
-export default function fib(n: number): number {
+function fib(n: number): number {
     if (n === 0 || n === 1) return n;
 
     const dp: number[] = [0, 1];
@@ -14,3 +14,5 @@ export default function fib(n: number): number {
 
     return dp[n];
 }
+
+export default fib;

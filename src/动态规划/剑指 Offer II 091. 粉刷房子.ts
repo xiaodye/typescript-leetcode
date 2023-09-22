@@ -3,7 +3,7 @@
  * @param costs
  * @returns
  */
-export default function minCost(costs: number[][]): number {
+function minCost(costs: number[][]): number {
     if (costs.length === 0) return 0;
 
     const len = costs.length;
@@ -27,10 +27,4 @@ export default function minCost(costs: number[][]): number {
     return Math.min(f[len - 1][0], f[len - 1][1], f[len - 1][2]);
 }
 
-// test
-const costs = [
-    [17, 2, 17],
-    [16, 16, 5],
-    [14, 3, 19],
-];
-console.log(minCost(costs));
+export default minCost;

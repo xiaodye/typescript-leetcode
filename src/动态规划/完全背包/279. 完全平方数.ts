@@ -4,7 +4,7 @@
  * @param n
  * @returns
  */
-export default function numSquares(n: number): number {
+function numSquares(n: number): number {
     // dp[i]: 和为 i 的完全平方数的最小数量
     // dp[i] = Math.min(dp[i - 1*1]+1, dp[i - 2*2]+1, ...)
     const dp = new Array<number>(n + 1).fill(Infinity);
@@ -20,3 +20,5 @@ export default function numSquares(n: number): number {
 
     return dp[n];
 }
+
+export default numSquares;

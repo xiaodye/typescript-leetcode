@@ -4,7 +4,7 @@
  * @param n
  * @returns
  */
-export default function integerBreak(n: number): number {
+function integerBreak(n: number): number {
     const dp = new Array<number>(n + 1).fill(0);
 
     dp[2] = 1;
@@ -17,3 +17,5 @@ export default function integerBreak(n: number): number {
 
     return dp[n];
 }
+
+export default integerBreak;

@@ -7,7 +7,7 @@
  * @param n
  * @returns
  */
-export default function findMaxForm(strs: string[], m: number, n: number): number {
+function findMaxForm(strs: string[], m: number, n: number): number {
     // dp[i][j][k] 前 i 个字符串， j：0的数量 k: 1的数量
 
     const len = strs.length;
@@ -44,3 +44,5 @@ function getZerosOnes(str: string) {
 
     return zerosOnes;
 }
+
+export default findMaxForm;

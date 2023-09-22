@@ -8,7 +8,7 @@
  * @param c 背包的容量
  * @returns 背包的最大价值
  */
-export default function knapsack(weight: number[], value: number[], c: number): number {
+function knapsack(weight: number[], value: number[], c: number): number {
     // dp[i][j]: 前 i 个物品，背包容量为 j 的最大价值
 
     // 对 物品 i 放还是不放的问题
@@ -55,6 +55,4 @@ export default function knapsack(weight: number[], value: number[], c: number): 
     return dp[num - 1][c];
 }
 
-// test
-console.log(knapsack([1, 3, 4, 5], [15, 20, 30, 55], 6));
-debugger;
+export default knapsack;

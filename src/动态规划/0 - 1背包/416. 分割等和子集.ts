@@ -3,7 +3,7 @@
  * @param nums
  * @returns
  */
-export default function canPartition(nums: number[]): boolean {
+function canPartition(nums: number[]): boolean {
     // 数组长度小于2，不成立
     if (nums.length < 2) return false;
 
@@ -33,6 +33,4 @@ export default function canPartition(nums: number[]): boolean {
     return dp[nums.length - 1][target];
 }
 
-// test
-console.log(canPartition([1, 5, 11, 5]));
-console.log(canPartition([1, 3, 4, 4]));
+export default canPartition;

@@ -4,7 +4,7 @@
  * @param nums2
  * @returns
  */
-export default function findLength(nums1: number[], nums2: number[]): number {
+function findLength(nums1: number[], nums2: number[]): number {
     const len1 = nums1.length;
     const len2 = nums2.length;
 
@@ -29,3 +29,5 @@ export default function findLength(nums1: number[], nums2: number[]): number {
 
     return maxLen;
 }
+
+export default findLength;

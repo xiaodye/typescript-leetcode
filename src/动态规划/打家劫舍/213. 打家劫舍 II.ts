@@ -6,7 +6,7 @@
  * @param nums
  * @returns
  */
-export default function rob(nums: number[]): number {
+function rob(nums: number[]): number {
     // 数组成环了，那么首尾元素一定不能同时存在，可以分为两种情况处理，这样就和打家劫舍I 一样了
     // 1. 考虑首元素，不考虑尾元素
     // 2. 考虑尾元素，不考虑首元素
@@ -33,3 +33,5 @@ function robRange(nums: number[], l: number, r: number): number {
 
     return dp[r];
 }
+
+export default rob;

@@ -3,7 +3,7 @@
  * @param n
  * @returns
  */
-export default function numTrees(n: number): number {
+function numTrees(n: number): number {
     const dp = new Array<number>(n + 1).fill(0);
 
     dp[0] = 1;
@@ -16,3 +16,5 @@ export default function numTrees(n: number): number {
 
     return dp[n];
 }
+
+export default numTrees;

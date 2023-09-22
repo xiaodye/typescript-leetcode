@@ -6,7 +6,7 @@
  * @param amount
  * @param coins
  */
-export default function change(amount: number, coins: number[]): number {
+function change(amount: number, coins: number[]): number {
     // dp[i] 表示金额之和等于 i 的硬币组合数
     // dp[i] = sum(dp[i- coins[0]], dp[i - coins[1],...])
     // dp[0] = 1; 金额为0 ，就是不放硬币 1种
@@ -24,3 +24,5 @@ export default function change(amount: number, coins: number[]): number {
 
     return dp[amount];
 }
+
+export default change;

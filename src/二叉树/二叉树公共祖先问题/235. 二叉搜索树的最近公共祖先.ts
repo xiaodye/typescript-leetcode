@@ -10,7 +10,7 @@ import TreeNode from "../../data-structure/TreeNode";
 export default function lowestCommonAncestor(
     root: TreeNode | null,
     p: TreeNode | null,
-    q: TreeNode | null,
+    q: TreeNode | null
 ): TreeNode | null {
     // 情况一：当点节点 > p.val 和 q.val ，左边递归查找
     // 情况二：当前节点 < p.val 和 q.val，右边递归查找

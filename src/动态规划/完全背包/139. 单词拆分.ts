@@ -5,7 +5,7 @@
  * @param wordDict
  * @returns
  */
-export default function wordBreak(s: string, wordDict: string[]): boolean {
+function wordBreak(s: string, wordDict: string[]): boolean {
     // 动态规划
     // dp[i]: 前 i 个字符能否和由字典的字符组成 对应下标 i - 1
     // dp[i] = dp[i - w[0].length] || dp[i - w[1].length] || ...
@@ -30,3 +30,5 @@ export default function wordBreak(s: string, wordDict: string[]): boolean {
 
     return dp[s.length];
 }
+
+export default wordBreak;

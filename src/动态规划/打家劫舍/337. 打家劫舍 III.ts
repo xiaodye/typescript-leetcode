@@ -7,7 +7,7 @@ import TreeNode from "../../data-structure/TreeNode";
  * 给定二叉树的 root 。返回 在不触动警报的情况下 ，小偷能够盗取的最高金额 。
  * @param root
  */
-export default function rob(root: TreeNode | null): number {
+function rob(root: TreeNode | null): number {
     // 一定是要后序遍历，因为通过递归函数的返回值来做下一步计算
     // 如果抢了当前节点，两个孩子就不能动，如果没抢当前节点，就可以考虑抢左右孩子（注意这里说的是“考虑”）
 
@@ -35,3 +35,5 @@ export default function rob(root: TreeNode | null): number {
 
     return traverse(root);
 }
+
+export default rob;

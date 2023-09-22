@@ -3,7 +3,7 @@
  * @param nums
  * @returns
  */
-export default function lengthOfLIS(nums: number[]): number {
+function lengthOfLIS(nums: number[]): number {
     // dp: 以 nums[i] 结尾的最长递增子序列
     // dp[i] = Math.max(dp[0], dp[1], ...) + 1; (nums[i] > nums[j]);
     // 初始化 dp, 开始每个元素均为 1
@@ -31,3 +31,5 @@ export default function lengthOfLIS(nums: number[]): number {
 
     return maxLen;
 }
+
+export default lengthOfLIS;

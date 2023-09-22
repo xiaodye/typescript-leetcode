@@ -6,7 +6,7 @@
  * @param n
  * @returns
  */
-export default function uniquePaths(m: number, n: number): number {
+function uniquePaths(m: number, n: number): number {
     // 创建dp数组
     const dp = Array.from({ length: m }, () => new Array<number>(n).fill(0));
 
@@ -26,3 +26,5 @@ export default function uniquePaths(m: number, n: number): number {
 
     return dp[m - 1][n - 1];
 }
+
+export default uniquePaths;

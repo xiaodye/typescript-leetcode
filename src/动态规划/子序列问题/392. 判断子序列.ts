@@ -6,7 +6,7 @@
  * @param t
  * @returns
  */
-export default function isSubsequence(s: string, t: string): boolean {
+function isSubsequence(s: string, t: string): boolean {
     if (s.length === 0) return true;
 
     let i = 0;
@@ -22,3 +22,5 @@ export default function isSubsequence(s: string, t: string): boolean {
 
     return i === s.length;
 }
+
+export default isSubsequence;

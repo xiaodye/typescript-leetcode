@@ -4,7 +4,7 @@
  * @param stones
  * @returns
  */
-export default function lastStoneWeightII(stones: number[]): number {
+function lastStoneWeightII(stones: number[]): number {
     //  可以看成是背包容量
     const sum = stones.reduce((total, curr) => total + curr, 0);
     const n = Math.floor(sum / 2);
@@ -28,3 +28,5 @@ export default function lastStoneWeightII(stones: number[]): number {
 
     return sum - dp[stones.length - 1][n] * 2;
 }
+
+export default lastStoneWeightII;

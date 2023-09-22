@@ -5,7 +5,7 @@
  * @param nums
  * @returns
  */
-export default function findLengthOfLCIS(nums: number[]): number {
+function findLengthOfLCIS(nums: number[]): number {
     if (nums.length <= 1) return 1;
 
     // dp[i]: 下标 i 结尾的最长递增子序列
@@ -28,3 +28,5 @@ export default function findLengthOfLCIS(nums: number[]): number {
 
     return maxLen;
 }
+
+export default findLengthOfLCIS;

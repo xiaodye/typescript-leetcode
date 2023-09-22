@@ -6,7 +6,7 @@
  * @param target
  * @returns
  */
-export default function combinationSum4(nums: number[], target: number): number {
+function combinationSum4(nums: number[], target: number): number {
     // dp[i]: 凑成目标数 i 的排列组合数
     // dp[i] = sum(dp[i - nums[0]], dp[i- nums[1]],...)
     // dp[0] = 1; 凑成 0 的排列组合数有一种，就是什么都不放
@@ -23,3 +23,5 @@ export default function combinationSum4(nums: number[], target: number): number 
 
     return dp[target];
 }
+
+export default combinationSum4;

@@ -7,7 +7,7 @@
  * @param cost
  * @returns
  */
-export default function minCostClimbingStairs(cost: number[]): number {
+function minCostClimbingStairs(cost: number[]): number {
     // dp[i]: 爬到这个楼梯需要支付的费用, 最终要爬到小标 n
     // dp[i] = Math.min(dp[i - 1] + cost[i - 1], dp[i - 2] + cost[i - 2]);
 
@@ -20,3 +20,5 @@ export default function minCostClimbingStairs(cost: number[]): number {
 
     return dp[cost.length - 1];
 }
+
+export default minCostClimbingStairs;

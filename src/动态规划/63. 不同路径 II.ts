@@ -6,7 +6,7 @@
  * @param obstacleGrid
  * @returns
  */
-export default function uniquePathsWithObstacles(obstacleGrid: number[][]): number {
+function uniquePathsWithObstacles(obstacleGrid: number[][]): number {
     const m = obstacleGrid.length;
     const n = obstacleGrid[0].length;
 
@@ -38,3 +38,5 @@ export default function uniquePathsWithObstacles(obstacleGrid: number[][]): numb
 
     return dp[m - 1][n - 1];
 }
+
+export default uniquePathsWithObstacles;

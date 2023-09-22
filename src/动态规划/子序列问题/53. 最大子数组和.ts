@@ -4,7 +4,7 @@
  * @param nums
  * @returns
  */
-export default function maxSubArray(nums: number[]): number {
+function maxSubArray(nums: number[]): number {
     // dp[i]: 第 i 项结尾最大子数组和
     // 递推式: dp[i] = Math.max(dp[i - 1] + nums[i], nums[i])
     // 初始化dp: dp[0] = nums[0];
@@ -20,3 +20,5 @@ export default function maxSubArray(nums: number[]): number {
 
     return maxSum;
 }
+
+export default maxSubArray;

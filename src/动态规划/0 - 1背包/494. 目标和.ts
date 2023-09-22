@@ -6,7 +6,7 @@
  * @param nums
  * @param target
  */
-export default function findTargetSumWays(nums: number[], target: number): number {
+function findTargetSumWays(nums: number[], target: number): number {
     // left组合 + right组合 = sum
     // 需要 left组合 - right组合 = target
     // 推导出 left组合 = (target + sum) / 2， 0 - 1 背包问题
@@ -41,3 +41,5 @@ export default function findTargetSumWays(nums: number[], target: number): numbe
 
     return dp[nums.length - 1][x];
 }
+
+export default findTargetSumWays;

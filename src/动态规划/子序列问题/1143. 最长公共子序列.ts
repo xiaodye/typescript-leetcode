@@ -4,7 +4,7 @@
  * @param text2
  * @returns
  */
-export default function longestCommonSubsequence(text1: string, text2: string): number {
+function longestCommonSubsequence(text1: string, text2: string): number {
     const len1 = text1.length;
     const len2 = text2.length;
 
@@ -25,3 +25,5 @@ export default function longestCommonSubsequence(text1: string, text2: string): 
 
     return dp[len1][len2];
 }
+
+export default longestCommonSubsequence;
