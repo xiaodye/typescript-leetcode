@@ -5,14 +5,14 @@ import ListNode from "../data-structure/ListNode";
  * @param head
  * @returns
  */
-export default function detectCycle(head: ListNode | null): ListNode | null {
-    if (head === null) return null;
+function detectCycle(head: ListNode | null): ListNode | null {
+    if (!head) return null;
 
     // 初始化快慢指针，慢指针一次走一步，快指针一次走两步
     let slow = head;
     let fast = head;
 
-    while (fast !== null && fast.next !== null) {
+    while (fast && fast.next) {
         slow = slow.next;
         fast = fast.next.next;
 
@@ -32,3 +32,5 @@ export default function detectCycle(head: ListNode | null): ListNode | null {
 
     return null;
 }
+
+export default detectCycle;
