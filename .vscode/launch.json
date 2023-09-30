@@ -5,7 +5,16 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "Launch TS",
+            "name": "esno",
+            "type": "node",
+            "request": "launch",
+            "args": ["./node_modules/esno/esno.js", "${file}"],
+            "skipFiles": ["<node_internals>/**"],
+            "internalConsoleOptions": "openOnSessionStart"
+        },
+
+        {
+            "name": "ts-node",
             "type": "node",
             "request": "launch",
             "runtimeArgs": ["-r", "ts-node/register"],
