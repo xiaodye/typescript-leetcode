@@ -37,7 +37,3 @@ export default function permute(nums: number[]): number[][] {
 
     return res;
 }
-
-// test
-console.log(permute([1, 2, 3]));
-debugger;

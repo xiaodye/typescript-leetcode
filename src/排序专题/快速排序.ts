@@ -81,8 +81,3 @@ function partition(arr: number[], l: number, r: number): number {
 function swap(arr: number[], i: number, j: number): void {
     [arr[i], arr[j]] = [arr[j], arr[i]];
 }
-
-// test
-const arr = [98, 42, 25, 54, 15, 3, 25, 72, 41, 10, 121];
-console.log(quickSort2(arr));
-debugger;

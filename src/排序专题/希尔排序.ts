@@ -29,10 +29,3 @@ export default function shellSort(arr: number[]): number[] {
 
     return arr;
 }
-
-// test
-const arr = [8, 7, 6, 5, 4, 3, 2, 1];
-console.log(shellSort(arr));
-console.log(1);
-
-debugger;

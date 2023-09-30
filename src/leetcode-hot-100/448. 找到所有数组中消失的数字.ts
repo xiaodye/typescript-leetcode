@@ -59,5 +59,3 @@ export function findDisappearedNumbers2(nums: number[]): number[] {
 
     return res;
 }
-
-debugger;

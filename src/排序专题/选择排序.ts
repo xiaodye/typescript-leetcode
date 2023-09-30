@@ -27,8 +27,3 @@ export default function selectSort(arr: number[]): number[] {
 
     return arr;
 }
-
-// test
-const arr = [5, 3, 2, 4, 1];
-console.log(selectSort(arr));
-debugger;

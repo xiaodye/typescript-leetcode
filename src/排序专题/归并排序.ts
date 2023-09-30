@@ -56,7 +56,7 @@ function merge(arr1: number[], arr2: number[]): number[] {
  * @param rightArr
  * @returns
  */
-const merge2 = function (leftArr: number[], rightArr: number[]): number[] {
+function merge2(leftArr: number[], rightArr: number[]): number[] {
     // 初始化两个指针，分别指向 arr1 和 arr2
     let i = 0;
     let j = 0;
@@ -78,9 +78,4 @@ const merge2 = function (leftArr: number[], rightArr: number[]): number[] {
     } else {
         return [...res, ...rightArr.slice(j)];
     }
-};
-
-// test
-const arr = [8, 7, 6, 5, 4, 3, 2, 1];
-console.log(mergeSort(arr));
-debugger;
+}
