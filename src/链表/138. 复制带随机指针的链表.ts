@@ -1,11 +1,21 @@
-import Node from "../data-structure/Node";
+class Node {
+    public val: number;
+    public next: Node | null;
+    public random: Node | null;
+    constructor(val: number, next: Node | null = null, random: Node | null = null) {
+        this.val = val;
+        this.next = next;
+        this.random = random;
+    }
+}
 
 /**
- * 给定一个链表，每个节点包含一个额外增加的随机指针，该指针可以指向链表中的任何节点或空节点。要求返回这个链表的深拷贝。
+ * 给定一个链表，每个节点包含一个额外增加的随机指针，该指针可以指向链表中的任何节点或空节点。
+ * 要求返回这个链表的深拷贝。
  * @param head
  * @returns
  */
-export default function copyRandomList(head: Node | null): Node | null {
+function copyRandomList(head: Node | null): Node | null {
     if (!head) return null;
 
     // 建立映射，源节点 -> 新节点
@@ -37,3 +47,5 @@ export default function copyRandomList(head: Node | null): Node | null {
     // 返回新链表的头节点
     return map.get(head);
 }
+
+export default copyRandomList;
