@@ -1,11 +1,12 @@
 /**
- * 给你一个整数数组 nums，有一个大小为 k 的滑动窗口从数组的最左侧移动到数组的最右侧。你只可以看到在滑动窗口内的 k 个数字。
+ * 给你一个整数数组 nums，有一个大小为 k 的滑动窗口从数组的最左侧移动到数组的最右侧。
+ * 你只可以看到在滑动窗口内的 k 个数字。
  * 滑动窗口每次只向右移动一位。
  * @param nums
  * @param k
  * @returns
  */
-export default function maxSlidingWindow(nums: number[], k: number): number[] {
+function maxSlidingWindow(nums: number[], k: number): number[] {
     const res: number[] = [];
 
     // 定义一个双端队列
@@ -33,3 +34,5 @@ export default function maxSlidingWindow(nums: number[], k: number): number[] {
 
     return res;
 }
+
+export default maxSlidingWindow;

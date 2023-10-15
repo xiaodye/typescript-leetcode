@@ -5,7 +5,7 @@
  * @param p
  * @returns
  */
-export default function findAnagrams(s: string, p: string): number[] {
+function findAnagrams(s: string, p: string): number[] {
     if (s.length < p.length) return [];
 
     // key为字符，value为出现的次数
@@ -34,8 +34,6 @@ export default function findAnagrams(s: string, p: string): number[] {
     while (r < s.length) {
         const char = s[r];
 
-        r++;
-
         if (need.has(char)) {
             win.set(char, win.has(char) ? win.get(char) + 1 : 1);
 
@@ -45,7 +43,7 @@ export default function findAnagrams(s: string, p: string): number[] {
         }
 
         // 当滑动窗口的大小超出p串长度时 收缩窗口
-        while (r - l >= p.length) {
+        while (r - l + 1 >= p.length) {
             if (vaild === need.size) {
                 res.push(l);
             }
@@ -53,6 +51,7 @@ export default function findAnagrams(s: string, p: string): number[] {
             const deletedChar = s[l];
             l++;
 
+            // 更新 win
             if (win.has(deletedChar)) {
                 // 如果离开字符数和所需字符数一致
                 if (win.get(deletedChar) === need.get(deletedChar)) {
@@ -64,7 +63,11 @@ export default function findAnagrams(s: string, p: string): number[] {
                 win.set(deletedChar, win.get(deletedChar) - 1);
             }
         }
+
+        r++;
     }
 
     return res;
 }
+
+export default findAnagrams;
