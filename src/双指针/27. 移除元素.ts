@@ -6,15 +6,24 @@
  * @param val
  * @returns
  */
-export default function removeElement(nums: number[], val: number): number {
-    let slow = 0;
+function removeElement(nums: number[], val: number): number {
+    // 思路：快慢指针
 
-    for (let fast = 0; fast < nums.length; fast++) {
-        if (nums[fast] !== val) {
-            nums[slow] = nums[fast];
-            slow++;
+    let i = 0;
+    let j = 0;
+
+    while (j < nums.length) {
+        if (nums[j] === val) {
+            j++;
+            continue;
         }
+
+        nums[i] = nums[j];
+        i++;
+        j++;
     }
 
-    return slow;
+    return i;
 }
+
+export default removeElement;

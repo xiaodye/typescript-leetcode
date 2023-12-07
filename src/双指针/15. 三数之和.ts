@@ -3,60 +3,46 @@
  * @param nums
  * @returns
  */
-export default function threeSum(nums: number[]): number[][] {
+function threeSum(nums: number[]): number[][] {
+    // 有两个地方需要去重
+
     const res: number[][] = [];
+    const len = nums.length - 1;
 
     // 先给数组排序，数组有序才能用双指针
     nums.sort((a, b) => a - b);
 
-    // 注意我们遍历到倒数第三个数就足够了，因为左右指针会遍历后面两个数
-    for (let i = 0; i < nums.length - 2; i++) {
-        // 数组排过序，如果第一个数大于0直接返回res
-        if (nums[i] > 0) return res;
+    for (let i = 0; i < len - 2; i++) {
+        // 这个最小的数都大于 0 ，后面就不用匹配了
+        if (nums[i] > 0) break;
 
-        // 左指针left, 右指针right
-        let left = i + 1;
-        let right = nums.length - 1;
+        let j = i + 1;
+        let k = len - 1;
 
-        // 如果遇到重复的数字，则跳过，i = 0 的时候，前面没有元素
+        // 要保证 i,j,k 不相同也要保证nums[i], nums[j], nums[k] 也不相等
         if (i > 0 && nums[i] === nums[i - 1]) continue;
 
-        while (left < right) {
-            const total = nums[i] + nums[left] + nums[right];
+        while (j < k) {
+            const total = nums[i] + nums[j] + nums[k];
 
-            if (total < 0) {
-                // 三数之和小于0，左指针前进
-                left++;
-
-                // 处理左指针元素重复的情况
-                while (left < right && nums[left] === nums[left - 1]) {
-                    left++;
-                }
-            } else if (total > 0) {
-                // 三数之和大于0，右指针后退
-                right--;
-
-                // 处理右指针元素重复的情况
-                while (left < right && nums[right] === nums[right + 1]) {
-                    right--;
-                }
+            if (total > 0) {
+                k--;
+                while (j < k && nums[k] === nums[k + 1]) k--;
+            } else if (total < 0) {
+                j++;
+                while (j < k && nums[j] === nums[j - 1]) j++;
             } else {
-                res.push([nums[i], nums[left], nums[right]]);
+                res.push([nums[i], nums[j], nums[k]]);
+                j++;
+                k--;
 
-                // 左右指针一起前进
-                left++;
-                right--;
-
-                // 若左或右指针元素重复，跳过
-                while (left < right && nums[left] === nums[left - 1]) {
-                    left++;
-                }
-                while (left < right && nums[right] === nums[right + 1]) {
-                    right--;
-                }
+                while (j < k && nums[k] === nums[k + 1]) k--;
+                while (j < k && nums[j] === nums[j - 1]) j++;
             }
         }
     }
 
     return res;
 }
+
+export default threeSum;

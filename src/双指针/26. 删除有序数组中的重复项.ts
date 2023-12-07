@@ -5,22 +5,29 @@
  * @param nums
  * @returns
  */
-export default function removeDuplicates(nums: number[]): number {
+function removeDuplicates(nums: number[]): number {
+    // 思路：
+    // 数组有序，相同元素一定会相同
+    // 采用双指针之快慢指针
+
     if (nums.length <= 1) return nums.length;
 
-    // 数组有序，相同元素一定会相同
-    // 采用双指针，快慢指针
+    let i = 0;
+    let j = 0;
 
-    let i = 1;
-
-    // 从第二个元素开始
-    for (let j = 1; j < nums.length; j++) {
-        if (nums[j] === nums[j - 1]) continue;
+    while (j < nums.length) {
+        if (j > 0 && nums[j] === nums[j - 1]) {
+            j++;
+            continue;
+        }
 
         nums[i] = nums[j];
         i++;
+        j++;
     }
 
     // 最终 i 对应的位置最后元素的索引位置 + 1, 即数组长度
     return i;
 }
+
+export default removeDuplicates;
