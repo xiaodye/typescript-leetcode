@@ -3,27 +3,29 @@
  * @param nums
  * @returns
  */
-export default function sortedSquares(nums: number[]): number[] {
+function sortedSquares(nums: number[]): number[] {
     const res: number[] = [];
 
     // 定义双指针
     let i = 0;
     let j = nums.length - 1;
 
-    // k指向结果数组末尾
+    // k 指向数组的末尾，从后往前填充
     let k = j;
 
     while (i <= j) {
         if (nums[i] * nums[i] >= nums[j] * nums[j]) {
             res[k] = nums[i] * nums[i];
             i++;
-            k--;
         } else {
             res[k] = nums[j] * nums[j];
             j--;
-            k--;
         }
+
+        k--;
     }
 
     return res;
 }
+
+export default sortedSquares;

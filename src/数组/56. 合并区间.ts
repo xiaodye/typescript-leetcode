@@ -3,23 +3,25 @@
  * @param intervals
  * @returns
  */
-export default function merge(intervals: number[][]): number[][] {
+function merge(intervals: number[][]): number[][] {
+    // 需要先排序，规则：每一个数组第一个元素大小
+    // 1. 如果两个数组中，前一个数组右边界小于后一个数组的左边界，不需要合并
+    // 2. 前一个数组右边界大于后一个数组的左边界，合并边界
+    // 3. 前一个数组右边界大于后一个数组的右边界，合并数组
+
     const res: number[][] = [];
     const len = intervals.length;
 
     // 将所有区间按照第一个元素大小排序
     intervals.sort((a, b) => a[0] - b[0]);
 
-    // 将第一个区间（起始元素最小的区间）推入结果数组（初始化）
     res.push(intervals[0]);
 
-    // 按照顺序，逐个遍历所有区间
     for (let i = 1; i < len; i++) {
-        let prev = res[res.length - 1];
+        const tail = res[res.length - 1];
 
-        // 若满足交错关系（前一个的尾部 >= 下一个的头部）
-        if (prev[1] >= intervals[i][0]) {
-            prev[1] = Math.max(prev[1], intervals[i][1]);
+        if (tail[1] >= intervals[i][0]) {
+            tail[1] = Math.max(tail[1], intervals[i][1]);
         } else {
             res.push(intervals[i]);
         }
@@ -27,3 +29,5 @@ export default function merge(intervals: number[][]): number[][] {
 
     return res;
 }
+
+export default merge;

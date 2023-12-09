@@ -10,16 +10,20 @@
  * @param nums
  * @returns
  */
-export default function minSubArrayLen(target: number, nums: number[]): number {
-    let minLen = Infinity;
-    let sum = 0;
+function minSubArrayLen(target: number, nums: number[]): number {
+    // 1. 定义两个指针，均从 0 开始
+    // 2. 当窗口内的和小于 target, 扩大窗口, j++
+    // 3. 当窗口内的和大于 target, 开始缩小窗口, i++
 
-    // 定义双指针 i, j
     let i = 0;
+    let j = 0;
+    let sum = 0;
+    let minLen = Infinity;
 
-    for (let j = 0; j < nums.length; j++) {
+    while (j < nums.length) {
         sum += nums[j];
 
+        // 到达临界值
         while (sum >= target) {
             const len = j - i + 1;
             minLen = Math.min(minLen, len);
@@ -28,7 +32,12 @@ export default function minSubArrayLen(target: number, nums: number[]): number {
             sum -= nums[i];
             i++;
         }
+
+        // 扩大窗口
+        j++;
     }
 
     return minLen === Infinity ? 0 : minLen;
 }
+
+export default minSubArrayLen;
