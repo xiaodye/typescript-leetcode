@@ -1,13 +1,13 @@
 /**
  * 请你仅使用两个栈实现先入先出队列。队列应当支持一般队列支持的所有操作（push、pop、peek、empty）
  */
-export default class MyQueue {
-    private inStack: number[] = [];
-    private outStack: number[] = [];
+class MyQueue {
+    #inStack: number[] = [];
+    #outStack: number[] = [];
     constructor() {}
 
     push(x: number): void {
-        this.inStack.push(x);
+        this.#inStack.push(x);
     }
 
     pop(): number {
@@ -15,26 +15,33 @@ export default class MyQueue {
          * 情况一：outStack不为空，直接取栈顶即可
          * 情况二：outStack为空，把inStack依次进outStack，然后再取栈顶
          */
-        if (this.outStack.length === 0) {
-            while (this.inStack.length !== 0) {
-                this.outStack.push(this.inStack.pop());
-            }
+
+        if (this.#outStack.length !== 0) {
+            return this.#outStack.pop();
         }
 
-        return this.outStack.pop();
+        while (this.#inStack.length !== 0) {
+            this.#outStack.push(this.#inStack.pop());
+        }
+
+        return this.#outStack.pop();
     }
 
     peek(): number {
-        if (this.outStack.length === 0) {
-            while (this.inStack.length !== 0) {
-                this.outStack.push(this.inStack.pop());
-            }
+        if (this.#outStack.length !== 0) {
+            return this.#outStack.at(-1);
         }
 
-        return this.outStack[this.outStack.length - 1];
+        while (this.#inStack.length !== 0) {
+            this.#outStack.push(this.#inStack.pop());
+        }
+
+        return this.#outStack.at(-1);
     }
 
     empty(): boolean {
-        return this.inStack.length === 0 && this.outStack.length === 0;
+        return this.#inStack.length === 0 && this.#outStack.length === 0;
     }
 }
+
+export default MyQueue;
