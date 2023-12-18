@@ -5,22 +5,24 @@
  * @param nums
  * @returns
  */
-export default function nextGreaterElements(nums: number[]): number[] {
+function nextGreaterElements(nums: number[]): number[] {
     const len = nums.length;
     const res = new Array<number>(len).fill(-1);
 
-    // 储存索引
-    const stack: number[] = [];
+    // 双端队列, 储存索引
+    const deque: number[] = [];
 
     // len * 2 -1 相当于遍历数组两次
     for (let i = 0; i < len * 2 - 1; i++) {
-        while (stack.length !== 0 && nums[i % len] > nums[stack[stack.length - 1] % len]) {
-            const numIndex = stack.pop();
+        while (deque.length > 0 && nums[i % len] > nums[deque[deque.length - 1] % len]) {
+            const numIndex = deque.pop();
             res[numIndex % len] = nums[i % len];
         }
 
-        stack.push(i);
+        deque.push(i);
     }
 
     return res;
 }
+
+export default nextGreaterElements;

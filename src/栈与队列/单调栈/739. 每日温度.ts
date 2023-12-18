@@ -4,22 +4,24 @@
  * @param temperatures
  * @returns
  */
-export default function dailyTemperatures(temperatures: number[]): number[] {
+function dailyTemperatures(temperatures: number[]): number[] {
     const len = temperatures.length;
     const res = new Array<number>(len).fill(0);
 
-    // 初始化一个递减栈
+    // 初始化一个递减栈, 存储索引
     const stack: number[] = [];
 
     for (let i = 0; i < len; i++) {
+        // 维护一个单调递减栈
         while (stack.length !== 0 && temperatures[i] > temperatures[stack[stack.length - 1]]) {
             const top = stack.pop();
             res[top] = i - top;
         }
 
-        // 存储索引
         stack.push(i);
     }
 
     return res;
 }
+
+export default dailyTemperatures;

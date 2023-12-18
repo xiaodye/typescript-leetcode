@@ -8,8 +8,8 @@
  * @param nums2
  * @returns
  */
-export default function nextGreaterElement(nums1: number[], nums2: number[]): number[] {
-    // 子问题1： 计算 nums2 每个元素右边更大的值
+function nextGreaterElement(nums1: number[], nums2: number[]): number[] {
+    // 子问题1：计算 nums2 每个元素右边更大的值
     // 子问题2：如何存储问题1的结果，保证查询效率
 
     // key: 元素, value: 下一个比它大的元素
@@ -20,22 +20,25 @@ export default function nextGreaterElement(nums1: number[], nums2: number[]): nu
     const deque: number[] = [];
 
     for (let i = 0; i < nums2.length; i++) {
-        while (deque.length !== 0 && nums2[deque[deque.length - 1]] < nums2[i]) {
-            const numIndex = deque.pop();
-            map.set(nums2[numIndex], nums2[i]);
+        while (deque.length > 0 && nums2[i] > nums2[deque[deque.length - 1]]) {
+            const top = deque.pop();
+            map.set(nums2[top], nums2[i]);
         }
 
         deque.push(i);
     }
 
-    // 还未出栈的元素说明这些元素右边没有比他们大的元素，赋值 -1
+    // 一些未出栈元素，说明没有比他们更大的元素，复值 -1
     while (deque.length !== 0) {
-        map.set(nums2[deque.shift()], -1);
+        map.set(nums2[deque.pop()], -1);
     }
 
+    // 取结果
     for (let i = 0; i < nums1.length; i++) {
-        res[i] = map.get(nums1[i]);
+        res.push(map.get(nums1[i]));
     }
 
     return res;
 }
+
+export default nextGreaterElement;
