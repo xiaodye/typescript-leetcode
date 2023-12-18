@@ -2,6 +2,9 @@ import isValid from "../20. 有效的括号";
 import MyStack from "../225. 用队列实现栈";
 import MyQueue from "../232. 用栈实现队列";
 import maxSlidingWindow from "../239. 滑动窗口最大值";
+import evalRPN from "../150. 逆波兰表达式求值";
+import removeDuplicates from "../1047. 删除字符串中的所有相邻重复项";
+import MinStack from "../155. 最小栈";
 
 describe("20. 有效的括号", () => {
     it("test-1", () => {
@@ -39,5 +42,30 @@ describe("225. 用队列实现栈", () => {
 describe("239. 滑动窗口最大值", () => {
     it("test-1", () => {
         expect(maxSlidingWindow([1, 3, -1, -3, 5, 3, 6, 7], 3)).toEqual([3, 3, 5, 5, 6, 7]);
+    });
+});
+
+describe("150. 逆波兰表达式求值", () => {
+    it("test-1", () => {
+        expect(evalRPN(["2", "1", "+", "3", "*"])).toBe(9);
+    });
+});
+
+describe("1047. 删除字符串中的所有相邻重复项", () => {
+    it("test-1", () => {
+        expect(removeDuplicates("abbaca")).toBe("ca");
+    });
+});
+
+describe("155. 最小栈", () => {
+    it("test-1", () => {
+        const minStack = new MinStack();
+        minStack.push(-2);
+        minStack.push(0);
+        minStack.push(-3);
+        expect(minStack.getMin()).toBe(-3);
+        minStack.pop();
+        minStack.top(); // 返回 0.
+        expect(minStack.getMin()).toBe(-2); // 返回 -2.
     });
 });

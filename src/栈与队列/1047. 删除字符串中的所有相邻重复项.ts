@@ -9,16 +9,18 @@
  * @param s
  * @returns
  */
-export default function removeDuplicates(s: string): string {
+function removeDuplicates(s: string): string {
     const stack: string[] = [];
 
-    for (let i = 0; i < s.length; i++) {
-        if (stack.length === 0 || s[i] !== stack[stack.length - 1]) {
-            stack.push(s[i]);
-        } else {
+    for (const char of s) {
+        if (stack.length > 0 && char === stack[stack.length - 1]) {
             stack.pop();
+        } else {
+            stack.push(char);
         }
     }
 
     return stack.join("");
 }
+
+export default removeDuplicates;
