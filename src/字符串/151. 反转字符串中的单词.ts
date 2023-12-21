@@ -11,32 +11,37 @@
  * @param s
  * @returns
  */
-export default function reverseWords(s: string): string {
-    // 定义双端队列
-    const deque: string[] = [];
-    let word = "";
+function reverseWords(s: string): string {
+    // 注意：分割单词的空格不止一个
+    // 1. 去除首尾空格
+    // 2. 队列
 
-    let left = 0;
-    let right = s.length - 1;
+    let l = 0;
+    let r = s.length - 1;
+    let word = "";
+    const queue: string[] = [];
 
     // 去除首尾空格
-    while (s[left] === " ") left++;
-    while (s[right] === " ") right--;
+    while (s[l] === " ") l++;
+    while (s[r] === " ") r--;
 
-    while (left <= right) {
-        let char = s[left];
-
-        if (char === " " && word !== "") {
-            deque.unshift(word);
+    for (let i = l; i <= r; i++) {
+        // 1. 遇到字符加入到 word
+        // 2. 遇到空格
+        //  - word !== "", 说明当前单词结束，加入 queue, 清空 word
+        //  - word === "", 往前走
+        if (s[i] === " " && word !== "") {
+            queue.unshift(word);
             word = "";
-        } else if (char !== " ") {
-            word += char;
+        } else if (s[i] !== " ") {
+            word += s[i];
         }
-
-        left++;
     }
 
-    deque.unshift(word);
+    // 还遗留一个单词，需要加入 queue
+    queue.unshift(word);
 
-    return deque.join(" ");
+    return queue.join(" ");
 }
+
+export default reverseWords;
