@@ -4,6 +4,7 @@ import reverseString from "../344. 反转字符串";
 import reverseStr from "../541. 反转字符串 II";
 import repeatedSubstringPattern from "../459. 重复的子字符串";
 import reverseWords from "../151. 反转字符串中的单词";
+import WordDictionary from "../211. 添加与搜索单词 - 数据结构设计";
 
 describe("../125. 验证回文串", () => {
     it("test-1", () => {
@@ -55,5 +56,18 @@ describe("151. 反转字符串中的单词", () => {
 
     it("test-3", () => {
         expect(reverseWords("a good   example")).toBe("example good a");
+    });
+});
+
+describe("211. 添加与搜索单词 - 数据结构设计", () => {
+    it("test-1", () => {
+        const wordDictionary = new WordDictionary();
+        wordDictionary.addWord("bad");
+        wordDictionary.addWord("dad");
+        wordDictionary.addWord("mad");
+        expect(wordDictionary.search("pad")).toBeFalsy();
+        expect(wordDictionary.search("bad")).toBeTruthy();
+        expect(wordDictionary.search(".ad")).toBeTruthy();
+        expect(wordDictionary.search("b..")).toBeTruthy();
     });
 });

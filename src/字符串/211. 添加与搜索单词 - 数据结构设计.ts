@@ -6,37 +6,39 @@
  * - bool search(word) 如果数据结构中存在字符串与 word 匹配，则返回 true ；否则，返回  false 。
  * word 中可能包含一些 '.' ，每个 . 都可以表示任何一个字母。
  */
-export default class WordDictionary {
+class WordDictionary {
     // key: 字符串的长度，value: 符合长度的字符串数组
-    private words = new Map<number, string[]>();
+    #words = new Map<number, string[]>();
 
     constructor() {}
 
     addWord(word: string): void {
-        // 首先根据字符串的长度判断 map 当中是否存在
-        const len = word.length;
+        const wordLen = word.length;
 
-        if (this.words.has(len)) {
-            this.words.get(len).push(word);
+        if (this.#words.has(wordLen)) {
+            this.#words.get(wordLen).push(word);
         } else {
-            this.words.set(len, [word]);
+            this.#words.set(wordLen, [word]);
         }
     }
 
     search(word: string): boolean {
-        const len = word.length;
+        // 1. len 不存在
+        // 2. len 存在
+        //   - 存在 .
+        //   - 不存在 .
+        const wordLen = word.length;
 
-        // 1. 若 map 不存在该长度的 key，直接 ruturn false;
-        if (!this.words.has(len)) return false;
+        if (!this.#words.has(wordLen)) return false;
 
-        // 2. 若字符串中不存在 . （无正则）
         if (!word.includes(".")) {
-            this.words.get(len).includes(word);
+            return this.#words.get(wordLen).includes(word);
         }
 
-        // 3. 字符串中存在 .
         const reg = new RegExp(word);
 
-        return this.words.get(len).some((item) => reg.test(item));
+        return this.#words.get(wordLen).some((word) => reg.test(word));
     }
 }
+
+export default WordDictionary;
