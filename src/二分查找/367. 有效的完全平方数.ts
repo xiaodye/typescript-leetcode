@@ -4,7 +4,7 @@
  * @param num
  * @returns
  */
-export default function isPerfectSquare(num: number): boolean {
+function isPerfectSquare(num: number): boolean {
     let l = 1;
     let r = num;
 
@@ -23,3 +23,5 @@ export default function isPerfectSquare(num: number): boolean {
 
     return false;
 }
+
+export default isPerfectSquare;

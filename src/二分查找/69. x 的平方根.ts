@@ -4,19 +4,26 @@
  * @param x
  * @returns
  */
-export default function mySqrt(x: number): number {
-    let left = 0;
-    let right = x;
+function mySqrt(x: number): number {
+    // 解题思路：就是在 0 ～ x 中找一个数 n, 保证 n * n <= x
 
-    while (left <= right) {
-        const mid = Math.floor(left + (right - left) / 2);
+    // 处理特殊情况：x === 0
+    if (x === 0) return 0;
+
+    let l = 0;
+    let r = x;
+
+    while (l <= r) {
+        const mid = Math.floor(l + (r - l) / 2);
 
         if (mid <= x / mid) {
-            left = mid + 1;
+            l = mid + 1;
         } else {
-            right = mid - 1;
+            r = mid - 1;
         }
     }
 
-    return right;
+    return r;
 }
+
+export default mySqrt;

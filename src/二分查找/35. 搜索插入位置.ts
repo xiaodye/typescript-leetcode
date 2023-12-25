@@ -5,17 +5,17 @@
  * @param target
  * @returns
  */
-export default function searchInsert(nums: number[], target: number): number {
-    let left = 0;
-    let right = nums.length - 1;
+function searchInsert(nums: number[], target: number): number {
+    let l = 0;
+    let r = nums.length - 1;
 
-    while (left <= right) {
-        const mid = Math.floor(left + (right - left) / 2);
+    while (l <= r) {
+        const mid = Math.floor(l + (r - l) / 2);
 
         if (nums[mid] > target) {
-            right = mid - 1;
+            r = mid - 1;
         } else if (nums[mid] < target) {
-            left = mid + 1;
+            l = mid + 1;
         } else {
             return mid;
         }
@@ -28,5 +28,7 @@ export default function searchInsert(nums: number[], target: number): number {
     // 4.目标值在数组所有元素之后的情况 [left, right]， 因为是右闭区间，所以 return right + 1
 
     // while 结束后，肯定是left > right，并且紧挨着
-    return left;
+    return l;
 }
+
+export default searchInsert;

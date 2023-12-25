@@ -5,7 +5,7 @@
  * @param target
  * @returns
  */
-export default function search(nums: number[], target: number): number {
+function search(nums: number[], target: number): number {
     let left = 0;
     let right = nums.length - 1;
 
@@ -23,3 +23,5 @@ export default function search(nums: number[], target: number): number {
 
     return -1;
 }
+
+export default search;
