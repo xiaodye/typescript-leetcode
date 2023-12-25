@@ -24,4 +24,13 @@ function isPerfectSquare(num: number): boolean {
     return false;
 }
 
+/**
+ * api 大法
+ * @param num
+ * @returns
+ */
+export function isPerfectSquare2(num: number) {
+    return Number.isInteger(Math.sqrt(num));
+}
+
 export default isPerfectSquare;
