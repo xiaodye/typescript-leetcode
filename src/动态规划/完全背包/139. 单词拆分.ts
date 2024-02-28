@@ -11,7 +11,7 @@ function wordBreak(s: string, wordDict: string[]): boolean {
     // dp[i] = dp[i - w[0].length] || dp[i - w[1].length] || ...
     // dp 初始化，dp[0] = true, 表示 空字符出现在字典里
 
-    const dp: boolean[] = [];
+    const dp = new Array<boolean>(s.length + 1).fill(false);
 
     dp[0] = true;
 
@@ -22,8 +22,6 @@ function wordBreak(s: string, wordDict: string[]): boolean {
             if (wordDict.includes(subStr) && dp[j]) {
                 dp[i] = true;
                 break;
-            } else {
-                dp[i] = false;
             }
         }
     }
