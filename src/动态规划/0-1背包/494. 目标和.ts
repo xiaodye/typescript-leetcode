@@ -11,17 +11,17 @@ function findTargetSumWays(nums: number[], target: number): number {
     // 需要 left组合 - right组合 = target
     // 推导出 left组合 = (target + sum) / 2， 0 - 1 背包问题
     const sum = nums.reduce((total, curr) => total + curr, 0);
-    // x 可以看成是背包容量
 
     if (sum < Math.abs(target)) return 0;
-
     if ((target + sum) % 2 === 1) return 0;
 
+    // x 可以看成是背包容量，需要从 nums 中凑出 x，01背包问题
+    // dp[i][j]: 前 i 个物品是否能凑出 j
     const x = (target + sum) / 2;
 
     const dp = Array.from({ length: nums.length }, () => new Array<number>(x + 1).fill(0));
 
-    // 初始化 dp，首列均为0, dp[0][0] = 1, dp[0][nums[0]] = 1;
+    // 初始化dp, dp[0][0] = 1, dp[0][nums[0]] = 1;
     dp[0][nums[0]] = 1;
     dp[0][0] = 1;
 
@@ -29,6 +29,7 @@ function findTargetSumWays(nums: number[], target: number): number {
         dp[0][0]++;
     }
 
+    // 第2行和第1列开始
     for (let i = 1; i < nums.length; i++) {
         for (let j = 0; j <= x; j++) {
             if (j >= nums[i]) {

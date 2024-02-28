@@ -21,7 +21,7 @@ function canPartition(nums: number[]): boolean {
     dp[0][nums[0]] = true;
 
     for (let i = 1; i < nums.length; i++) {
-        for (let j = 1; j <= target; j++) {
+        for (let j = 0; j <= target; j++) {
             if (nums[i] > j) {
                 dp[i][j] = dp[i - 1][j];
             } else {

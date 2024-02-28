@@ -5,6 +5,9 @@
  * @returns
  */
 function longestCommonSubsequence(text1: string, text2: string): number {
+    // dp[i][j]：长度为[0, i - 1]的字符串text1与长度为[0, j - 1]的字符串text2的最长公共子序列为dp[i][j]
+    // dp[i][j] = dp[i - 1][j - 1] + 1 当 text1[i - 1] === text2[j - 1]
+
     const len1 = text1.length;
     const len2 = text2.length;
 
