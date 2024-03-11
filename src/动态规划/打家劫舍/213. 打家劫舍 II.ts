@@ -22,7 +22,8 @@ function rob(nums: number[]): number {
 }
 
 function robRange(nums: number[], l: number, r: number): number {
-    const dp = new Array<number>(nums.length).fill(0);
+    const dp: number[] = [];
+
     // dp 初始化
     dp[l] = nums[l];
     dp[l + 1] = Math.max(nums[l], nums[l + 1]);
