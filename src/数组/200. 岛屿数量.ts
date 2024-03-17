@@ -3,7 +3,7 @@
  * @param grid
  * @returns
  */
-export default function numIslands(grid: string[][]): number {
+function numIslands(grid: string[][]): number {
     if (grid.length === 0 || grid[0].length === 0) return 0;
 
     const directions = [
@@ -18,9 +18,9 @@ export default function numIslands(grid: string[][]): number {
     const rows = grid.length;
     const columns = grid[0].length;
 
-    function dfs(i: number, j: number) {
+    function dfs(i: number, j: number): void {
         // 如果试图探索的范围已经越界，则return
-        if (i < 0 || i >= grid.length || j < 0 || j >= grid[0].length || grid[i][j] === "0") return;
+        if (i < 0 || j < 0 || i >= rows || j >= columns || grid[i][j] === "0") return;
 
         grid[i][j] = "0";
 
@@ -41,3 +41,5 @@ export default function numIslands(grid: string[][]): number {
 
     return count;
 }
+
+export default numIslands;
