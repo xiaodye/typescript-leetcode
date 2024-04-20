@@ -4,7 +4,7 @@
  * @param amount
  * @returns
  */
-function coinChnage(coins: number[], amount: number): number {
+function coinChange(coins: number[], amount: number): number {
     // 完全背包问题
     // dp[i]: 总额数字 i 对应的最少硬币数
     // 倒推：假设现在已经有了 11 美分，确定有几个硬币
@@ -25,4 +25,4 @@ function coinChnage(coins: number[], amount: number): number {
     return dp[amount] === Infinity ? -1 : dp[amount];
 }
 
-export default coinChnage;
+export default coinChange;
