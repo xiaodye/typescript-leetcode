@@ -9,7 +9,9 @@
         "strictNullChecks": false,
         "noImplicitReturns": true,
         "noFallthroughCasesInSwitch": true,
-        "forceConsistentCasingInFileNames": true
+        "forceConsistentCasingInFileNames": true,
+        "types": ["jest", "node"]
     },
+
     "exclude": ["node_modules"]
 }

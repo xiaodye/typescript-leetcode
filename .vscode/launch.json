@@ -5,10 +5,11 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "esno",
+            "name": "tsx",
             "type": "node",
             "request": "launch",
-            "args": ["./node_modules/esno/esno.js", "${file}"],
+            "runtimeExecutable": "${workspaceFolder}/node_modules/.bin/tsx",
+            "args": ["${file}"],
             "skipFiles": ["<node_internals>/**"],
             "internalConsoleOptions": "openOnSessionStart"
         },
