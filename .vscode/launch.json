@@ -4,6 +4,25 @@
     // 欲了解更多信息，请访问: https://go.microsoft.com/fwlink/?linkid=830387
     "version": "0.2.0",
     "configurations": [
+        // 不可用
+        // {
+        //     "name": "tsx",
+        //     "type": "node",
+        //     "request": "launch",
+        //     "args": ["./node_modules/tsx/dist/cli.mjs", "${file}"],
+        //     "stopOnEntry": true,
+        //     "skipFiles": ["<node_internals>/**"],
+        //     "internalConsoleOptions": "openOnSessionStart"
+        // },
+        {
+            "name": "node.js",
+            "type": "node",
+            "runtimeExecutable": "node",
+            "request": "launch",
+            "skipFiles": ["<node_internals>/**"],
+            "internalConsoleOptions": "openOnFirstSessionStart",
+            "program": "${file}"
+        },
         {
             "name": "esno",
             "type": "node",
@@ -11,16 +30,6 @@
             "args": ["./node_modules/esno/esno.js", "${file}"],
             "skipFiles": ["<node_internals>/**"],
             "internalConsoleOptions": "openOnSessionStart"
-        },
-
-        {
-            "name": "ts-node",
-            "type": "node",
-            "request": "launch",
-            "runtimeArgs": ["-r", "ts-node/register"],
-            "internalConsoleOptions": "openOnSessionStart",
-            "skipFiles": ["<node_internals>/**"],
-            "program": "${workspaceFolder}/${file}"
         }
     ]
 }

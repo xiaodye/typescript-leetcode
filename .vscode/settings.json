@@ -3,5 +3,5 @@
     "editor.formatOnSave": true,
     "editor.formatOnType": true,
     "editor.defaultFormatter": "esbenp.prettier-vscode",
-    "cSpell.words": ["deque", "dummp", "inorder", "leetcode", "nums", "preorder", "strs", "visted"]
+    "cSpell.words": ["deque", "dummp", "esno", "inorder", "leetcode", "nums", "preorder", "strs", "visted"]
 }

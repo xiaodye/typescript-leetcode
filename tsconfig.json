@@ -4,12 +4,16 @@
         "module": "ESNext",
         "lib": ["ESNext"],
         "esModuleInterop": true,
+        "sourceMap": true,
+        "inlineSources": true,
 
         "strict": true,
         "strictNullChecks": false,
         "noImplicitReturns": true,
         "noFallthroughCasesInSwitch": true,
-        "forceConsistentCasingInFileNames": true
+        "forceConsistentCasingInFileNames": true,
+        "types": ["vitest/globals", "node"]
     },
+
     "exclude": ["node_modules"]
 }
