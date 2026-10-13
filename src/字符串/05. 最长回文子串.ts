@@ -46,3 +46,9 @@ export default function longestPalindrome(s: string): string {
 
     return s.substring(begin, end + 1);
 }
+
+let a = 2;
+
+console.log(a);
+
+console.log(longestPalindrome("babad")); // 输出: "bab" 或 "aba"

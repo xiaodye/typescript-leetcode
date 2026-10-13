@@ -10,7 +10,7 @@
         "noImplicitReturns": true,
         "noFallthroughCasesInSwitch": true,
         "forceConsistentCasingInFileNames": true,
-        "types": ["jest", "node"]
+        "types": ["vitest/globals", "node"]
     },
 
     "exclude": ["node_modules"]

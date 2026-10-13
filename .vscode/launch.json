@@ -13,7 +13,6 @@
             "skipFiles": ["<node_internals>/**"],
             "internalConsoleOptions": "openOnSessionStart"
         },
-
         {
             "name": "ts-node",
             "type": "node",
