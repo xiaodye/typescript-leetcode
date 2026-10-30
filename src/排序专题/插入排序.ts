@@ -7,23 +7,25 @@
  * @returns
  */
 export default function insertSort(arr: number[]): number[] {
-    /**
-     * 外层循环代表要进行的轮数，每轮可以排序好一个数。
-     * i用于标识每次被插入的元素的索引，temp用来保存当前需要插入的元素。
-     * j用于定位要插入的位置。
-     */
-    for (let i = 1; i < arr.length; i++) {
-        let j = i;
-        const temp = arr[i];
+    // 插入排序
+    // 把第一个元素当做已经排好序的元素
+    // 当前 arr[i] 表示为需要插入的元素
+    // 前面一段为排好的元素，后面的元素依次和前面元素比较，找到正确的位置插入
 
-        while (j - 1 >= 0 && arr[j - 1] > temp) {
-            // 这个赋值操作相当于索引为j-1的元素往后挪，不用担心arr[j]，它已经提前被保存到了temp
-            arr[j] = arr[j - 1];
+    for (let i = 1; i < arr.length; i++) {
+        // 需要插入的元素
+        const curr = arr[i];
+        // 前一个元素
+        let j = i - 1;
+
+        while (j >= 0 && curr < arr[j]) {
+            arr[j + 1] = arr[j];
             j--;
         }
 
-        // 循环让位，最后得到的 j 就是 temp 的正确索引
-        arr[j] = temp;
+        // 此时 arr[j] <= curr; 需要插入到前面
+        // 或者 j === -1：curr 比所有已排序元素都小，插到 arr[0]
+        arr[j + 1] = curr;
     }
 
     return arr;

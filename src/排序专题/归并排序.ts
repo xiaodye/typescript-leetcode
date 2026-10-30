@@ -7,6 +7,9 @@
  * @returns
  */
 export default function mergeSort(arr: number[]): number[] {
+    // 归并排序
+    // 1. 递归分割数组，一直对半分割，直到 arr.length <= 1,数组就是有序
+    // 2. 递归合并有序数组
     const len = arr.length;
 
     // 但被分割的数组小于一个元素时，返回数组。

@@ -7,24 +7,24 @@
  * @returns
  */
 export default function bubbleSort(arr: number[]): number[] {
-    const len = arr.length;
+    // 外层为轮次，需要 len - 1 轮
+    // 内层交换，从后往前排，过程类似冒泡
+    // 优化，如果在某一轮中没有发生交换，说明当前序列以及有序，直接退出
 
-    // 外层代表轮数。
-    // 一轮排序好一个数，从后往前排。
-    // 比如5个数，只需比较4轮，排序好后4个数，还有1个数自然就排好了。
-    for (let i = 0; i < len - 1; i++) {
-        // 内层循环代表每轮要比较的次数
-        // flag作为一个标志位。可以优化冒泡排序，让算法的最好情况时间复杂度达到O(n)
+    for (let i = 0; i < arr.length - 1; i++) {
         let flag = false;
-        for (let j = 0; j < len - 1 - i; j++) {
+
+        for (let j = 0; j < arr.length - (i + 1); j++) {
             if (arr[j] > arr[j + 1]) {
+                // 交换
                 [arr[j], arr[j + 1]] = [arr[j + 1], arr[j]];
                 flag = true;
             }
         }
 
-        // 若一次交换也没发生，则说明数组有序，直接放过。
-        if (!flag) return arr;
+        if (!flag) {
+            break;
+        }
     }
 
     return arr;

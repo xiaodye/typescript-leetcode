@@ -7,6 +7,12 @@
  * @returns
  */
 export default function quickSort(arr: number[]): number[] {
+    // 快速排序
+    // 1. 取一个基准元素，一般是中间元素,或者第一个元素
+    // 2. 获得两个数组，leftArr 都小于基准元素，rightArr 都大于基准元素
+    // 3. 递归 leftArr 和 rightArr
+    // 4. 当元素 <= 1 时，就是有序的
+
     if (arr.length <= 1) return arr;
 
     // 把第一个元素作为基准元素
